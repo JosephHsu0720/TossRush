@@ -107,3 +107,26 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# TossRush project-specific exclusions
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Bb]uild/
+/[Bb]uilds/
+/Artifacts/
+/.vs/
+*.csproj
+!Docs/Validation/StreetFlightMath/StreetFlightMath.csproj
+/Docs/Validation/StreetFlightMath/bin/
+/Docs/Validation/StreetFlightMath/obj/
+*.sln
+*.slnx
+*.user
+*.pidb
+*.suo
+*.tmp
+*.unitypackage
+/TestResults/

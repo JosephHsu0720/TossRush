@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ab102b18f102047bfd0b7d7dff5743, type: 3}
+  m_Name: Carnival
+  m_EditorClassIdentifier: Assembly-CSharp::TossRush.StageData
+  title: MOVING MIDWAY
+  instruction: BEANBAG / LEAD THE MOVING HOLE
+  accent: {r: 1, g: 0.78431374, b: 0.34117645, a: 1}
+  points: 200
+  cleanShotBonus: 100
+  pointsPerPropCollision: 0
+  heldItemIndex: 2
+  launchSpeed: 12.8
+  throwLoft: 26
+  physicsProfile: {fileID: 11400000, guid: 040381038f2d64441a908bb9b4668adc, type: 2}
+  gravityScale: 1
+  wind: {x: 0, y: 0, z: 0}
+  windInfluence: 1
+  throwInterval: 0.38
+  projectileRadius: 0.15
+  targetRadius: 0.68
+  motionAmplitude: 1.05
+  motionSpeed: 1.65
+  randomize: 1
+  horizontalOffsetRange: {x: -0.5, y: 0.5}
+  depthOffsetRange: {x: -0.25, y: 0.25}
+  windSpeedRange: {x: 1, y: 3}
+  windDirectionSpread: 15
+  projectilePrefab: {fileID: 5636865897977656489, guid: da7891b5613266f42a658a684b0f2aa5, type: 3}

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ab102b18f102047bfd0b7d7dff5743, type: 3}
+  m_Name: Basketball
+  m_EditorClassIdentifier: Assembly-CSharp::TossRush.StageData
+  title: CROSSWIND COURT
+  instruction: BASKETBALL / AIM INTO THE WIND
+  accent: {r: 0.95686275, g: 0.4823529, b: 0.3960784, a: 1}
+  points: 150
+  cleanShotBonus: 100
+  pointsPerPropCollision: 0
+  heldItemIndex: 1
+  launchSpeed: 10.6
+  throwLoft: 44
+  physicsProfile: {fileID: 11400000, guid: 147b1aba4cad79e42949308946c476ca, type: 2}
+  gravityScale: 1
+  wind: {x: 5.5, y: 0, z: 0}
+  windInfluence: 1
+  throwInterval: 0.38
+  projectileRadius: 0.2
+  targetRadius: 0.72
+  motionAmplitude: 0
+  motionSpeed: 1.4
+  randomize: 1
+  horizontalOffsetRange: {x: -0.7, y: 0.7}
+  depthOffsetRange: {x: -0.25, y: 0.25}
+  windSpeedRange: {x: 4, y: 7}
+  windDirectionSpread: 15
+  projectilePrefab: {fileID: 6368252267971896991, guid: dc36aac784d25c94083fca68ba24231b, type: 3}

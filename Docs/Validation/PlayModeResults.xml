@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="18" result="Passed" total="18" passed="18" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-11 10:41:03Z" end-time="2026-11-11 10:42:00Z" duration="57.3481361">
+  <test-suite type="TestSuite" id="1026" name="TossRush" fullname="TossRush" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-11-11 10:41:03Z" end-time="2026-11-11 10:42:00Z" duration="57.348136" total="18" passed="18" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1020" name="TossRush.PlayModeTests.dll" fullname="C:/Users/sheena/TossRush/Library/ScriptAssemblies/TossRush.PlayModeTests.dll" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-11-11 10:41:03Z" end-time="2026-11-11 10:42:00Z" duration="57.332088" total="18" passed="18" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="37684" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1021" name="TossRush" fullname="TossRush" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-11-11 10:41:03Z" end-time="2026-11-11 10:42:00Z" duration="57.324852" total="18" passed="18" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1022" name="Tests" fullname="TossRush.Tests" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-11-11 10:41:03Z" end-time="2026-11-11 10:42:00Z" duration="57.318499" total="18" passed="18" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1001" name="PrototypeTests" fullname="TossRush.Tests.PrototypeTests" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-11-11 10:41:03Z" end-time="2026-11-11 10:42:00Z" duration="57.310802" total="18" passed="18" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1006" name="Carnival_MovesAndRejectsReverseEntry_ThenScoresFromFront" fullname="TossRush.Tests.PrototypeTests.Carnival_MovesAndRejectsReverseEntry_ThenScoresFromFront" methodname="Carnival_MovesAndRejectsReverseEntry_ThenScoresFromFront" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="2084161835" result="Passed" start-time="2026-11-11 10:41:03Z" end-time="2026-11-11 10:41:05Z" duration="2.358892" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1013" name="CornerCleanShot_Awards50InsteadOf100_AndReusesPaperPool" fullname="TossRush.Tests.PrototypeTests.CornerCleanShot_Awards50InsteadOf100_AndReusesPaperPool" methodname="CornerCleanShot_Awards50InsteadOf100_AndReusesPaperPool" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="1670312902" result="Passed" start-time="2026-11-11 10:41:05Z" end-time="2026-11-11 10:41:06Z" duration="0.484311" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1014" name="CornerTwoContacts_Award60_AndReuseClearsCollisionHistory" fullname="TossRush.Tests.PrototypeTests.CornerTwoContacts_Award60_AndReuseClearsCollisionHistory" methodname="CornerTwoContacts_Award60_AndReuseClearsCollisionHistory" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="1196074803" result="Passed" start-time="2026-11-11 10:41:06Z" end-time="2026-11-11 10:41:06Z" duration="0.740408" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1004" name="Crosswind_AcceleratesBasketball_AndCompensatedThrowScores" fullname="TossRush.Tests.PrototypeTests.Crosswind_AcceleratesBasketball_AndCompensatedThrowScores" methodname="Crosswind_AcceleratesBasketball_AndCompensatedThrowScores" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="1150868663" result="Passed" start-time="2026-11-11 10:41:06Z" end-time="2026-11-11 10:41:09Z" duration="2.973033" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1002" name="FullTwentySecondRound_StaysOnMisses_StopsAtDeadline_AndRestarts" fullname="TossRush.Tests.PrototypeTests.FullTwentySecondRound_StaysOnMisses_StopsAtDeadline_AndRestarts" methodname="FullTwentySecondRound_StaysOnMisses_StopsAtDeadline_AndRestarts" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="1735581826" result="Passed" start-time="2026-11-11 10:41:09Z" end-time="2026-11-11 10:41:30Z" duration="20.319662" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1018" name="HighScoreIndicator_PersistsRecord_AndEditorToolClearsOnlyScore" fullname="TossRush.Tests.PrototypeTests.HighScoreIndicator_PersistsRecord_AndEditorToolClearsOnlyScore" methodname="HighScoreIndicator_PersistsRecord_AndEditorToolClearsOnlyScore" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="278408925" result="Passed" start-time="2026-11-11 10:41:30Z" end-time="2026-11-11 10:41:31Z" duration="1.433730" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[TossRush high score cleared.
+TossRush high score cleared.
+]]></output>
+            </test-case>
+            <test-case id="1005" name="Hoop_RejectsUpwardAndOutsideCrossings_AcceptsDownwardEntry" fullname="TossRush.Tests.PrototypeTests.Hoop_RejectsUpwardAndOutsideCrossings_AcceptsDownwardEntry" methodname="Hoop_RejectsUpwardAndOutsideCrossings_AcceptsDownwardEntry" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="889954697" result="Passed" start-time="2026-11-11 10:41:31Z" end-time="2026-11-11 10:41:33Z" duration="2.062762" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="NormalPaperThrow_ScoresOnce_AndClearsOldProjectiles" fullname="TossRush.Tests.PrototypeTests.NormalPaperThrow_ScoresOnce_AndClearsOldProjectiles" methodname="NormalPaperThrow_ScoresOnce_AndClearsOldProjectiles" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="1084575068" result="Passed" start-time="2026-11-11 10:41:33Z" end-time="2026-11-11 10:41:35Z" duration="1.332392" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1015" name="OrdinaryCollision_CancelsCleanBonus" fullname="TossRush.Tests.PrototypeTests.OrdinaryCollision_CancelsCleanBonus" methodname="OrdinaryCollision_CancelsCleanBonus" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="2078238527" result="Passed" start-time="2026-11-11 10:41:35Z" end-time="2026-11-11 10:41:35Z" duration="0.549809" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1009" name="PhysicsProfiles_ShareGravity_ButPaperRespondsMoreToWind" fullname="TossRush.Tests.PrototypeTests.PhysicsProfiles_ShareGravity_ButPaperRespondsMoreToWind" methodname="PhysicsProfiles_ShareGravity_ButPaperRespondsMoreToWind" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="1256516692" result="Passed" start-time="2026-11-11 10:41:35Z" end-time="2026-11-11 10:41:35Z" duration="0.327341" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1017" name="PhysicsProps_MoveOnImpact_AndRestartRestoresPose" fullname="TossRush.Tests.PrototypeTests.PhysicsProps_MoveOnImpact_AndRestartRestoresPose" methodname="PhysicsProps_MoveOnImpact_AndRestartRestoresPose" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="232117379" result="Passed" start-time="2026-11-11 10:41:35Z" end-time="2026-11-11 10:41:36Z" duration="0.546227" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1010" name="PredictedFlight_MatchesRigidbodyWithAirResistance" fullname="TossRush.Tests.PrototypeTests.PredictedFlight_MatchesRigidbodyWithAirResistance" methodname="PredictedFlight_MatchesRigidbodyWithAirResistance" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="1314586720" result="Passed" start-time="2026-11-11 10:41:36Z" end-time="2026-11-11 10:41:37Z" duration="0.726792" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1007" name="ProjectilePool_IsBounded_AndRestartResetsEveryShot" fullname="TossRush.Tests.PrototypeTests.ProjectilePool_IsBounded_AndRestartResetsEveryShot" methodname="ProjectilePool_IsBounded_AndRestartResetsEveryShot" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="26368874" result="Passed" start-time="2026-11-11 10:41:37Z" end-time="2026-11-11 10:41:37Z" duration="0.333015" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1012" name="RandomizedStages_CanBeScoredWithPlayerThrow_FromSeveralSeeds" fullname="TossRush.Tests.PrototypeTests.RandomizedStages_CanBeScoredWithPlayerThrow_FromSeveralSeeds" methodname="RandomizedStages_CanBeScoredWithPlayerThrow_FromSeveralSeeds" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="1012940710" result="Passed" start-time="2026-11-11 10:41:37Z" end-time="2026-11-11 10:41:57Z" duration="19.997259" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1008" name="StageVariations_StayInBounds_AndCameraKeepsLayoutVisible" fullname="TossRush.Tests.PrototypeTests.StageVariations_StayInBounds_AndCameraKeepsLayoutVisible" methodname="StageVariations_StayInBounds_AndCameraKeepsLayoutVisible" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="407753082" result="Passed" start-time="2026-11-11 10:41:57Z" end-time="2026-11-11 10:41:57Z" duration="0.346308" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1011" name="SurfaceMaterials_BasketballBounces_BeanbagSettles" fullname="TossRush.Tests.PrototypeTests.SurfaceMaterials_BasketballBounces_BeanbagSettles" methodname="SurfaceMaterials_BasketballBounces_BeanbagSettles" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="2047139876" result="Passed" start-time="2026-11-11 10:41:57Z" end-time="2026-11-11 10:41:59Z" duration="1.815887" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1016" name="TargetRimContact_CancelsCleanButDoesNotEarnPropBonus" fullname="TossRush.Tests.PrototypeTests.TargetRimContact_CancelsCleanButDoesNotEarnPropBonus" methodname="TargetRimContact_CancelsCleanButDoesNotEarnPropBonus" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="509906447" result="Passed" start-time="2026-11-11 10:41:59Z" end-time="2026-11-11 10:42:00Z" duration="0.591922" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1019" name="TargetsHaveOutline_AndHUDLeavesCenterClear" fullname="TossRush.Tests.PrototypeTests.TargetsHaveOutline_AndHUDLeavesCenterClear" methodname="TargetsHaveOutline_AndHUDLeavesCenterClear" classname="TossRush.Tests.PrototypeTests" runstate="Runnable" seed="1587232614" result="Passed" start-time="2026-11-11 10:42:00Z" end-time="2026-11-11 10:42:00Z" duration="0.346494" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/sheena/AppData/LocalLow/JOJOwork/TossRush\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

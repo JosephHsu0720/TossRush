@@ -1,0 +1,11 @@
+{
+    "appliedUtc": "2026-11-12T06:31:22.3899071Z",
+    "targetRenderers": 88,
+    "sceneRenderers": 69,
+    "updatedPrefabs": [
+        "Assets/TossRush/Prefabs/Targets/RoomStageTarget.prefab",
+        "Assets/TossRush/Prefabs/Targets/CornerTarget.prefab",
+        "Assets/TossRush/Prefabs/Stages/RoomStage.prefab",
+        "Assets/TossRush/Prefabs/Stages/CornerStage.prefab"
+    ]
+}

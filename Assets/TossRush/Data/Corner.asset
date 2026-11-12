@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ab102b18f102047bfd0b7d7dff5743, type: 3}
+  m_Name: Corner
+  m_EditorClassIdentifier: Assembly-CSharp::TossRush.StageData
+  title: CORNER SHOTS
+  instruction: PAPER / CLEAN +50 OR EACH PROP HIT +30
+  accent: {r: 0.41176468, g: 0.8627451, b: 0.7647059, a: 1}
+  points: 100
+  cleanShotBonus: 50
+  pointsPerPropCollision: 30
+  heldItemIndex: 0
+  launchSpeed: 13.2
+  throwLoft: 25
+  physicsProfile: {fileID: 11400000, guid: f5758c131fa850a47af248b890d55cb1, type: 2}
+  gravityScale: 1
+  wind: {x: 0, y: 0, z: 0}
+  windInfluence: 1
+  throwInterval: 0.38
+  projectileRadius: 0.13
+  targetRadius: 0.67
+  motionAmplitude: 0
+  motionSpeed: 1.4
+  randomize: 1
+  horizontalOffsetRange: {x: -0.2, y: 0.2}
+  depthOffsetRange: {x: -0.15, y: 0.15}
+  windSpeedRange: {x: 0.1, y: 0.8}
+  windDirectionSpread: 15
+  projectilePrefab: {fileID: 6977931213915778279, guid: f585c45219405a446be0789aba0e46bc, type: 3}

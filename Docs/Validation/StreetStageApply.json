@@ -1,0 +1,17 @@
+{
+    "appliedUtc": "2026-11-12T07:26:45.6150801Z",
+    "stageOrder": [
+        "Corner",
+        "Street",
+        "Basketball",
+        "Carnival"
+    ],
+    "deletedUnusedAssets": [
+        "Assets/TossRush/Prefabs/Stages/RoomStage.prefab",
+        "Assets/TossRush/Data/Room.asset"
+    ],
+    "trafficVehicles": 4,
+    "streetPoints": 200,
+    "projectileTypes": 4,
+    "validation": "Assets applied. Play Mode physics and visual tests must still be run."
+}

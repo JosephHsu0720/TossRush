@@ -1,0 +1,6 @@
+{
+  "name": "TossRush.Runtime",
+  "rootNamespace": "TossRush",
+  "references": ["Unity.InputSystem", "Unity.TextMeshPro", "UnityEngine.UI"],
+  "autoReferenced": true
+}

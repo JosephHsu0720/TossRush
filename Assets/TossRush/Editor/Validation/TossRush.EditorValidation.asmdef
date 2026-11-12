@@ -1,0 +1,7 @@
+{
+  "name": "TossRush.EditorValidation",
+  "rootNamespace": "TossRush.Editor.Validation",
+  "references": ["UnityEditor.TestRunner", "UnityEngine.TestRunner"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": false
+}
