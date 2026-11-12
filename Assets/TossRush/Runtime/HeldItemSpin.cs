@@ -7,12 +7,26 @@ namespace TossRush
         public float degreesPerSecond = 150;
         Quaternion restingRotation;
         float angle;
-        void Awake() => restingRotation = transform.localRotation;
-        void OnEnable() { angle = 0; }
+        bool initialized;
+        void Awake() => Initialize();
+        void Initialize()
+        {
+            if (initialized) return;
+            restingRotation = transform.localRotation;
+            initialized = true;
+        }
+        void OnEnable() => ResetSpin();
+        public void ResetSpin()
+        {
+            Initialize();
+            angle = 0;
+            transform.localRotation = restingRotation;
+        }
         void Update()
         {
             angle = (angle + degreesPerSecond * Time.deltaTime) % 360;
-            transform.localRotation = restingRotation * Quaternion.AngleAxis(angle, Vector3.up);
+            Quaternion parentRotation = transform.parent ? transform.parent.rotation : Quaternion.identity;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.up) * parentRotation * restingRotation;
         }
     }
 }

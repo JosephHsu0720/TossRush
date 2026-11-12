@@ -56,6 +56,7 @@ namespace TossRush
                     for (int j = 0; j < poolSizePerStage; j++)
                     {
                         var shot = Instantiate(stages[i].data.projectilePrefab, poolRoot);
+                        shot.Owner = this;
                         shot.name = stages[i].data.title + " Shot " + j;
                         shot.Retire();
                         pool.Add(shot); allShots.Add(shot);
@@ -118,16 +119,25 @@ namespace TossRush
             return false;
         }
 
+        public void RegisterCollision(Projectile shot, Vector3 point)
+        {
+            if (!CanScore || !shot || shot.Owner != this || !shot.InFlight || shot.Scored || shot.StageToken != StageToken) return;
+            int points = ActiveStage.data.pointsPerPropCollision;
+            if (points <= 0) return;
+            Score += points;
+            hud.ShowCollision(points, point, thrower.view, ActiveStage.data.accent);
+        }
+
         public void RegisterHit(Projectile shot)
         {
             if (!CanScore || !shot || !shot.Scored || !shot.InFlight || shot.StageToken != StageToken) return;
             var data = ActiveStage.data;
             LastWasClean = shot.CollisionCount == 0;
-            LastBonus = LastWasClean ? data.cleanShotBonus : shot.PropCollisionCount * data.pointsPerPropCollision;
+            LastBonus = LastWasClean ? data.cleanShotBonus : 0;
             LastAward = data.points + LastBonus;
             Score += LastAward;
             Hits++;
-            string detail = LastWasClean ? "CLEAN SHOT" : LastBonus > 0 ? shot.PropCollisionCount + " BOUNCES  +" + LastBonus : "NICE SHOT";
+            string detail = LastWasClean ? "CLEAN SHOT" : "NICE SHOT";
             hud.ShowFeedback("+" + LastAward + "   " + detail, data.accent);
             if (LastWasClean && LastBonus > 0) hud.ShowCleanShot(LastBonus);
             if (hitClip) audioSource.PlayOneShot(hitClip, 0.5f);

@@ -11,6 +11,7 @@ namespace TossRush
         [Min(1)] public int points = 100;
         [Header("Scoring")]
         [Min(0)] public int cleanShotBonus = 100;
+        [Tooltip("Immediate points for every projectile collision before scoring, including target contacts.")]
         [Min(0)] public int pointsPerPropCollision;
         [Min(0)] public int heldItemIndex;
         [Min(1)] public float launchSpeed = 11f;
@@ -33,5 +34,6 @@ namespace TossRush
         public Vector2 windSpeedRange = new Vector2(1, 3);
         [Range(0, 30)] public float windDirectionSpread = 15f;
         public Projectile projectilePrefab;
+        public Vector3 projectileEulerAngles;
     }
 }

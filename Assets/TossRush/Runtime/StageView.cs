@@ -16,6 +16,7 @@ namespace TossRush
         float elapsed, motionPhase;
         PhysicsProp[] props;
         TrafficVehicle[] vehicles;
+        ScoreGate[] gates;
 
         public void Initialize(GameDirector game)
         {
@@ -24,6 +25,8 @@ namespace TossRush
             movingTarget.localScale = Vector3.one * (data.targetRadius / authoredRadius);
             CurrentTargetCenter = home;
             CurrentWind = data.wind;
+            gates = movingTarget.GetComponentsInChildren<ScoreGate>(true);
+            foreach (var targetGate in gates) targetGate.stage = this;
             props = GetComponentsInChildren<PhysicsProp>(true);
             foreach (var prop in props) prop.InitializePose();
             vehicles = GetComponentsInChildren<TrafficVehicle>(true);
@@ -45,7 +48,7 @@ namespace TossRush
                 motionPhase = Random.Range(0, Mathf.PI * 2);
             }
             movingTarget.localPosition = PositionAtTime(0);
-            gate.ResetTracking();
+            foreach (var targetGate in gates) targetGate.ResetTracking();
             foreach (var prop in props) prop.ResetPose();
             foreach (var vehicle in vehicles) vehicle.ResetPose();
         }

@@ -26,6 +26,8 @@ namespace TossRush
             view.transform.localRotation = Quaternion.Euler(pitch, yaw, 0);
             nextThrow = 0;
             for (int i = 0; i < heldItems.Length; i++) heldItems[i].SetActive(i == game.ActiveStage.data.heldItemIndex);
+            var spin = heldItems[game.ActiveStage.data.heldItemIndex].GetComponent<HeldItemSpin>();
+            if (spin) spin.ResetSpin();
             trajectory.startColor = trajectory.endColor = game.ActiveStage.data.accent;
         }
 

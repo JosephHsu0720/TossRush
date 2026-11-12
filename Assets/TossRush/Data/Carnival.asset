@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Carnival
   m_EditorClassIdentifier: Assembly-CSharp::TossRush.StageData
   title: MOVING MIDWAY
-  instruction: BEANBAG / LEAD THE MOVING HOLE
+  instruction: BEANBAG / CLEAN +100 / EACH CONTACT +30
   accent: {r: 1, g: 0.78431374, b: 0.34117645, a: 1}
   points: 200
   cleanShotBonus: 100
-  pointsPerPropCollision: 0
+  pointsPerPropCollision: 30
   heldItemIndex: 2
   launchSpeed: 12.8
   throwLoft: 26
@@ -36,3 +36,4 @@ MonoBehaviour:
   windSpeedRange: {x: 1, y: 3}
   windDirectionSpread: 15
   projectilePrefab: {fileID: 5636865897977656489, guid: da7891b5613266f42a658a684b0f2aa5, type: 3}
+  projectileEulerAngles: {x: 0, y: 0, z: 0}

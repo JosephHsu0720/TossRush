@@ -11,6 +11,7 @@ namespace TossRush
         public TMP_Text highScoreText;
         public CleanShotEffect cleanShotEffect;
         public WindIndicator windIndicator;
+        public CollisionPointFeedback collisionFeedback;
         public UnityEngine.UI.Image timerFill, transition;
         public CanvasGroup feedback;
         public Material feedbackMaterial;
@@ -29,6 +30,7 @@ namespace TossRush
 
         public void ShowMenu(int best)
         {
+            collisionFeedback.Clear();
             cleanShotEffect.ResetEffect();
             cleanShotEffect.gameObject.SetActive(false);
             menuPanel.SetActive(true); resultPanel.SetActive(false); playPanel.SetActive(false);
@@ -38,6 +40,7 @@ namespace TossRush
 
         public void ShowPlay()
         {
+            collisionFeedback.Clear();
             menuPanel.SetActive(false); resultPanel.SetActive(false); playPanel.SetActive(true);
             feedbackEnd = 0; feedback.alpha = 0;
             cleanShotEffect.gameObject.SetActive(true);
@@ -64,6 +67,7 @@ namespace TossRush
         }
 
         public void ShowCleanShot(int bonus) => cleanShotEffect.Play(bonus);
+        public void ShowCollision(int points, Vector3 point, Camera view, Color color) => collisionFeedback.Show(points, point, view, color);
 
         public void ShowFeedback(string text, Color color)
         {
@@ -76,6 +80,7 @@ namespace TossRush
 
         public void ShowResult(int score, int best, int hits, int shots, bool newRecord)
         {
+            collisionFeedback.Clear();
             cleanShotEffect.ResetEffect();
             cleanShotEffect.gameObject.SetActive(false);
             playPanel.SetActive(false); menuPanel.SetActive(false); resultPanel.SetActive(true);

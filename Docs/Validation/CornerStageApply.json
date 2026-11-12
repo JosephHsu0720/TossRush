@@ -1,0 +1,14 @@
+{
+    "appliedUtc": "2026-11-12T09:45:45.4865075Z",
+    "oldRampEuler": {
+        "x": 325.0,
+        "y": 310.0,
+        "z": -0.0000010422651257613325
+    },
+    "rampEuler": {
+        "x": -35.0,
+        "y": -50.0,
+        "z": 0.0
+    },
+    "validation": "Ramp direction checked with flight math. Play Mode bank shots and Game View appearance still require verification."
+}

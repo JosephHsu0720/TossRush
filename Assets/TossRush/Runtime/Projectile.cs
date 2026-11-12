@@ -13,6 +13,7 @@ namespace TossRush
         public Vector3 PreviousPosition { get; private set; }
         public int CollisionCount { get; private set; }
         public int PropCollisionCount { get; private set; }
+        internal GameDirector Owner { get; set; }
         ProjectilePhysicsProfile profile;
         Vector3 wind;
         float gravityScale;
@@ -23,7 +24,8 @@ namespace TossRush
         public void Launch(StageData data, int token, Vector3 position, Vector3 velocity, Vector3 stageWind)
         {
             if (!Body) Body = GetComponent<Rigidbody>();
-            transform.SetPositionAndRotation(position, Quaternion.identity);
+            Quaternion rotation = Quaternion.Euler(data.projectileEulerAngles);
+            transform.SetPositionAndRotation(position, rotation);
             PreviousPosition = position;
             StageToken = token;
             Radius = data.projectileRadius;
@@ -36,6 +38,7 @@ namespace TossRush
             expiresAt = Time.time + (profile ? profile.flightLifetime : 4f);
             gameObject.SetActive(true);
             Body.position = position;
+            Body.rotation = rotation;
             Body.mass = profile ? profile.mass : 0.3f;
             Body.useGravity = false;
             Body.linearDamping = 0;
@@ -65,6 +68,7 @@ namespace TossRush
             if (!InFlight || Scored) return;
             CollisionCount++;
             if (!collision.collider.GetComponentInParent<TargetMarker>()) PropCollisionCount++;
+            if (Owner && collision.contactCount > 0) Owner.RegisterCollision(this, collision.GetContact(0).point);
         }
 
         public void Retire()

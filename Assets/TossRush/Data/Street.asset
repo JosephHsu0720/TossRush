@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Street
   m_EditorClassIdentifier: TossRush.Runtime::TossRush.StageData
   title: CURBSIDE SPIN
-  instruction: BLACK BAG / SPIN CURVE / BANK OFF THE OPEN LID
+  instruction: TRASH BAG / CHOOSE ANY BIN / EACH CONTACT +30
   accent: {r: 0.35, g: 0.9, b: 0.91, a: 1}
   points: 200
   cleanShotBonus: 0
-  pointsPerPropCollision: 0
+  pointsPerPropCollision: 30
   heldItemIndex: 3
   launchSpeed: 11.8
   throwLoft: 38
@@ -36,3 +36,4 @@ MonoBehaviour:
   windSpeedRange: {x: 0.4, y: 1.8}
   windDirectionSpread: 15
   projectilePrefab: {fileID: 8921436304672772622, guid: 3a4f897b42ebd164482a54161c26f927, type: 3}
+  projectileEulerAngles: {x: 0, y: 0, z: 90}

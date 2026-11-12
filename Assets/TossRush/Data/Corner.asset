@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Corner
   m_EditorClassIdentifier: Assembly-CSharp::TossRush.StageData
   title: CORNER SHOTS
-  instruction: PAPER / CLEAN +50 OR EACH PROP HIT +30
+  instruction: PAPER / CLEAN +50 / EACH CONTACT +30
   accent: {r: 0.41176468, g: 0.8627451, b: 0.7647059, a: 1}
   points: 100
   cleanShotBonus: 50
@@ -36,3 +36,4 @@ MonoBehaviour:
   windSpeedRange: {x: 0.1, y: 0.8}
   windDirectionSpread: 15
   projectilePrefab: {fileID: 6977931213915778279, guid: f585c45219405a446be0789aba0e46bc, type: 3}
+  projectileEulerAngles: {x: 0, y: 0, z: 0}

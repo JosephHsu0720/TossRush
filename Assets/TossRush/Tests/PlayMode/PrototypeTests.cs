@@ -24,7 +24,7 @@ namespace TossRush.Tests
             savedBest=PlayerPrefs.GetInt("TossRush.Best.v1",0);
             savedRandom=Random.state;
             Random.InitState(73021);
-            yield return EditorSceneManager.LoadSceneAsyncInPlayMode("Assets/TossRush/Scenes/TossRushPrototype.unity",new LoadSceneParameters(LoadSceneMode.Single));
+            yield return EditorSceneManager.LoadSceneAsyncInPlayMode("Assets/TossRush/Scenes/TossRush.unity",new LoadSceneParameters(LoadSceneMode.Single));
             yield return null;
             game=Object.FindFirstObjectByType<GameDirector>();
             Assert.That(game,Is.Not.Null);
@@ -40,11 +40,11 @@ namespace TossRush.Tests
             Cursor.lockState=CursorLockMode.None;Cursor.visible=true;
         }
 
-        static IEnumerator WaitUntil(System.Func<bool> condition,float seconds=3)
+        static IEnumerator WaitUntil(System.Func<bool> condition,float seconds=3,string context="")
         {
             double end=Time.timeAsDouble+seconds;
             while(!condition()&&Time.timeAsDouble<end)yield return null;
-            Assert.That(condition(),Is.True,"Expected state did not arrive within "+seconds+" seconds.");
+            Assert.That(condition(),Is.True,"Expected state did not arrive within "+seconds+" seconds. "+context);
         }
 
         IEnumerator ReachCourt()
@@ -334,15 +334,13 @@ namespace TossRush.Tests
             foreach(int seed in new[]{11,127,950,3001})
             {
                 Random.InitState(seed);game.StartRound();
-                int expected=0;
                 for(int index=0;index<game.stages.Length;index++)
                 {
                     Assert.That(game.ActiveStage,Is.SameAs(game.stages[index]));
-                    expected+=game.ActiveStage.data.points+game.ActiveStage.data.cleanShotBonus;
                     AimAtGate();
                     Assert.That(game.thrower.TryThrow(),Is.True);
-                    int targetScore=expected;
-                    yield return WaitUntil(()=>game.Score==targetScore&&game.CanThrow);
+                    int targetHits=game.Hits+1;
+                    yield return WaitUntil(()=>game.Hits==targetHits&&game.CanThrow,3,"Seed="+seed+", stage="+game.ActiveStage.data.name);
                 }
             }
         }
@@ -360,6 +358,52 @@ namespace TossRush.Tests
             Assert.That(game.Score,Is.EqualTo(150));
             Assert.That(game.LastBonus,Is.EqualTo(50));
             Assert.That(game.hud.cleanShotEffect.label.text,Does.Contain("+50"));
+        }
+
+        [UnityTest]
+        public IEnumerator Corner_RimRollIn_AwardsBaseAndContactsOnce_WithoutCleanBonus()
+        {
+            foreach (var entry in new[] { new Vector2(.7f, .25f), new Vector2(.7f, .5f), new Vector2(.75f, .5f) })
+            {
+                Random.InitState(73021);
+                StartStage("Corner");
+                var gate = game.ActiveStage.gate;
+                Vector3 center = gate.transform.position;
+                Assert.That(game.Launch(center + Vector3.right * entry.x + Vector3.up * .25f, Vector3.left * entry.y), Is.True);
+                var shot = game.Projectiles.First(p => p.InFlight);
+                yield return WaitUntil(() => shot.CollisionCount > 0 || game.Hits > 0, 1);
+                Assert.That(shot.CollisionCount, Is.GreaterThan(0), "Expected rim contact for " + entry + "; score=" + game.Score);
+                Assert.That(game.Hits, Is.Zero, "Touching the rim alone must not count as a goal.");
+                Assert.That(game.Score, Is.EqualTo(shot.CollisionCount * 30));
+                Assert.That(shot.PropCollisionCount, Is.Zero, "The rim is part of the target.");
+                yield return WaitUntil(() => game.Hits == 1, 2);
+                int expected = 100 + shot.CollisionCount * 30;
+                Assert.That(game.Score, Is.EqualTo(expected), "Paper rolling fully inside the bin must score.");
+                Assert.That(game.LastWasClean, Is.False);
+                Assert.That(game.LastBonus, Is.Zero);
+                game.RegisterHit(shot);
+                Assert.That(game.Score, Is.EqualTo(expected), "The same paper must score only once.");
+                yield return null;
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator Corner_RejectsUpwardOutsideAndBelowRimSideEntry()
+        {
+            StartStage("Corner");
+            Vector3 center = game.ActiveStage.gate.transform.position;
+            game.Launch(center - Vector3.up * .3f, Vector3.up * 5);
+            yield return new WaitForSeconds(.1f);
+            Assert.That(game.Hits, Is.Zero, "Upward entry must not count as a goal.");
+            foreach (var shot in game.Projectiles) shot.Retire();
+            game.Launch(center + Vector3.right * .9f + Vector3.up * .25f, Vector3.zero);
+            yield return new WaitForSeconds(.7f);
+            Assert.That(game.Hits, Is.Zero, "Falling outside the bin must not count as a goal.");
+            foreach (var shot in game.Projectiles) shot.Retire();
+            // A shot already below the rim has not entered through the opening.
+            game.Launch(center - Vector3.up * .15f, Vector3.down);
+            yield return new WaitForSeconds(.15f);
+            Assert.That(game.Hits, Is.Zero, "Being inside below the rim alone must not count as a goal.");
         }
 
         IEnumerator ContactWall(Projectile shot=null)
@@ -399,9 +443,9 @@ namespace TossRush.Tests
             DropExistingShotThroughGate(shot);
             yield return WaitUntil(()=>game.Hits==1);
             Assert.That(game.LastWasClean,Is.False);
-            Assert.That(game.LastBonus,Is.EqualTo(60));
+            Assert.That(game.LastBonus,Is.Zero,"Collision points were already awarded on contact.");
             Assert.That(game.Score,Is.EqualTo(160));
-            Assert.That(game.hud.feedbackText.text,Does.Contain("2 BOUNCES"));
+            Assert.That(game.LastAward,Is.EqualTo(100));
             game.StartRound();
             game.Launch(new Vector3(0,2,-3),Vector3.up);
             shot=game.Projectiles.First(p=>p.InFlight);
@@ -417,23 +461,25 @@ namespace TossRush.Tests
             var shot=game.Projectiles.First(p=>p.InFlight);
             DropExistingShotThroughGate(shot);
             yield return WaitUntil(()=>game.Hits==1);
-            Assert.That(game.Score,Is.EqualTo(150));
+            Assert.That(game.Score,Is.EqualTo(180));
             Assert.That(game.LastBonus,Is.Zero);
             Assert.That(game.LastWasClean,Is.False);
         }
 
         [UnityTest]
-        public IEnumerator TargetRimContact_CancelsCleanButDoesNotEarnPropBonus()
+        public IEnumerator TargetRimContact_Awards30Immediately_AndCancelsCleanBonus()
         {
+            Random.InitState(73021);
             StartStage("Corner");
             var center=game.ActiveStage.gate.transform.position;
-            game.Launch(center+Vector3.right*0.73f+Vector3.up*0.35f,Vector3.down*3);
+            game.Launch(center+Vector3.right*.7f+Vector3.up*.25f,Vector3.left*.25f);
             var shot=game.Projectiles.First(p=>p.InFlight);
             yield return WaitUntil(()=>shot.CollisionCount>0,1);
             Assert.That(shot.PropCollisionCount,Is.Zero);
+            Assert.That(game.Score,Is.EqualTo(shot.CollisionCount*30));
             DropExistingShotThroughGate(shot);
             yield return WaitUntil(()=>game.Hits==1);
-            Assert.That(game.Score,Is.EqualTo(100));
+            Assert.That(game.Score,Is.EqualTo(100+shot.CollisionCount*30));
             Assert.That(game.LastBonus,Is.Zero);
         }
 
@@ -527,7 +573,7 @@ namespace TossRush.Tests
         }
 
         [UnityTest]
-        public IEnumerator Street_LidContactRollsIntoOpening_AndAwards200Once()
+        public IEnumerator Street_LidContactRollsIntoOpening_AndAwardsBasePlusContactsOnce()
         {
             StartStage("Street");
             Transform lid=game.ActiveStage.movingTarget.Find("Open Lid");
@@ -536,14 +582,16 @@ namespace TossRush.Tests
             Assert.That(game.Launch(start,Vector3.down*.25f),Is.True);
             var shot=game.Projectiles.First(p=>p.InFlight);
             yield return WaitUntil(()=>shot.CollisionCount>0,1.5f);
-            Assert.That(game.Score,Is.Zero,"Contacting the lid alone cannot score.");
+            Assert.That(game.Hits,Is.Zero,"Contacting the lid alone cannot count as a goal.");
+            Assert.That(game.Score,Is.EqualTo(shot.CollisionCount*30));
             Assert.That(shot.PropCollisionCount,Is.Zero,"The lid is part of the target.");
             yield return WaitUntil(()=>game.Hits==1,3);
-            Assert.That(game.Score,Is.EqualTo(200));
+            int expected=200+shot.CollisionCount*30;
+            Assert.That(game.Score,Is.EqualTo(expected));
             Assert.That(game.LastBonus,Is.Zero);
             Assert.That(game.LastWasClean,Is.False);
             game.RegisterHit(shot);
-            Assert.That(game.Score,Is.EqualTo(200));
+            Assert.That(game.Score,Is.EqualTo(expected));
         }
 
         [UnityTest]
@@ -553,15 +601,15 @@ namespace TossRush.Tests
             Vector3 center=game.ActiveStage.gate.transform.position;
             game.Launch(center-Vector3.up*.6f,Vector3.up*7);
             yield return new WaitForSeconds(.2f);
-            Assert.That(game.Score,Is.Zero);
+            Assert.That(game.Hits,Is.Zero);
             foreach(var shot in game.Projectiles)shot.Retire();
             game.Launch(center+Vector3.right*1.2f+Vector3.up*.5f,Vector3.down*3);
             yield return new WaitForSeconds(.3f);
-            Assert.That(game.Score,Is.Zero);
+            Assert.That(game.Hits,Is.Zero);
             foreach(var shot in game.Projectiles)shot.Retire();
             game.Launch(center+Vector3.up*.6f,Vector3.down*3);
             yield return WaitUntil(()=>game.Hits==1);
-            Assert.That(game.Score,Is.EqualTo(200));
+            Assert.That(game.LastAward,Is.EqualTo(200));
         }
 
         [UnityTest]
@@ -577,6 +625,107 @@ namespace TossRush.Tests
             for(int i=0;i<cars.Length;i++)Assert.That((cars[i].transform.localPosition.x-homes[i].x)*cars[i].direction,Is.GreaterThan(.3f));
             game.StartRound();
             for(int i=0;i<cars.Length;i++)Assert.That(Vector3.Distance(cars[i].transform.localPosition,homes[i]),Is.LessThan(.01f));
+        }
+
+        [UnityTest]
+        public IEnumerator Street_AllThreeBinsAcceptDrops_AndGapDoesNotCountAsGoal()
+        {
+            StartStage("Street");
+            var gates=game.ActiveStage.movingTarget.GetComponentsInChildren<ScoreGate>(true);
+            Assert.That(gates.Length,Is.EqualTo(3));
+            var sorted=gates.OrderBy(g=>g.transform.position.x).ToArray();
+            for(int i=1;i<3;i++)
+            {
+                float spacing=sorted[i].transform.position.x-sorted[i-1].transform.position.x;
+                Assert.That(spacing,Is.EqualTo(2.2f).Within(.01f));
+                Assert.That(spacing-1.52f,Is.GreaterThan(game.ActiveStage.data.projectileRadius*2));
+            }
+            for(int i=0;i<3;i++)
+            {
+                StartStage("Street");
+                Vector3 center=sorted[i].transform.position;
+                game.Launch(center+Vector3.up*.7f,Vector3.down*2);
+                yield return WaitUntil(()=>game.Hits==1);
+                Assert.That(game.Score,Is.EqualTo(200));
+                Assert.That(game.ActiveStage.data.name,Is.EqualTo("Street"));
+            }
+            StartStage("Street");
+            Vector3 gap=(sorted[0].transform.position+sorted[1].transform.position)*.5f;
+            game.Launch(gap+Vector3.up*.7f,Vector3.down*2);
+            yield return new WaitForSeconds(.6f);
+            Assert.That(game.Hits,Is.Zero,"Between two bins is not an opening.");
+        }
+
+        [UnityTest]
+        public IEnumerator Street_BagStartsSideways_AndSpinsAroundWorldUp()
+        {
+            StartStage("Street");
+            var held=game.thrower.heldItems[game.ActiveStage.data.heldItemIndex].transform;
+            Assert.That(Quaternion.Angle(held.localRotation,Quaternion.Euler(0,0,90)),Is.LessThan(.1f));
+            Quaternion start=held.rotation;
+            yield return new WaitForSeconds(.2f);
+            Quaternion delta=held.rotation*Quaternion.Inverse(start);
+            delta.ToAngleAxis(out float angle,out Vector3 axis);
+            Assert.That(angle,Is.GreaterThan(20));
+            Assert.That(Mathf.Abs(Vector3.Dot(axis,Vector3.up)),Is.GreaterThan(.999f));
+            game.Launch(new Vector3(4,3,-4),Vector3.forward);
+            var shot=game.Projectiles.First(p=>p.InFlight);
+            Assert.That(Quaternion.Angle(shot.Body.rotation,Quaternion.Euler(0,0,90)),Is.LessThan(.1f));
+            Assert.That(shot.Body.angularVelocity.y,Is.GreaterThan(10));
+            game.StartRound();
+            Assert.That(Quaternion.Angle(held.localRotation,Quaternion.Euler(0,0,90)),Is.LessThan(.1f));
+        }
+
+        [UnityTest]
+        public IEnumerator EveryStage_ContactsAward30BeforeGoal_AndPropsReset()
+        {
+            foreach(string name in new[]{"Corner","Street","Basketball","Carnival"})
+            {
+                StartStage(name);
+                var props=game.ActiveStage.transform.Find("Extra Physics Props").GetComponentsInChildren<PhysicsProp>();
+                Assert.That(props.Length,Is.EqualTo(6));
+                Assert.That(props.All(p=>p.GetComponent<Collider>()&&!p.GetComponent<Collider>().isTrigger&&!p.GetComponent<Rigidbody>().isKinematic),Is.True);
+                var prop=props.First(p=>p.name.EndsWith(" 1")&&p.GetComponent<BoxCollider>());
+                Vector3 home=prop.transform.position;
+                game.Launch(home+Vector3.back*.65f,Vector3.forward*6);
+                var shot=game.Projectiles.First(p=>p.InFlight);
+                yield return WaitUntil(()=>shot.CollisionCount>0,1);
+                Assert.That(game.Hits,Is.Zero);
+                Assert.That(game.Score,Is.EqualTo(shot.CollisionCount*30),name);
+                Assert.That(game.hud.collisionFeedback.labels.Any(l=>l.gameObject.activeInHierarchy&&l.text=="+30"&&!l.raycastTarget),Is.True);
+                shot.Retire();
+                int before=game.Score;
+                game.RegisterCollision(shot,home);
+                Assert.That(game.Score,Is.EqualTo(before),"Retired projectiles cannot award points.");
+                prop.GetComponent<Rigidbody>().AddForce(Vector3.right*.6f,ForceMode.Impulse);
+                yield return new WaitForSeconds(.15f);
+                Assert.That(Vector3.Distance(home,prop.transform.position),Is.GreaterThan(.03f));
+                game.StartRound();
+                Assert.That(Vector3.Distance(home,prop.transform.position),Is.LessThan(.001f));
+                Assert.That(game.hud.collisionFeedback.labels.All(l=>!l.gameObject.activeSelf),Is.True);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator CollisionPopup_ProjectsWorldPoint_UsesBoundedPool_AndExpires()
+        {
+            StartStage("Street");
+            var feedback=game.hud.collisionFeedback;
+            var view=game.thrower.view;
+            Vector3 point=view.ViewportToWorldPoint(new Vector3(.35f,.45f,5));
+            game.hud.ShowCollision(30,point,view,Color.cyan);
+            var label=feedback.labels[0];
+            var canvas=feedback.GetComponentInParent<Canvas>();
+            RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)feedback.transform,view.WorldToScreenPoint(point),canvas.renderMode==RenderMode.ScreenSpaceOverlay?null:canvas.worldCamera,out var expected);
+            Assert.That(Vector2.Distance(expected,label.rectTransform.anchoredPosition),Is.LessThan(.1f));
+            Assert.That(label.gameObject.activeInHierarchy,Is.True);
+            int count=feedback.GetComponentsInChildren<TMPro.TMP_Text>(true).Length;
+            for(int i=0;i<80;i++)game.hud.ShowCollision(30,point,view,Color.cyan);
+            Assert.That(feedback.GetComponentsInChildren<TMPro.TMP_Text>(true).Length,Is.EqualTo(count));
+            yield return new WaitForSeconds(feedback.duration+.05f);
+            Assert.That(feedback.labels.All(l=>!l.gameObject.activeSelf),Is.True);
+            game.hud.ShowCollision(30,view.transform.position-view.transform.forward,view,Color.cyan);
+            Assert.That(feedback.labels.All(l=>!l.gameObject.activeSelf),Is.True,"Contacts behind the camera must not appear on screen.");
         }
 
         [UnityTest]
