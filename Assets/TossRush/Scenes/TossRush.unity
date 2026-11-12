@@ -756,10 +756,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CornerStage
       objectReference: {fileID: 0}
-    - target: {fileID: 1452705292207219586, guid: cf37d1198f146834aa92166f3297566f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7368064053476019553, guid: cf37d1198f146834aa92166f3297566f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
