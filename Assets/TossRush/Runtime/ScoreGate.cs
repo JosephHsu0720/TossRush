@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TossRush
@@ -11,28 +12,49 @@ namespace TossRush
         public StageView stage;
         [Tooltip("Optional rectangular opening in gate-local X/Z units. Zero uses the original circular opening.")]
         public Vector2 openingHalfExtents;
+        [Tooltip("World-space depth below the entry plane to finish a rim roll-in. Zero requires crossing the plane fully inside the opening.")]
+        [Min(0)] public float rollInDepth;
         Vector3 previousCenter;
+        readonly HashSet<Projectile> pendingRollIns = new HashSet<Projectile>();
 
-        void OnEnable() => previousCenter = transform.position;
-        public void ResetTracking() => previousCenter = transform.position;
+        void OnEnable() => ResetTracking();
+        public void ResetTracking()
+        {
+            previousCenter = transform.position;
+            pendingRollIns.Clear();
+        }
 
         void FixedUpdate()
         {
             var game = stage.Game;
-            if (!game || !game.CanScore || game.ActiveStage != stage) { previousCenter = transform.position; return; }
+            if (!game || !game.CanScore || game.ActiveStage != stage) { ResetTracking(); return; }
             Vector3 center = transform.position;
             Vector3 normal = transform.TransformDirection(entryNormal).normalized;
             foreach (var shot in game.Projectiles)
             {
-                if (!shot.InFlight || shot.Scored || shot.StageToken != game.StageToken) continue;
+                if (!shot.InFlight || shot.Scored || shot.StageToken != game.StageToken) { pendingRollIns.Remove(shot); continue; }
                 Vector3 from = shot.PreviousPosition - previousCenter;
                 Vector3 to = shot.Body.position - center;
                 float before = Vector3.Dot(from, normal);
                 float after = Vector3.Dot(to, normal);
-                if (before <= 0 || after > 0) continue;
-                float t = before / (before - after);
-                Vector3 crossing = Vector3.Lerp(from, to, t);
-                if (!FitsOpening(crossing, shot.Radius, normal)) continue;
+                if (after > 0) { pendingRollIns.Remove(shot); continue; }
+                bool entered = false;
+                if (before > 0)
+                {
+                    float t = before / (before - after);
+                    Vector3 crossing = Vector3.Lerp(from, to, t);
+                    entered = FitsOpening(crossing, shot.Radius, normal);
+                    // A rim contact can carry the center below the plane before the
+                    // whole paper fits. Only track shots that entered at the opening.
+                    if (!entered && rollInDepth > 0 && FitsOpening(crossing, 0, normal)) pendingRollIns.Add(shot);
+                }
+                if (!entered && pendingRollIns.Contains(shot))
+                {
+                    if (after < -rollInDepth || !FitsOpening(to, 0, normal)) pendingRollIns.Remove(shot);
+                    else entered = after < before && FitsOpening(to, shot.Radius, normal);
+                }
+                if (!entered) continue;
+                pendingRollIns.Remove(shot);
                 shot.MarkScored();
                 game.RegisterHit(shot);
                 break;
