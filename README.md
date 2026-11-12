@@ -1,6 +1,6 @@
 # TossRush
 
-[繁體中文](README_tw.md) | [English](README_en.md)
+[繁體中文](README_tw.md) | [English](README.md)
 
 A 20-second first-person throwing game made with Unity.
 

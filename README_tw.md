@@ -1,6 +1,6 @@
 # TossRush
 
-[繁體中文](README_tw.md) | [English](README_en.md)
+[繁體中文](README_tw.md) | [English](README.md)
 
 使用 Unity 製作的 20 秒第一人稱投擲遊戲。
 
