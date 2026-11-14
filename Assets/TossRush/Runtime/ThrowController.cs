@@ -16,7 +16,9 @@ namespace TossRush
         readonly Vector3[] positions = new Vector3[100];
 
         public Vector3 LaunchPosition => throwOrigin.position;
-        public Vector3 LaunchVelocity => Quaternion.AngleAxis(-game.ActiveStage.data.throwLoft, view.transform.right) * view.transform.forward * game.ActiveStage.data.launchSpeed;
+        public Vector3 LaunchVelocity => game.ActiveStage.data.horizontalThrow
+            ? view.transform.forward * game.ActiveStage.data.launchSpeed
+            : Quaternion.AngleAxis(-game.ActiveStage.data.throwLoft, view.transform.right) * view.transform.forward * game.ActiveStage.data.launchSpeed;
 
         public void ResetForStage(int index)
         {

@@ -13,15 +13,18 @@ MonoBehaviour:
   m_Name: Carnival
   m_EditorClassIdentifier: Assembly-CSharp::TossRush.StageData
   title: MOVING MIDWAY
-  instruction: BEANBAG / CLEAN +100 / EACH CONTACT +30
+  instruction: BOTTLE FLIP / CLEAN +150 / REBOUND +30 ON GOAL
   accent: {r: 1, g: 0.78431374, b: 0.34117645, a: 1}
   points: 200
-  cleanShotBonus: 100
+  cleanShotBonus: 150
   pointsPerPropCollision: 30
+  minimumReboundSpeed: 1.5
+  pedestrianHitPenalty: 0
   heldItemIndex: 2
   launchSpeed: 12.8
   throwLoft: 26
-  physicsProfile: {fileID: 11400000, guid: 040381038f2d64441a908bb9b4668adc, type: 2}
+  horizontalThrow: 0
+  physicsProfile: {fileID: 11400000, guid: 0facae2fda302b4489818da21ef2439a, type: 2}
   gravityScale: 1
   wind: {x: 0, y: 0, z: 0}
   windInfluence: 1
@@ -30,10 +33,16 @@ MonoBehaviour:
   targetRadius: 0.68
   motionAmplitude: 1.05
   motionSpeed: 1.65
+  motionSpeedAfterFirstClear: 1.25
+  verticalMotionAmplitude: 0.32
+  verticalMotionSpeed: 1.15
+  verticalMotionUnlockHits: 1
   randomize: 1
   horizontalOffsetRange: {x: -0.5, y: 0.5}
+  minimumHorizontalDistanceFromCenter: 0
+  minimumHorizontalChange: 0
   depthOffsetRange: {x: -0.25, y: 0.25}
   windSpeedRange: {x: 1, y: 3}
   windDirectionSpread: 15
-  projectilePrefab: {fileID: 5636865897977656489, guid: da7891b5613266f42a658a684b0f2aa5, type: 3}
+  projectilePrefab: {fileID: 5647735361383078768, guid: 6afbe2182f1276249b2abf31be18eec0, type: 3}
   projectileEulerAngles: {x: 0, y: 0, z: 0}

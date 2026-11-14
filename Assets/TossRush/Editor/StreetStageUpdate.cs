@@ -192,7 +192,7 @@ namespace TossRush.Editor
             if (!profile) { profile = ScriptableObject.CreateInstance<ProjectilePhysicsProfile>(); AssetDatabase.CreateAsset(profile, profilePath); }
             profile.name = "TrashBag";
             profile.displayName = "BLACK TRASH BAG"; profile.mass = .8f; profile.referenceArea = .035f; profile.dragCoefficient = .8f;
-            profile.angularDamping = .3f; profile.initialSpin = new Vector3(0, 12, 0); profile.spinLift = .025f;
+            profile.angularDamping = .3f; profile.initialSpin = new Vector3(0, 12, 0); profile.spinLift = .05f;
             profile.maxSpinAcceleration = 6; profile.flightLifetime = 7; profile.surfaceMaterial = surface; EditorUtility.SetDirty(profile);
             string dataPath = Root + "Data/Street.asset";
             var data = AssetDatabase.LoadAssetAtPath<StageData>(dataPath);
@@ -252,7 +252,7 @@ namespace TossRush.Editor
             surface.GetComponent<Collider>().sharedMaterial = lidSurface;
             foreach (int sign in new[] {-1,1}) Part(lid.transform,"Lid Ridge "+sign,PrimitiveType.Cube,new Vector3(sign*.48f,-.055f,-.62f),new Vector3(.055f,.035f,1.08f),"Black");
             var gate = new GameObject("Opening Gate"); gate.transform.SetParent(root.transform,false); gate.transform.localPosition = new Vector3(0,1.5f,0);
-            gate.AddComponent<ScoreGate>().openingHalfExtents = new Vector2(.62f,.52f);
+            var scoring = gate.AddComponent<ScoreGate>(); scoring.openingHalfExtents = new Vector2(.62f,.52f); scoring.rollInDepth = .65f;
             AddOutline(root);
             return SavePrefab(root,Root+"Prefabs/Targets/StreetTarget.prefab");
         }

@@ -35,13 +35,13 @@ namespace TossRush
             foreach (var label in labels) label.gameObject.SetActive(false);
         }
 
-        public void Show(int points, Vector3 point, Camera view, Color color)
+        public void Show(int points, Vector3 point, Camera view, Color color, bool pending = true)
         {
             if (popups == null || popups.Length == 0 || !view) return;
             int index = next;
             next = (next + 1) % popups.Length;
             popups[index] = new Popup { view = view, point = point, started = Time.time, active = true };
-            labels[index].text = "+" + points;
+            labels[index].text = (points > 0 ? "+" : "") + points + (pending ? " <size=55%>PENDING</size>" : "");
             labels[index].color = Color.Lerp(color, Color.white, .65f);
             UpdatePopup(index);
         }

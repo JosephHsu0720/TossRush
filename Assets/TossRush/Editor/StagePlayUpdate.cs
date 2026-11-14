@@ -21,13 +21,12 @@ namespace TossRush.Editor
             {
                 var data = AssetDatabase.LoadAssetAtPath<StageData>(Root + "Data/" + name + ".asset");
                 data.pointsPerPropCollision = 30;
-                data.instruction = name == "Street" ? "TRASH BAG / CHOOSE ANY BIN / EACH CONTACT +30" :
-                    name == "Corner" ? "PAPER / CLEAN +50 / EACH CONTACT +30" :
-                    name == "Basketball" ? "BASKETBALL / CLEAN +100 / EACH CONTACT +30" : "BEANBAG / CLEAN +100 / EACH CONTACT +30";
+                data.instruction = name == "Street" ? "TRASH BAG / CHOOSE ANY BIN / REBOUND +30 ON GOAL" :
+                    "CLEAN +150 / STRONG REBOUND +30 / BANK ON GOAL";
                 if (name == "Street") data.projectileEulerAngles = new Vector3(0, 0, 90);
                 EditorUtility.SetDirty(data);
-                AddProps(name == "Corner" ? "CornerStage" : name == "Street" ? "StreetStage" : name + "Stage");
             }
+            NeighborhoodUpdate.ApplySceneDressing();
             AssetDatabase.SaveAssets();
         }
 

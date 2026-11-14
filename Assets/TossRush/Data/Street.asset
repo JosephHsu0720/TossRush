@@ -13,26 +13,36 @@ MonoBehaviour:
   m_Name: Street
   m_EditorClassIdentifier: TossRush.Runtime::TossRush.StageData
   title: CURBSIDE SPIN
-  instruction: TRASH BAG / CHOOSE ANY BIN / EACH CONTACT +30
+  instruction: TRASH BAG / LID REBOUND +30 / HIT PEDESTRIAN -10
   accent: {r: 0.35, g: 0.9, b: 0.91, a: 1}
   points: 200
-  cleanShotBonus: 0
+  cleanShotBonus: 150
   pointsPerPropCollision: 30
+  minimumReboundSpeed: 0.1
+  pedestrianHitPenalty: 10
   heldItemIndex: 3
   launchSpeed: 11.8
   throwLoft: 38
+  horizontalThrow: 0
   physicsProfile: {fileID: 11400000, guid: 9afbce2d35d7cca42b73534f4a72be8f, type: 2}
   gravityScale: 1
   wind: {x: 0, y: 0, z: 0}
   windInfluence: 1
+  windLineWidthMultiplier: 2
   throwInterval: 0.55
   projectileRadius: 0.28
   targetRadius: 0.67
   motionAmplitude: 0
   motionSpeed: 1.4
+  motionSpeedAfterFirstClear: 1
+  verticalMotionAmplitude: 0
+  verticalMotionSpeed: 1.2
+  verticalMotionUnlockHits: 5
   randomize: 1
   horizontalOffsetRange: {x: -0.55, y: 0.55}
-  depthOffsetRange: {x: -0.15, y: 0.15}
+  minimumHorizontalDistanceFromCenter: 0
+  minimumHorizontalChange: 0.25
+  depthOffsetRange: {x: 0, y: 0}
   windSpeedRange: {x: 0.4, y: 1.8}
   windDirectionSpread: 15
   projectilePrefab: {fileID: 8921436304672772622, guid: 3a4f897b42ebd164482a54161c26f927, type: 3}

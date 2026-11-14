@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ab102b18f102047bfd0b7d7dff5743, type: 3}
+  m_Name: Doorstep
+  m_EditorClassIdentifier: TossRush.Runtime::TossRush.StageData
+  title: MORNING DELIVERY
+  instruction: NEWSPAPERS / AIM UP+DOWN / FIND THE MAILBOX
+  accent: {r: 1, g: 0.68, b: 0.36, a: 1}
+  points: 200
+  cleanShotBonus: 150
+  pointsPerPropCollision: 30
+  minimumReboundSpeed: 1.5
+  pedestrianHitPenalty: 0
+  heldItemIndex: 4
+  launchSpeed: 34
+  throwLoft: 0
+  horizontalThrow: 1
+  physicsProfile: {fileID: 11400000, guid: dec1a74a89927ba489ee8156258644b0, type: 2}
+  gravityScale: 1
+  wind: {x: 0, y: 0, z: 0}
+  windInfluence: 1
+  throwInterval: 0.45
+  projectileRadius: 0.13
+  targetRadius: 0.67
+  motionAmplitude: 0
+  motionSpeed: 1.4
+  verticalMotionAmplitude: 0
+  verticalMotionSpeed: 1.2
+  verticalMotionUnlockHits: 5
+  randomize: 1
+  horizontalOffsetRange: {x: -2.75, y: 2.75}
+  minimumHorizontalDistanceFromCenter: 2.25
+  minimumHorizontalChange: 0.12
+  depthOffsetRange: {x: 0, y: 0}
+  windSpeedRange: {x: 0, y: 0}
+  windDirectionSpread: 15
+  projectilePrefab: {fileID: 2131066951198927881, guid: 088b629bdbb875043a50aa748c035e17, type: 3}
+  projectileEulerAngles: {x: 0, y: 0, z: 0}

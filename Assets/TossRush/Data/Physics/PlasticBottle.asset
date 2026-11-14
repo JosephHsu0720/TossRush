@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84dbf652b90e9a4eba9b424ffe60420, type: 3}
+  m_Name: PlasticBottle
+  m_EditorClassIdentifier: TossRush.Runtime::TossRush.ProjectilePhysicsProfile
+  displayName: PLASTIC BOTTLE
+  mass: 0.3
+  referenceArea: 0.014
+  dragCoefficient: 0.9
+  angularDamping: 0.25
+  initialSpin: {x: 14, y: 0, z: 0}
+  spinLift: 0
+  maxSpinAcceleration: 6
+  flightLifetime: 4
+  surfaceMaterial: {fileID: 13400000, guid: 1d2b2edbbe579fb4dae042b9b7a6ad9a, type: 2}

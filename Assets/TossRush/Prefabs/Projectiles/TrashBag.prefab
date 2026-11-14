@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 510747318797236005}
   - component: {fileID: 6630087756312041146}
   - component: {fileID: 8921436304672772622}
+  - component: {fileID: 4298503460548454117}
   m_Layer: 8
   m_Name: TrashBag
   m_TagString: Untagged
@@ -95,6 +96,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f178473dbd67ff54b81c969ba27197fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TossRush.Runtime::TossRush.Projectile
+--- !u!114 &4298503460548454117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8697432831603081564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcff3c3420f07b6418bb3c679b9098eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TossRush.Runtime::TossRush.SoftBagDeformation
+  maximumCompression: 0.5
+  reboundRetention: 0.55
+  maximumReboundSpeed: 0.22
 --- !u!1001 &2453631321587721272
 PrefabInstance:
   m_ObjectHideFlags: 0

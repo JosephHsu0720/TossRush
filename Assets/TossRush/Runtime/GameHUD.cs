@@ -56,7 +56,11 @@ namespace TossRush
             stageText.text = data.title.ToUpperInvariant() + "   /   +" + data.points;
             if (windIndicator) windIndicator.SetWind(wind, game.thrower.view.transform, data.accent);
             stageText.color = data.accent;
-            hintText.text = released ? "CLICK TO CAPTURE MOUSE  /  TIMER CONTINUES" : data.instruction + "   |   ESC : RELEASE MOUSE";
+            string instruction = data.instruction;
+            if (data.verticalMotionAmplitude > 0)
+                instruction = game.ActiveStage.CurrentVerticalAmplitude > 0 ? "BOTTLE FLIP / LEFT+RIGHT + UP+DOWN / PRIZES +10"
+                    : "BOTTLE FLIP / LEFT+RIGHT / PRIZES +10 / CLEAR TO UNLOCK UP+DOWN";
+            hintText.text = released ? "CLICK TO CAPTURE MOUSE  /  TIMER CONTINUES" : instruction + "   |   ESC : RELEASE MOUSE";
             timerFill.fillAmount = time/game.roundDuration;
             timerFill.color = time <= 5 ? new Color(1,0.3f,0.25f) : data.accent;
             bool newRecord = score > game.Best;
@@ -68,6 +72,7 @@ namespace TossRush
 
         public void ShowCleanShot(int bonus) => cleanShotEffect.Play(bonus);
         public void ShowCollision(int points, Vector3 point, Camera view, Color color) => collisionFeedback.Show(points, point, view, color);
+        public void ShowPenalty(int points, Vector3 point, Camera view) => collisionFeedback.Show(-points, point, view, new Color(1, .18f, .12f), false);
 
         public void ShowFeedback(string text, Color color)
         {

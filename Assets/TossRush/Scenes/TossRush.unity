@@ -342,6 +342,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c558e7d1e0bbf514fab20e2234acba9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TossRush.ThrowController
+--- !u!1001 &484897375
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4156862023464423992, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_Name
+      value: DoorstepStage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156862023464423992, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042526893269936809, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042526893269936809, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042526893269936809, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042526893269936809, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042526893269936809, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042526893269936809, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042526893269936809, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042526893269936809, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042526893269936809, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042526893269936809, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+--- !u!114 &484897376 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 838233444044454654, guid: 6f7b28ea3775a4b42856b7456be76c6f, type: 3}
+  m_PrefabInstance: {fileID: 484897375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7baf926879a71154098336b04735241e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TossRush.Runtime::TossRush.StageView
 --- !u!1 &615272981
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,16 +449,18 @@ MonoBehaviour:
   - {fileID: 874314905}
   - {fileID: 81646893}
   - {fileID: 1464261231}
+  - {fileID: 484897376}
   thrower: {fileID: 140239295}
   hud: {fileID: 636734333}
   poolRoot: {fileID: 1932336096}
   audioSource: {fileID: 615272983}
   hitClip: {fileID: 8300000, guid: c6d902f49f2157342b421faed88b55f7, type: 3}
   throwClip: {fileID: 8300000, guid: 5ec9fbdcb6fbcdf489dc19f4c666b350, type: 3}
-  roundDuration: 20
+  roundDuration: 100
   transitionDuration: 0.3
   poolSizePerStage: 16
   startingStageIndex: 0
+  repeatStartingStage: 0
 --- !u!82 &615272983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -744,6 +818,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7baf926879a71154098336b04735241e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TossRush.Runtime::TossRush.StageView
+--- !u!1 &1132978025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4894425670507856356, guid: cf37d1198f146834aa92166f3297566f, type: 3}
+  m_PrefabInstance: {fileID: 1395049094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1132978027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132978025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1001 &1395049094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -755,34 +863,6 @@ PrefabInstance:
     - target: {fileID: 1452705292207219586, guid: cf37d1198f146834aa92166f3297566f, type: 3}
       propertyPath: m_Name
       value: CornerStage
-      objectReference: {fileID: 0}
-    - target: {fileID: 4537083566674910464, guid: cf37d1198f146834aa92166f3297566f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.93951416
-      objectReference: {fileID: 0}
-    - target: {fileID: 4537083566674910464, guid: cf37d1198f146834aa92166f3297566f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.27252293
-      objectReference: {fileID: 0}
-    - target: {fileID: 4537083566674910464, guid: cf37d1198f146834aa92166f3297566f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.1332825
-      objectReference: {fileID: 0}
-    - target: {fileID: 4537083566674910464, guid: cf37d1198f146834aa92166f3297566f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.1589978
-      objectReference: {fileID: 0}
-    - target: {fileID: 4537083566674910464, guid: cf37d1198f146834aa92166f3297566f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -28.015
-      objectReference: {fileID: 0}
-    - target: {fileID: 4537083566674910464, guid: cf37d1198f146834aa92166f3297566f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 22.448
-      objectReference: {fileID: 0}
-    - target: {fileID: 4537083566674910464, guid: cf37d1198f146834aa92166f3297566f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -24.879
       objectReference: {fileID: 0}
     - target: {fileID: 7368064053476019553, guid: cf37d1198f146834aa92166f3297566f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -827,7 +907,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4894425670507856356, guid: cf37d1198f146834aa92166f3297566f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1132978027}
   m_SourcePrefab: {fileID: 100100000, guid: cf37d1198f146834aa92166f3297566f, type: 3}
 --- !u!114 &1395049095 stripped
 MonoBehaviour:
@@ -1075,11 +1158,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 615272984}
+  - {fileID: 1395049094}
+  - {fileID: 874314904}
   - {fileID: 81646892}
   - {fileID: 1464261230}
+  - {fileID: 484897375}
   - {fileID: 140239294}
   - {fileID: 636734332}
   - {fileID: 61936608}
   - {fileID: 1773133683}
-  - {fileID: 1395049094}
-  - {fileID: 874314904}

@@ -18,7 +18,7 @@ MonoBehaviour:
   dragCoefficient: 0.8
   angularDamping: 0.3
   initialSpin: {x: 0, y: 12, z: 0}
-  spinLift: 0.025
+  spinLift: 0.05
   maxSpinAcceleration: 6
   flightLifetime: 7
   surfaceMaterial: {fileID: 13400000, guid: 17ca787c2e3260f4db80d1d6ce85f0de, type: 2}

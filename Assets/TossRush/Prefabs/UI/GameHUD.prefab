@@ -1883,10 +1883,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ROOM +100 / STREET +200 / COURT +150 / MIDWAY +200
+  m_text: 'ROOM / STREET / COURT / MIDWAY / DOORSTEP
 
-    SPIN THE BAG.
-    BANK OFF THE LID.'
+    CLEAN +150 / REBOUND +30
+    ON GOAL'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e256da4cb4c7b144b6d498cebfe2326, type: 2}
   m_sharedMaterial: {fileID: 2186284977480509199, guid: 4e256da4cb4c7b144b6d498cebfe2326, type: 2}

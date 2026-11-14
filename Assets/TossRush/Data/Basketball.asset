@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: Basketball
   m_EditorClassIdentifier: Assembly-CSharp::TossRush.StageData
   title: CROSSWIND COURT
-  instruction: BASKETBALL / CLEAN +100 / EACH CONTACT +30
+  instruction: CLEAN +150 / STRONG REBOUND +30 / BANK ON GOAL
   accent: {r: 0.95686275, g: 0.4823529, b: 0.3960784, a: 1}
   points: 150
-  cleanShotBonus: 100
+  cleanShotBonus: 150
   pointsPerPropCollision: 30
+  minimumReboundSpeed: 1.5
+  pedestrianHitPenalty: 0
   heldItemIndex: 1
   launchSpeed: 10.6
   throwLoft: 44
+  horizontalThrow: 0
   physicsProfile: {fileID: 11400000, guid: 147b1aba4cad79e42949308946c476ca, type: 2}
   gravityScale: 1
   wind: {x: 5.5, y: 0, z: 0}
@@ -30,9 +33,14 @@ MonoBehaviour:
   targetRadius: 0.72
   motionAmplitude: 0
   motionSpeed: 1.4
+  verticalMotionAmplitude: 0
+  verticalMotionSpeed: 1.2
+  verticalMotionUnlockHits: 5
   randomize: 1
   horizontalOffsetRange: {x: -0.7, y: 0.7}
-  depthOffsetRange: {x: -0.25, y: 0.25}
+  minimumHorizontalDistanceFromCenter: 0
+  minimumHorizontalChange: 0.3
+  depthOffsetRange: {x: 0, y: 0}
   windSpeedRange: {x: 4, y: 7}
   windDirectionSpread: 15
   projectilePrefab: {fileID: 6368252267971896991, guid: dc36aac784d25c94083fca68ba24231b, type: 3}

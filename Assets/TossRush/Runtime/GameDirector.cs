@@ -17,6 +17,8 @@ namespace TossRush
         [Range(4, 32)] public int poolSizePerStage = 16;
         [Tooltip("Choose a starting stage for Editor playtesting. Normal play starts at zero.")]
         [Min(0)] public int startingStageIndex;
+        [Tooltip("Editor only: repeat the selected starting stage after each hit. Player builds use normal rotation.")]
+        public bool repeatStartingStage;
 
         public bool IsPlaying { get; private set; }
         public bool IsTransitioning { get; private set; }
@@ -37,7 +39,7 @@ namespace TossRush
         readonly List<List<Projectile>> pools = new List<List<Projectile>>();
         int stageIndex, nextStage;
         double roundEnd, transitionStart;
-        bool hasResult;
+        bool hasResult, transitionActivated;
         public const string BestKey = "TossRush.Best.v1";
 
         void Awake()
@@ -45,6 +47,8 @@ namespace TossRush
             Best = PlayerPrefs.GetInt(BestKey, 0);
             Physics.IgnoreLayerCollision(8, 8);
             Physics.IgnoreLayerCollision(8, 9);
+            // Release any authored stage atmosphere before selecting the menu stage.
+            foreach (var stage in stages) stage.gameObject.SetActive(false);
             var sharedPools = new Dictionary<Projectile, List<Projectile>>();
             for (int i = 0; i < stages.Length; i++)
             {
@@ -63,8 +67,8 @@ namespace TossRush
                     }
                 }
                 pools.Add(pool);
-                stages[i].gameObject.SetActive(i == 0);
             }
+            stages[0].gameObject.SetActive(true);
             hud.Initialize(this);
             thrower.ResetForStage(0);
             thrower.SetCursor(false);
@@ -75,6 +79,7 @@ namespace TossRush
         {
             RetireAll();
             Score = Hits = Throws = 0;
+            foreach (var stage in stages) stage.ResetRoundProgress();
             LastAward = LastBonus = 0;
             LastWasClean = false;
             hasResult = false;
@@ -98,7 +103,11 @@ namespace TossRush
             {
                 float t = (float)((Time.timeAsDouble-transitionStart)/transitionDuration);
                 hud.SetTransition(1-Mathf.Abs(2*Mathf.Clamp01(t)-1));
-                if (t >= 0.5f && stageIndex != nextStage) ActivateStage(nextStage);
+                if (t >= 0.5f && !transitionActivated)
+                {
+                    ActivateStage(nextStage);
+                    transitionActivated = true;
+                }
                 if (t >= 1) { IsTransitioning = false; hud.SetTransition(0); }
             }
             hud.Refresh(Remaining, Score, ActiveStage.data,
@@ -119,24 +128,26 @@ namespace TossRush
             return false;
         }
 
-        public void RegisterCollision(Projectile shot, Vector3 point)
+        public void RegisterCollision(Projectile shot, Vector3 point, float reboundSpeed = 0)
         {
             if (!CanScore || !shot || shot.Owner != this || !shot.InFlight || shot.Scored || shot.StageToken != StageToken) return;
+            if (!(reboundSpeed > ActiveStage.data.minimumReboundSpeed)) return;
             int points = ActiveStage.data.pointsPerPropCollision;
             if (points <= 0) return;
-            Score += points;
+            shot.AccumulateCollisionPoints(points);
             hud.ShowCollision(points, point, thrower.view, ActiveStage.data.accent);
         }
 
         public void RegisterHit(Projectile shot)
         {
-            if (!CanScore || !shot || !shot.Scored || !shot.InFlight || shot.StageToken != StageToken) return;
+            if (!CanScore || !shot || shot.Owner != this || !shot.Scored || !shot.InFlight || shot.StageToken != StageToken) return;
             var data = ActiveStage.data;
             LastWasClean = shot.CollisionCount == 0;
             LastBonus = LastWasClean ? data.cleanShotBonus : 0;
-            LastAward = data.points + LastBonus;
+            LastAward = data.points + LastBonus + shot.PendingCollisionPoints;
             Score += LastAward;
             Hits++;
+            ActiveStage.RecordClear();
             string detail = LastWasClean ? "CLEAN SHOT" : "NICE SHOT";
             hud.ShowFeedback("+" + LastAward + "   " + detail, data.accent);
             if (LastWasClean && LastBonus > 0) hud.ShowCleanShot(LastBonus);
@@ -144,11 +155,32 @@ namespace TossRush
             BeginTransition();
         }
 
+        public void RegisterPedestrianHit(Projectile shot, Pedestrian pedestrian, Vector3 point)
+        {
+            if (!CanScore || !shot || shot.Owner != this || !shot.InFlight || shot.Scored || shot.StageToken != StageToken) return;
+            if (!pedestrian || pedestrian.stage != ActiveStage) return;
+            int penalty = ActiveStage.data.pedestrianHitPenalty;
+            if (penalty <= 0) return;
+            Score -= penalty;
+            hud.ShowPenalty(penalty, point, thrower.view);
+        }
+
+        internal void RegisterKnockdown(PhysicsProp prop)
+        {
+            if (!CanScore || !prop || prop.stage != ActiveStage || !prop.KnockedDown || prop.knockdownPoints <= 0) return;
+            Score += prop.knockdownPoints;
+            hud.collisionFeedback.Show(prop.knockdownPoints, prop.transform.position, thrower.view, ActiveStage.data.accent, false);
+        }
+
         void BeginTransition()
         {
             IsTransitioning = true;
+            transitionActivated = false;
             transitionStart = Time.timeAsDouble;
             nextStage = (stageIndex+1)%stages.Length;
+#if UNITY_EDITOR
+            if (repeatStartingStage) nextStage = stageIndex;
+#endif
             RetireAll();
         }
 
@@ -157,7 +189,10 @@ namespace TossRush
             RetireAll();
             stageIndex = index;
             StageToken++;
-            for (int i = 0; i < stages.Length; i++) stages[i].gameObject.SetActive(i == index);
+            // Let the previous stage restore its lighting before the next one takes it.
+            for (int i = 0; i < stages.Length; i++)
+                if (i != index) stages[i].gameObject.SetActive(false);
+            ActiveStage.gameObject.SetActive(true);
             ActiveStage.ResetStage();
             thrower.ResetForStage(index);
         }

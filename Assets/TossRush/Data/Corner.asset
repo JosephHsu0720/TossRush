@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: Corner
   m_EditorClassIdentifier: Assembly-CSharp::TossRush.StageData
   title: CORNER SHOTS
-  instruction: PAPER / CLEAN +50 / EACH CONTACT +30
+  instruction: CLEAN +150 / STRONG REBOUND +30 / BANK ON GOAL
   accent: {r: 0.41176468, g: 0.8627451, b: 0.7647059, a: 1}
   points: 100
-  cleanShotBonus: 50
+  cleanShotBonus: 150
   pointsPerPropCollision: 30
+  minimumReboundSpeed: 1.5
   heldItemIndex: 0
   launchSpeed: 13.2
   throwLoft: 25
+  horizontalThrow: 0
   physicsProfile: {fileID: 11400000, guid: f5758c131fa850a47af248b890d55cb1, type: 2}
   gravityScale: 1
   wind: {x: 0, y: 0, z: 0}
