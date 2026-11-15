@@ -1,9 +1,0 @@
-{
-  "name": "TossRush.PlayModeTests",
-  "references": ["TossRush.Runtime", "UnityEngine.TestRunner", "UnityEditor.TestRunner", "UnityEngine.UI", "Unity.TextMeshPro"],
-  "includePlatforms": [],
-  "overrideReferences": true,
-  "precompiledReferences": ["nunit.framework.dll"],
-  "autoReferenced": false,
-  "defineConstraints": ["UNITY_INCLUDE_TESTS"]
-}

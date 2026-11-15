@@ -11,7 +11,8 @@
 - 五種情境：房間角落、街頭垃圾桶、側風籃球場、園遊會移動洞口與住家信箱。
 - 空心命中與借彈加分，搭配垃圾袋迴旋等不同投擲手感。
 - 卡通風格場景、目標描邊與命中回饋。
-- CC0 循環音樂，以及投擲、碰撞、得分、扣分與回合音效。
+- CC0 循環音樂，以及投擲、命中、開始與結算音效。
+- 首頁喇叭圖示與音量滑桿，可靜音並記住整體音量。投擲使用短 whoosh，碰撞、扣分與獎品音效停用。
 
 ## 試玩
 
@@ -33,7 +34,7 @@
 
 ## 授權與致謝
 
-專案自行建立且有權授權的內容採 [MIT License](LICENSE)。家具、按鈕、字型與音效來自 **Kenney（CC0）**；音樂採 **Juhani Junkala／SubspaceAudio 的 Level 1（CC0）**。Unity／TextMeshPro 內容保留原授權。
+專案自行建立且有權授權的內容採 [MIT License](LICENSE)。家具、按鈕、字型與介面提示音來自 **Kenney（CC0）**；投擲 whoosh 來自 **Woven SFX（CC0）**；音樂採 **Juhani Junkala／SubspaceAudio 的 Level 1（CC0）**。Unity／TextMeshPro 內容保留原授權。
 
 詳見 [素材來源](Docs/AssetSources.md) 與 [第三方授權聲明](THIRD_PARTY_NOTICES.md)。
 

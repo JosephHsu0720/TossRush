@@ -1,0 +1,20 @@
+{
+  "status": "Success",
+  "removedDirectReferences": [
+    "com.unity.ide.visualstudio",
+    "com.unity.test-framework",
+    "com.unity.modules.accessibility",
+    "com.unity.modules.animation",
+    "com.unity.modules.assetbundle",
+    "com.unity.modules.particlesystem",
+    "com.unity.modules.physics2d",
+    "com.unity.modules.umbra",
+    "com.unity.modules.unitywebrequest",
+    "com.unity.modules.unitywebrequestassetbundle",
+    "com.unity.modules.unitywebrequestaudio",
+    "com.unity.modules.unitywebrequesttexture",
+    "com.unity.modules.unitywebrequestwww",
+    "com.unity.modules.vectorgraphics"
+  ],
+  "error": null
+}

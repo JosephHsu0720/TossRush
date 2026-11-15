@@ -13,7 +13,7 @@ A 20-second first-person throwing game prototype made with Unity.
 3. 使用指定版本開啟，等待 Unity 還原套件與匯入資產。
 4. 依下方步驟開啟場景並試玩。
 
-主要依賴：URP 17.3.0、Input System 1.20.0、uGUI／TextMeshPro 2.0.0、Unity Test Framework 1.6.0。版本以 [manifest.json](../Packages/manifest.json) 與 [packages-lock.json](../Packages/packages-lock.json) 為準，由 Unity Package Manager 還原。
+主要依賴：URP 17.3.0、Input System 1.20.0、uGUI／TextMeshPro 2.0.0，以及 Editor 操作用的 Pipeline。Test Framework 不再直接引用，但仍由 Pipeline／Collections 等套件間接依賴。版本以 [manifest.json](../Packages/manifest.json) 與 [packages-lock.json](../Packages/packages-lock.json) 為準，由 Unity Package Manager 還原。
 
 目前以桌面滑鼠操作為主；行動裝置與瀏覽器相容性尚待驗證。
 
@@ -84,7 +84,6 @@ A 20-second first-person throwing game prototype made with Unity.
 | `Assets/TossRush/Data/` | 關卡資料與投擲物物理參數 |
 | `Assets/TossRush/Shaders/` | 專案建立的 Shader |
 | `Assets/TossRush/ThirdParty/Kenney/` | Kenney 素材與各包原始授權 |
-| `Assets/TossRush/Tests/` | Play Mode 測試 |
 | `Assets/TossRush/Editor/` | Editor 工具與驗證入口 |
 | `Docs/` | 玩法、素材來源、調整與驗證紀錄 |
 
@@ -92,11 +91,13 @@ A 20-second first-person throwing game prototype made with Unity.
 
 ### 音樂與音效
 
-投擲（ThrowClip）、碰撞（Impact）、扣分（Penalty）與獎品（Reward）音效目前停用，素材與設定仍保留；需要恢復時，可勾選 GameAudio 中對應的 `Play … Sounds`。BGM、開始、命中與結算提示照常播放。
+投擲使用 Woven SFX 的 **fast-whoosh**（約 0.395 秒，CC0）。碰撞（Impact）、扣分（Penalty）與獎品（Reward）維持停用，對應未用音效已移除。BGM、開始、命中與結算提示保留。
 
-首頁、遊玩、轉場與結算共用同一個循環 BGM：Juhani Junkala／SubspaceAudio 的 **Level 1**（CC0）。音樂和音效使用獨立 AudioSource，投擲、命中、碰撞、行人扣分、獎品擊倒、開始及結算有音訊回饋。開始新回合與切關不重新啟動 BGM。
+首頁、遊玩、轉場與結算共用同一個循環 BGM：Juhani Junkala／SubspaceAudio 的 **Level 1**（CC0）。音樂和音效使用獨立 AudioSource；開始新回合與切關不重新啟動 BGM。
 
-場景中 GameDirector 的 `GameAudio` 可調整 `Music Volume`（預設 0.12）及 `Effects Volume`（預設 0.8）。投擲與碰撞加強音量；音效播放時 BGM 短暫降至 0.035，保留至少 0.16 秒、依音效長度最多 0.55 秒，再於約 0.25 秒內恢復，不重新播放音樂。開始／命中／擊倒／結算分別使用 Interface Sounds 的 open／confirmation／pluck／close，取代原本共用的鈴聲。
+首頁右下角直接顯示喇叭圖示與整體音量 slider；拖曳立即調整 BGM 和音效，點喇叭可靜音／恢復先前音量，設定保存在本機並在重新啟動後套用。控制只出現在首頁，與全螢幕按鈕並列。
+
+場景中 GameDirector 的 `GameAudio` 可調整 `Music Volume`（預設 0.12）及 `Effects Volume`（預設 0.8）。音效播放時 BGM 短暫降至 0.035，再自動恢復。開始／命中／結算分別使用 Interface Sounds 的 open／confirmation／close。
 
 **TossRush → Apply CC0 Game Audio** 可重新套用引用，重複執行不會增加音樂來源。Editor 若聽不到，先檢查 Game 視窗的 Mute Audio；此開關不代表遊戲未播放音樂。所有新增音源均允許免費非商用與商用，來源見 [授權檢查](Validation/AssetLicenseAudit.md)。
 
@@ -105,7 +106,7 @@ A 20-second first-person throwing game prototype made with Unity.
 ### 開發工具
 
 - **TossRush → Clear High Score**：清除本機高分。
-- **TossRush → Run Prototype Checks**：執行 Play Mode 測試，結果寫入 `Docs/Validation/StreetPlayMode.json`／`.xml`。退出 Play 後執行；編譯成功不代表測試已通過。
+- 專案自動測試、舊驗證／預覽腳本已移除，保留 **TossRush → 固定關卡測試**。`Docs/Validation/` 內既有報告屬歷史紀錄，不代表目前仍提供相同測試入口。
 - **TossRush → Apply Neighborhood And Rebound Update**：保存五關的門檻計分、人群、物件與信箱／報紙資產；重複執行不增加重複人群或物件。
 - **TossRush → Update Scene Props And Sidewalk Crowd**：只更新各場景的主題擺設與人行道行人動線，移除先前的共用雜物。
 - **TossRush → Apply Mailbox Bottle And Street Scoring**：保存歐式小型信箱、34 m/s 平拋報紙、柔軟垃圾袋、翻轉寶特瓶與街頭扣分／低反彈門檻。

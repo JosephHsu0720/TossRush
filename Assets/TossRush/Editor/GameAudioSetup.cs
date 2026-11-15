@@ -7,7 +7,6 @@ namespace TossRush.Editor
     public static class GameAudioSetup
     {
         public const string MusicPath = "Assets/TossRush/ThirdParty/SubspaceAudio/Juhani Junkala [Retro Game Music Pack] Level 1.wav";
-        const string Sounds = "Assets/TossRush/ThirdParty/Kenney/impact-sounds/";
         const string Interface = "Assets/TossRush/ThirdParty/Kenney/interface-sounds/";
 
         [MenuItem("TossRush/Apply CC0 Game Audio")]
@@ -45,18 +44,20 @@ namespace TossRush.Editor
             audio.musicSource = source;
             audio.effectsSource = game.audioSource;
             audio.music = AssetDatabase.LoadAssetAtPath<AudioClip>(MusicPath);
-            audio.impact = Clip("impactSoft_medium_001.ogg");
-            audio.penalty = Clip("impactSoft_heavy_000.ogg");
+            audio.impact = null;
+            audio.penalty = null;
             audio.start = AssetDatabase.LoadAssetAtPath<AudioClip>(Interface + "open_001.ogg");
             audio.finish = AssetDatabase.LoadAssetAtPath<AudioClip>(Interface + "close_001.ogg");
-            audio.reward = AssetDatabase.LoadAssetAtPath<AudioClip>(Interface + "pluck_001.ogg");
+            audio.reward = null;
             game.hitClip = AssetDatabase.LoadAssetAtPath<AudioClip>(Interface + "confirmation_001.ogg");
-            game.throwClip = Clip("impactSoft_medium_000.ogg");
+            game.throwClip = AssetDatabase.LoadAssetAtPath<AudioClip>("Assets/TossRush/ThirdParty/WovenSFX/fast-whoosh.wav");
+            audio.playThrowSounds = true;
+            audio.playCollisionSounds = audio.playPenaltySounds = audio.playRewardSounds = false;
             audio.musicVolume = .12f;
             audio.effectsVolume = .8f;
             audio.duckedMusicVolume = .035f;
             audio.duckHoldSeconds = .16f;
-            if (!audio.music || !audio.impact || !audio.penalty || !audio.start || !audio.finish || !audio.reward || !game.hitClip || !game.throwClip)
+            if (!audio.music || !audio.start || !audio.finish || !game.hitClip || !game.throwClip)
                 throw new System.InvalidOperationException("Required licensed audio clip is missing.");
             source.clip = audio.music;
             source.playOnAwake = false;
@@ -73,6 +74,5 @@ namespace TossRush.Editor
             Debug.Log("CC0 audio saved: Level 1 BGM + throw, hit, collision, penalty, start and result effects.");
         }
 
-        static AudioClip Clip(string name) => AssetDatabase.LoadAssetAtPath<AudioClip>(Sounds + name);
     }
 }

@@ -7,7 +7,7 @@ namespace TossRush
     {
         public AudioSource musicSource, effectsSource;
         public AudioClip music, impact, penalty, start, finish, reward;
-        [Tooltip("Optional gameplay sounds, currently disabled. Start, goal and result sounds remain enabled.")]
+        [Tooltip("Enable individual gameplay cues. Throw uses a whoosh; collision, penalty and reward cues are disabled.")]
         public bool playThrowSounds, playCollisionSounds, playPenaltySounds, playRewardSounds;
         [Range(0, 1)] public float musicVolume = .12f;
         [Range(0, 1)] public float effectsVolume = .8f;

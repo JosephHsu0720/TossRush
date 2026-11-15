@@ -1,0 +1,17 @@
+{
+  "passed": 12,
+  "checks": [
+    "Pointer drag sets slider to 30 percent",
+    "Master listener follows slider",
+    "Volume preference stored",
+    "Speaker button mutes all game audio",
+    "Speaker button restores previous volume",
+    "Whoosh assigned and enabled",
+    "Other disabled gameplay cues remain disabled",
+    "Volume controls visible on home screen",
+    "Home-only volume controls hide during play",
+    "Real player throw accepted after cleanup",
+    "Whoosh effects source starts on throw",
+    "BGM remains playing"
+  ]
+}

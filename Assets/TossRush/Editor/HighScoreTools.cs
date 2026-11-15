@@ -9,7 +9,7 @@ namespace TossRush.Editor
         public static void OpenPrototype()
         {
             if (!Application.isPlaying)
-                UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/TossRush/Scenes/TossRushPrototype.unity");
+                UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/TossRush/Scenes/TossRush.unity");
         }
 
         [MenuItem("TossRush/Clear High Score")]

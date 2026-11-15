@@ -11,7 +11,8 @@ Toss paper balls, trash bags, basketballs, plastic bottles, and newspapers into 
 - Five settings: a room corner, curbside trash bins, a basketball court with crosswinds, a moving carnival opening, and a doorstep mailbox.
 - Clean-shot and bounce bonuses, with distinct throwing behavior such as curving trash bags.
 - Cartoon-style environments, target outlines, and hit feedback.
-- Looping CC0 music and sound effects for throws, impacts, scoring, penalties, and rounds.
+- Looping CC0 music with throw, goal, start and result sounds.
+- Home-screen speaker and volume slider with saved master volume and mute controls. Throws use a short CC0 whoosh; collision, penalty and prize sounds are disabled.
 
 ## Play in the Editor
 
@@ -33,7 +34,7 @@ Built with Unity, C#, and URP. I direct the gameplay, playtest, and provide feed
 
 ## License and Credits
 
-Original project content that we have the right to license is released under the [MIT License](LICENSE). Furniture, buttons, fonts, and sound effects are provided by **Kenney (CC0)**. Music: **Level 1 by Juhani Junkala / SubspaceAudio (CC0)**. Unity and TextMeshPro content remains under its respective original license terms.
+Original project content that we have the right to license is released under the [MIT License](LICENSE). Furniture, buttons, fonts, and interface sounds are provided by **Kenney (CC0)**. Throw whoosh: **Woven SFX (CC0)**. Music: **Level 1 by Juhani Junkala / SubspaceAudio (CC0)**. Unity and TextMeshPro content remains under its respective original license terms.
 
 See [Asset Sources](Docs/AssetSources.md) and [Third-Party Notices](THIRD_PARTY_NOTICES.md) for details (in Traditional Chinese).
 

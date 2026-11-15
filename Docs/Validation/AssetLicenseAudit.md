@@ -1,5 +1,7 @@
 # 素材授權檢查（2026-11-16）
 
+清理更新：下表保留初次稽核證據；目前未使用的 Impact Sounds 六個音效及 pluck 已移除，新增 Woven SFX 的 CC0 fast-whoosh 作投擲音。最新實際檔案與雜湊以 [AssetLicenseInventory.csv](AssetLicenseInventory.csv) 為準，來源與授權見 [WovenSFX/License.txt](../../Assets/TossRush/ThirdParty/WovenSFX/License.txt) 及 [官方素材頁](https://www.woven.video/sfx/whoosh-sound-effect)。
+
 檢查目前工作目錄的外部模型、圖片、字型和聲音，對照隨附授權、既有來源紀錄及官方素材頁。逐檔 SHA-256 和大小見 [AssetLicenseInventory.csv](AssetLicenseInventory.csv)。這是可追溯的來源／授權檢查，並非對所有潛在第三方權利的法律保證。
 
 | 內容 | 檢查證據 | 結論 |

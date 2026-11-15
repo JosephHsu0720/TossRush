@@ -10,8 +10,7 @@
 |---|---|---|
 | [Furniture Kit](https://kenney.nl/assets/furniture-kit)，包內版本 2.0 | bench、bookcaseOpen、books、chairDesk、desk、lampRoundFloor、pottedPlant 的 FBX | [License.txt](Assets/TossRush/ThirdParty/Kenney/furniture-kit/License.txt) |
 | [UI Pack](https://kenney.nl/assets/ui-pack)，2.0 | button_rectangle_depth_flat.png、Kenney Future.ttf | [License.txt](Assets/TossRush/ThirdParty/Kenney/ui-pack/License.txt) |
-| [Impact Sounds](https://kenney.nl/assets/impact-sounds)，1.0 | impactBell_heavy_000／001／002.ogg、impactSoft_medium_000／001.ogg、impactSoft_heavy_000.ogg | [License.txt](Assets/TossRush/ThirdParty/Kenney/impact-sounds/License.txt) |
-| [Interface Sounds](https://kenney.nl/assets/interface-sounds)，1.0 | open_001.ogg、confirmation_001.ogg、pluck_001.ogg、close_001.ogg | [License.txt](Assets/TossRush/ThirdParty/Kenney/interface-sounds/License.txt) |
+| [Interface Sounds](https://kenney.nl/assets/interface-sounds)，1.0 | open_001.ogg、confirmation_001.ogg、close_001.ogg | [License.txt](Assets/TossRush/ThirdParty/Kenney/interface-sounds/License.txt) |
 
 Kenney 字型衍生的 `Assets/TossRush/Fonts/KenneyFuture.asset` 中，字形／圖集內容亦按 CC0 1.0 提供；這不包含 Unity 的 TMP 程式或 Shader。修改用途與來源詳見 [AssetSources.md](Docs/AssetSources.md)。
 
@@ -28,6 +27,10 @@ CC0 允許複製、修改、散布及商用，無須強制署名；本專案自�
 
 作者隨包的 [INFO.txt](Assets/TossRush/ThirdParty/SubspaceAudio/INFO.txt) 明確聲明這些曲目以 CC0 釋出。適用 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)，允許免費非商用及商用、修改與散布，不要求強制署名；本專案自願保留作者與來源。此授權不延伸到作者其他付費音樂包。
 
+## Woven SFX fast-whoosh：CC0 1.0
+
+投擲音效 `Assets/TossRush/ThirdParty/WovenSFX/fast-whoosh.wav` 來自 [Woven SFX whoosh 素材頁](https://www.woven.video/sfx/whoosh-sound-effect)，該頁明確以 CC0 1.0 提供，允許非商用及商用。2026-11-16 下載原始 WAV，未修改；保留 [來源與授權紀錄](Assets/TossRush/ThirdParty/WovenSFX/License.txt) 及上述 CC0 法律文本。先前未使用的 Kenney Impact Sounds 與 pluck 檔案已移除。
+
 ## Unity uGUI／TextMeshPro
 
 `Assets/TextMesh Pro/` 內保留的必要資源，包括 TMP Shader、include 檔、換行資料及預設設定，來自 Unity `com.unity.ugui` 2.0.0 所附的 TMP Essential Resources；這些內容不屬於本專案的 MIT 授權。
@@ -40,6 +43,6 @@ CC0 允許複製、修改、散布及商用，無須強制署名；本專案自�
 
 Unity 引擎不包含於此 repository。`Packages/manifest.json` 與 `Packages/packages-lock.json` 記錄的套件由 Unity Package Manager 還原，不受本專案 MIT 授權覆蓋。
 
-主要直接依賴包括 URP 17.3.0、Input System 1.20.0、uGUI 2.0.0、Test Framework 1.6.0、Visual Studio Editor 2.0.26、Pipeline 1.0.0-pre.1，以及 Unity 內建模組。各套件與其內含第三方內容，均以該版本所附的 LICENSE／Third Party Notices 為準。
+主要直接依賴包括 URP 17.3.0、Input System 1.20.0、uGUI 2.0.0、Pipeline 1.0.0-pre.1，以及 Unity 內建必要模組。Visual Studio Editor 已移除；Test Framework 不再直接引用，但仍由其他套件間接依賴。各套件與其內含第三方內容，均以該版本所附的 LICENSE／Third Party Notices 為準。
 
 發行遊戲版本時，需同時保留實際隨版本散布之內容所要求的授權及第三方通知。

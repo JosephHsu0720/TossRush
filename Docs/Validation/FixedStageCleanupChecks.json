@@ -1,0 +1,13 @@
+{
+  "passed": 8,
+  "checks": [
+    "Volume survives a real scene reload at 42 percent",
+    "Fixed-stage menu works: 房間",
+    "Fixed-stage menu works: 街頭",
+    "Fixed-stage menu works: 籃球",
+    "Fixed-stage menu works: 園遊會（寶特瓶）",
+    "Fixed-stage menu works: 住家（信箱）",
+    "Normal stage rotation restored",
+    "All five stages retain supported materials"
+  ]
+}

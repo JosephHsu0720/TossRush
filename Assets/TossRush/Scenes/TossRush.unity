@@ -585,7 +585,7 @@ MonoBehaviour:
   poolRoot: {fileID: 1932336096}
   audioSource: {fileID: 615272983}
   hitClip: {fileID: 8300000, guid: 0751359df3e908941b5c952754b9b992, type: 3}
-  throwClip: {fileID: 8300000, guid: 5ec9fbdcb6fbcdf489dc19f4c666b350, type: 3}
+  throwClip: {fileID: 8300000, guid: 4882a3d94d1914e42ab259cb8e51c354, type: 3}
   gameAudio: {fileID: 615272985}
   roundDuration: 20
   transitionDuration: 0.3
@@ -721,11 +721,15 @@ MonoBehaviour:
   musicSource: {fileID: 150157017}
   effectsSource: {fileID: 615272983}
   music: {fileID: 8300000, guid: 9f76aeea3922147438f56cee10a56078, type: 3}
-  impact: {fileID: 8300000, guid: baba64d158d519f49a6dbd1a613967cb, type: 3}
-  penalty: {fileID: 8300000, guid: e1eeb20fe1c5743449aebf239ac31535, type: 3}
+  impact: {fileID: 0}
+  penalty: {fileID: 0}
   start: {fileID: 8300000, guid: 4b34aeb5be25ea749969a9ec141ad5a6, type: 3}
   finish: {fileID: 8300000, guid: 0e4ab8346572ec04ba0a2fe18f6ffc8b, type: 3}
-  reward: {fileID: 8300000, guid: 1f675d34d92346144a6309592a745604, type: 3}
+  reward: {fileID: 0}
+  playThrowSounds: 1
+  playCollisionSounds: 0
+  playPenaltySounds: 0
+  playRewardSounds: 0
   musicVolume: 0.12
   effectsVolume: 0.8
   duckedMusicVolume: 0.035
@@ -749,6 +753,14 @@ PrefabInstance:
     - target: {fileID: 598779688885586951, guid: 6b91de371c1125e48ba2776067948ace, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 937759258125236987, guid: 6b91de371c1125e48ba2776067948ace, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 937759258125236987, guid: 6b91de371c1125e48ba2776067948ace, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3231697920635847269, guid: 6b91de371c1125e48ba2776067948ace, type: 3}
       propertyPath: m_Name
@@ -789,6 +801,18 @@ PrefabInstance:
     - target: {fileID: 5274878960772184386, guid: 6b91de371c1125e48ba2776067948ace, type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806676158886325518, guid: 6b91de371c1125e48ba2776067948ace, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806676158886325518, guid: 6b91de371c1125e48ba2776067948ace, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806676158886325518, guid: 6b91de371c1125e48ba2776067948ace, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6740437404525746767, guid: 6b91de371c1125e48ba2776067948ace, type: 3}
       propertyPath: m_Pivot.x

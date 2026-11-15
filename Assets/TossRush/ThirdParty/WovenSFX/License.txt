@@ -1,0 +1,12 @@
+fast-whoosh.wav
+Provider: Woven SFX
+Source: https://www.woven.video/sfx/whoosh-sound-effect
+Original file: https://assets.sfx.woven.video/sfx/fast-whoosh.wav
+Retrieved: 2026-11-16
+License: Creative Commons Zero 1.0 Universal (CC0-1.0).
+https://creativecommons.org/publicdomain/zero/1.0/
+
+The provider's source page states that every whoosh sound on that page is
+released under CC0 1.0 and may be used for any purpose, commercial or not,
+without permission or payment. Original WAV imported without modification.
+Full CC0 legal text is preserved at Docs/Licenses/CC0-1.0.txt.
