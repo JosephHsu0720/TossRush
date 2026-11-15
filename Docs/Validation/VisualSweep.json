@@ -1,0 +1,122 @@
+[
+  {
+    "stage": "Corner",
+    "extreme": false,
+    "frame": 39022,
+    "screenshot": "Docs/Validation/VisualSweep-0-Normal.png",
+    "throws": 1,
+    "hits": 0,
+    "rotation": "(6.00, 0.00, 0.00)",
+    "musicSource": 73406,
+    "samples": 2179526,
+    "continuous": true
+  },
+  {
+    "stage": "Corner",
+    "extreme": true,
+    "frame": 39109,
+    "screenshot": "Docs/Validation/VisualSweep-0-Extreme.png",
+    "throws": 1,
+    "hits": 0,
+    "rotation": "(335.00, 322.00, 0.00)",
+    "musicSource": 73406,
+    "samples": 2201164,
+    "continuous": true
+  },
+  {
+    "stage": "Street",
+    "extreme": false,
+    "frame": 39195,
+    "screenshot": "Docs/Validation/VisualSweep-1-Normal.png",
+    "throws": 1,
+    "hits": 0,
+    "rotation": "(6.00, 0.00, 0.00)",
+    "musicSource": 73406,
+    "samples": 2223743,
+    "continuous": true
+  },
+  {
+    "stage": "Street",
+    "extreme": true,
+    "frame": 39273,
+    "screenshot": "Docs/Validation/VisualSweep-1-Extreme.png",
+    "throws": 1,
+    "hits": 0,
+    "rotation": "(30.00, 38.00, 0.00)",
+    "musicSource": 73406,
+    "samples": 2245382,
+    "continuous": true
+  },
+  {
+    "stage": "Basketball",
+    "extreme": false,
+    "frame": 39350,
+    "screenshot": "Docs/Validation/VisualSweep-2-Normal.png",
+    "throws": 1,
+    "hits": 0,
+    "rotation": "(6.00, 0.00, 0.00)",
+    "musicSource": 73406,
+    "samples": 2267961,
+    "continuous": true
+  },
+  {
+    "stage": "Basketball",
+    "extreme": true,
+    "frame": 39431,
+    "screenshot": "Docs/Validation/VisualSweep-2-Extreme.png",
+    "throws": 1,
+    "hits": 0,
+    "rotation": "(335.00, 322.00, 0.00)",
+    "musicSource": 73406,
+    "samples": 2291481,
+    "continuous": true
+  },
+  {
+    "stage": "Carnival",
+    "extreme": false,
+    "frame": 39512,
+    "screenshot": "Docs/Validation/VisualSweep-3-Normal.png",
+    "throws": 1,
+    "hits": 0,
+    "rotation": "(6.00, 0.00, 0.00)",
+    "musicSource": 73406,
+    "samples": 2314060,
+    "continuous": true
+  },
+  {
+    "stage": "Carnival",
+    "extreme": true,
+    "frame": 39591,
+    "screenshot": "Docs/Validation/VisualSweep-3-Extreme.png",
+    "throws": 1,
+    "hits": 0,
+    "rotation": "(30.00, 38.00, 0.00)",
+    "musicSource": 73406,
+    "samples": 2335699,
+    "continuous": true
+  },
+  {
+    "stage": "Doorstep",
+    "extreme": false,
+    "frame": 39669,
+    "screenshot": "Docs/Validation/VisualSweep-4-Normal.png",
+    "throws": 1,
+    "hits": 0,
+    "rotation": "(6.00, 0.00, 0.00)",
+    "musicSource": 73406,
+    "samples": 2357337,
+    "continuous": true
+  },
+  {
+    "stage": "Doorstep",
+    "extreme": true,
+    "frame": 39749,
+    "screenshot": "Docs/Validation/VisualSweep-4-Extreme.png",
+    "throws": 1,
+    "hits": 0,
+    "rotation": "(335.00, 322.00, 0.00)",
+    "musicSource": 73406,
+    "samples": 2379916,
+    "continuous": true
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "focusedTests": [
+    {
+      "name": "Carnival_FirstClearSpeedsBothAxesOnce_AndPlayerPredictionStillScores",
+      "status": "Passed",
+      "duration": 3.1772135
+    },
+    {
+      "name": "WindLines_FollowDirectionAndStrength_KeepAimClear_AndHideWithoutWindOrDuringMenus",
+      "status": "Passed",
+      "duration": 0.9998506
+    }
+  ],
+  "normalProgression": {
+    "status": "completed",
+    "duration": 6.69,
+    "summary": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "inconclusive": 0
+    },
+    "results": [
+      {
+        "fullName": "TossRush.Tests.PrototypeTests.Carnival_UnlocksVerticalMotionOnNextVisitAfterClear_AndRestartResetsProgress",
+        "status": "Passed",
+        "duration": 6.6503151,
+        "message": null,
+        "stackTrace": null
+      }
+    ]
+  },
+  "liveChecks": {
+    "firstClearMultiplier": 1.25,
+    "initialMultiplier": 1,
+    "horizontalSpeedAfterClear": 2.0625,
+    "verticalSpeedAfterClear": 1.4375,
+    "verticalAmplitudeAfterClear": 0.32,
+    "calmHouseVisibleWindLines": 0
+  }
+}

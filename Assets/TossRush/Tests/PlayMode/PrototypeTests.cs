@@ -10,7 +10,7 @@ using UnityEngine.TestTools;
 
 namespace TossRush.Tests
 {
-    public sealed class PrototypeTests
+    public sealed partial class PrototypeTests
     {
         GameDirector game;
         int savedBest;

@@ -11,15 +11,17 @@
 | Furniture Kit | https://kenney.nl/assets/furniture-kit | Kenney；CC0 1.0；包內 License 標為 2.0 | desk、chairDesk、bookcaseOpen、books、pottedPlant、lampRoundFloor、bench 共七個 FBX。調整比例與位置，改用本專案卡通材質統一配色；未匯入原始色盤貼圖。 |
 | UI Pack 2.0：按鈕 | https://kenney.nl/assets/ui-pack | Kenney；CC0 1.0 | `PNG/Yellow/Default/button_rectangle_depth_flat.png`，設定為 Sprite／九宮格切片；用於開始、重玩按鈕，搭配 UI Feedback Shader。 |
 | UI Pack 2.0：Kenney Future 字型 | https://kenney.nl/assets/ui-pack | Kenney；包內 CC0 1.0 授權 | `Font/Kenney Future.ttf`；製作動態 TMP SDF 字型，供 UI 與舞台標題共用。 |
-| Impact Sounds 1.0 | https://kenney.nl/assets/impact-sounds | Kenney；CC0 1.0 | `impactBell_heavy_000.ogg` 作命中音、`impactSoft_medium_000.ogg` 作投擲回饋，降低播放音量。 |
+| Impact Sounds 1.0 | https://kenney.nl/assets/impact-sounds | Kenney；CC0 1.0 | `impactSoft_medium_000.ogg` 投擲、`impactSoft_medium_001.ogg` 碰撞、`impactSoft_heavy_000.ogg` 行人扣分。原本三個 `impactBell_heavy` 檔案保留作歷史素材，已不供遊戲事件使用。 |
+| Interface Sounds 1.0 | https://kenney.nl/assets/interface-sounds | Kenney；CC0 1.0 | 2026-11-16 以官方下載包原檔替換鈴聲：`open_001.ogg` 開始、`confirmation_001.ogg` 命中、`pluck_001.ogg` 擊倒獎品、`close_001.ogg` 結算。保留原始 License.txt。 |
+| 5 Chiptunes (Action)：Level 1 | https://opengameart.org/content/5-chiptunes-action | Juhani Junkala／SubspaceAudio；CC0 1.0 | 2026-11-16 從作者提供的 ZIP 匯入原始 WAV，不裁切；作為全流程循環 BGM。保留作者 `INFO.txt`；Unity 匯入使用 Vorbis 壓縮，不改寫原檔。 |
 
-三份原始 `License.txt` 分別保存在 `Assets/TossRush/ThirdParty/Kenney/` 下對應資料夾。CC0 說明：https://creativecommons.org/publicdomain/zero/1.0/ 。Kenney 官方使用說明：https://kenney.nl/support 。
+四份原始 `License.txt` 分別保存在 `Assets/TossRush/ThirdParty/Kenney/` 下對應資料夾。CC0 說明：https://creativecommons.org/publicdomain/zero/1.0/ 。Kenney 官方使用說明：https://kenney.nl/support 。
 
 ## 自行建立的原型內容
 
 - 桶體、籃框／籃網、移動洞口、舞台結構、紙團／球／沙包的基本幾何：在 Editor 以 Unity primitives 與簡單環形 Mesh 組合並保存為資產。
 - Stage Toon、UI Feedback Shader、遊戲程式與 UI 排版：本次開發建立。
-- 未使用影像生成工具製作美術，未使用外部人物、商標、音樂或其他貼圖。
+- 未使用影像生成工具製作美術，未使用外部人物、商標或其他貼圖。外部音樂僅使用上表明列的 CC0 曲目。
 
 ## 引擎與第三方程式
 

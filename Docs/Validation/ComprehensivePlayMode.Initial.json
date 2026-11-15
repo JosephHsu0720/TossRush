@@ -1,0 +1,36 @@
+{
+    "status": "Failed(Child)",
+    "finishedUtc": "2026-11-15T17:37:13.1919360Z",
+    "message": "",
+    "passed": 157,
+    "failed": 5,
+    "skipped": 0,
+    "duration": 394.6306624,
+    "failures": [
+        {
+            "test": "TossRush.Tests.PrototypeTests.HundredThrowSweep(16)",
+            "message": "  gate_reverse Corner contacts=1 last=(0.95, 1.18, 2.01)\r\n  Expected: 0\r\n  But was:  1\r\n",
+            "stackTrace": "at TossRush.Tests.PrototypeTests+<HundredThrowSweep>d__1.MoveNext () [0x008e4] in C:\\Users\\User\\UnityProjects\\TossRush\\Assets\\TossRush\\Tests\\PlayMode\\HundredThrowSweep.cs:92\r\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e] in .\\Library\\PackageCache\\com.unity.test-framework@bd7f943e9647\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\r\n"
+        },
+        {
+            "test": "TossRush.Tests.PrototypeTests.HundredThrowSweep(36)",
+            "message": "  gate_reverse Street contacts=1 last=(-0.26, 1.86, 1.04)\r\n  Expected: 0\r\n  But was:  1\r\n",
+            "stackTrace": "at TossRush.Tests.PrototypeTests+<HundredThrowSweep>d__1.MoveNext () [0x008e4] in C:\\Users\\User\\UnityProjects\\TossRush\\Assets\\TossRush\\Tests\\PlayMode\\HundredThrowSweep.cs:92\r\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e] in .\\Library\\PackageCache\\com.unity.test-framework@bd7f943e9647\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\r\n"
+        },
+        {
+            "test": "TossRush.Tests.PrototypeTests.HundredThrowSweep(37)",
+            "message": "  gate_outside Street contacts=0 last=(2.50, 1.43, 1.25)\r\n  Expected: 0\r\n  But was:  1\r\n",
+            "stackTrace": "at TossRush.Tests.PrototypeTests+<HundredThrowSweep>d__1.MoveNext () [0x008e4] in C:\\Users\\User\\UnityProjects\\TossRush\\Assets\\TossRush\\Tests\\PlayMode\\HundredThrowSweep.cs:92\r\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e] in .\\Library\\PackageCache\\com.unity.test-framework@bd7f943e9647\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\r\n"
+        },
+        {
+            "test": "TossRush.Tests.PrototypeTests.HundredThrowSweep(56)",
+            "message": "  gate_reverse Basketball contacts=0 last=(0.83, 2.18, 1.93)\r\n  Expected: 0\r\n  But was:  1\r\n",
+            "stackTrace": "at TossRush.Tests.PrototypeTests+<HundredThrowSweep>d__1.MoveNext () [0x008e4] in C:\\Users\\User\\UnityProjects\\TossRush\\Assets\\TossRush\\Tests\\PlayMode\\HundredThrowSweep.cs:92\r\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e] in .\\Library\\PackageCache\\com.unity.test-framework@bd7f943e9647\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\r\n"
+        },
+        {
+            "test": "TossRush.Tests.PrototypeTests.RandomizedStages_CanBeScoredWithPlayerThrow_FromSeveralSeeds",
+            "message": "  Expected state did not arrive within 3 seconds. Seed=11, stage=Street hits=1, contacts=5, radius=0.2444392, offsets=(-1.01, -1.26, -0.35);(1.19, -1.26, -0.35);(-3.21, -1.26, -0.35)\r\n  Expected: True\r\n  But was:  False\r\n",
+            "stackTrace": "at TossRush.Tests.PrototypeTests+<WaitUntil>d__9.MoveNext () [0x0006d] in C:\\Users\\User\\UnityProjects\\TossRush\\Assets\\TossRush\\Tests\\PlayMode\\PrototypeTests.cs:52\r\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e] in .\\Library\\PackageCache\\com.unity.test-framework@bd7f943e9647\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\r\n"
+        }
+    ]
+}

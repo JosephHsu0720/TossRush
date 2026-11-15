@@ -1,0 +1,20 @@
+{
+  "description": "Live Play Mode reproductions before the bin/hoop entry fix. Wind disabled temporarily and restored after each scan.",
+  "basketball": {
+    "releaseOffset": [0.54, 0.30, 0],
+    "velocity": [-0.1, -0.5, 0],
+    "observedAfterSeconds": 0.9,
+    "positionRelativeToGate": [0.41, -1.15, 0.03],
+    "contacts": 2,
+    "hits": 0
+  },
+  "street": {
+    "releaseOffset": [0, 0.32, -0.4],
+    "velocity": [0, -0.5, 0.4],
+    "observedAfterSeconds": 0.9,
+    "positionRelativeToGate": [0.14, -1.03, -0.16],
+    "compression": 0.4512,
+    "contacts": 24,
+    "hits": 0
+  }
+}

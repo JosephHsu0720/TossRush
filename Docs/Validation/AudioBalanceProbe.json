@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "musicBaseVolume": 0.12,
+  "musicDuckedVolume": 0.035,
+  "musicRestoredVolume": 0.12,
+  "musicBeforeRms": 0.085940030039356713,
+  "musicDuringPeakRms": 0.062907731905723116,
+  "throwPeakRms": 0.34690339519195612,
+  "musicSource": 88072,
+  "musicSamplesBefore": 2495001,
+  "musicSamplesAfter": 2527929,
+  "frameBefore": 10801,
+  "frameAfter": 11046
+}

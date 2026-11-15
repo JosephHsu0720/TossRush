@@ -12,6 +12,7 @@ namespace TossRush
         public Transform poolRoot;
         public AudioSource audioSource;
         public AudioClip hitClip, throwClip;
+        public GameAudio gameAudio;
         [Min(1)] public float roundDuration = 20f;
         [Min(0.1f)] public float transitionDuration = 0.3f;
         [Range(4, 32)] public int poolSizePerStage = 16;
@@ -89,6 +90,7 @@ namespace TossRush
             ActivateStage(Mathf.Clamp(startingStageIndex, 0, stages.Length - 1));
             hud.ShowPlay();
             thrower.SetCursor(true);
+            if (gameAudio) gameAudio.Play(gameAudio.start);
         }
 
         void Update()
@@ -122,7 +124,7 @@ namespace TossRush
                 if (shot.InFlight) continue;
                 shot.Launch(ActiveStage.data, StageToken, position, velocity, ActiveStage.CurrentWind);
                 Throws++;
-                if (throwClip) audioSource.PlayOneShot(throwClip, 0.25f);
+                if (gameAudio && gameAudio.playThrowSounds) gameAudio.Play(throwClip);
                 return true;
             }
             return false;
@@ -151,7 +153,8 @@ namespace TossRush
             string detail = LastWasClean ? "CLEAN SHOT" : "NICE SHOT";
             hud.ShowFeedback("+" + LastAward + "   " + detail, data.accent);
             if (LastWasClean && LastBonus > 0) hud.ShowCleanShot(LastBonus);
-            if (hitClip) audioSource.PlayOneShot(hitClip, 0.5f);
+            if (gameAudio) gameAudio.Play(hitClip, .85f);
+            else if (hitClip) audioSource.PlayOneShot(hitClip, .68f);
             BeginTransition();
         }
 
@@ -162,6 +165,7 @@ namespace TossRush
             int penalty = ActiveStage.data.pedestrianHitPenalty;
             if (penalty <= 0) return;
             Score -= penalty;
+            if (gameAudio && gameAudio.playPenaltySounds) gameAudio.Play(gameAudio.penalty);
             hud.ShowPenalty(penalty, point, thrower.view);
         }
 
@@ -169,6 +173,7 @@ namespace TossRush
         {
             if (!CanScore || !prop || prop.stage != ActiveStage || !prop.KnockedDown || prop.knockdownPoints <= 0) return;
             Score += prop.knockdownPoints;
+            if (gameAudio && gameAudio.playRewardSounds) gameAudio.Play(gameAudio.reward, .65f);
             hud.collisionFeedback.Show(prop.knockdownPoints, prop.transform.position, thrower.view, ActiveStage.data.accent, false);
         }
 
@@ -207,6 +212,7 @@ namespace TossRush
             thrower.SetCursor(false);
             hud.SetTransition(0);
             hud.ShowResult(Score, Best, Hits, Throws, newRecord);
+            if (gameAudio) gameAudio.Play(gameAudio.finish);
         }
 
         public void ClearHighScore()

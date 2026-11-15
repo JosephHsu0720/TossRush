@@ -1,0 +1,44 @@
+[
+  {
+    "clip": "impactSoft_medium_000",
+    "length": 0.118004538,
+    "readable": true,
+    "rms": 0.19278480986031918,
+    "peak": 0.899993896484375
+  },
+  {
+    "clip": "impactSoft_medium_001",
+    "length": 0.183287978,
+    "readable": true,
+    "rms": 0.17989180577440184,
+    "peak": 0.903564453125
+  },
+  {
+    "clip": "open_001",
+    "length": 0.147777781,
+    "readable": true,
+    "rms": 0.17784717340183309,
+    "peak": 0.90228271484375
+  },
+  {
+    "clip": "confirmation_001",
+    "length": 0.289841264,
+    "readable": true,
+    "rms": 0.27297031480781109,
+    "peak": 0.9095458984375
+  },
+  {
+    "clip": "pluck_001",
+    "length": 0.102426305,
+    "readable": true,
+    "rms": 0.094080470485195508,
+    "peak": 0.999969482421875
+  },
+  {
+    "clip": "close_001",
+    "length": 0.147777781,
+    "readable": true,
+    "rms": 0.18012577709778121,
+    "peak": 0.88812255859375
+  }
+]

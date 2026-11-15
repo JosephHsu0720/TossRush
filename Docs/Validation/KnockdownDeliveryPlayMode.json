@@ -1,0 +1,391 @@
+{
+  "status": "completed",
+  "duration": 90.01,
+  "summary": {
+    "total": 54,
+    "passed": 53,
+    "failed": 1,
+    "skipped": 0,
+    "inconclusive": 0
+  },
+  "results": [
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Carnival_MovesAndRejectsReverseEntry_ThenScoresFromFront",
+      "status": "Passed",
+      "duration": 0.9137162,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Carnival_PrizesAwardImmediatelyOnce_WithoutGoalOrReboundBonus",
+      "status": "Passed",
+      "duration": 1.7497075,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Carnival_ThrowsPlasticBottle_WithSpinPerpendicularToBottleAxis",
+      "status": "Passed",
+      "duration": 0.4891017,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Carnival_UnlocksVerticalMotionOnNextVisitAfterClear_AndRestartResetsProgress",
+      "status": "Passed",
+      "duration": 6.3792393,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.CollisionPoints_BelongOnlyToScoringShot_AndMissesAreDiscarded",
+      "status": "Passed",
+      "duration": 0.5635095,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.CollisionPoints_ExpireWithoutScoring_AndCannotSurviveRoundEnd",
+      "status": "Passed",
+      "duration": 1.2096833,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.CollisionPopup_ProjectsWorldPoint_UsesBoundedPool_AndExpires",
+      "status": "Passed",
+      "duration": 1.2303498,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Corner_RejectsUpwardOutsideAndBelowRimSideEntry",
+      "status": "Passed",
+      "duration": 1.2835859,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Corner_RimRollIn_AwardsBaseAndContactsOnce_WithoutCleanBonus",
+      "status": "Passed",
+      "duration": 1.476712,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.CornerCleanShot_Awards150Bonus_AndUsesPaperPool",
+      "status": "Passed",
+      "duration": 0.4714251,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.CornerTwoContacts_Bank60OnGoal_AndReuseClearsCollisionHistory",
+      "status": "Passed",
+      "duration": 0.7337314,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Crosswind_AcceleratesBasketball_AndCompensatedThrowScores",
+      "status": "Passed",
+      "duration": 1.9991212,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Doorstep_PlayerThrowFollowsPitchAndYaw_WithoutLoft_AndScoresWithNewspapers",
+      "status": "Passed",
+      "duration": 0.9214415,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.FixedStagePlaytest_ReentersSameStage_UnlocksMotion_AndCanResumeRotation",
+      "status": "Passed",
+      "duration": 1.5230231,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.FullTwentySecondRound_StaysOnMisses_StopsAtDeadline_AndRestarts",
+      "status": "Passed",
+      "duration": 20.3267243,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.HighScoreIndicator_PersistsRecord_AndEditorToolClearsOnlyScore",
+      "status": "Passed",
+      "duration": 1.4414727,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Hoop_NearRimEntriesFromFourOffsets_ScoreOnceAfterEntering",
+      "status": "Passed",
+      "duration": 1.3779251,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Hoop_PendingEntryDoesNotCarryIntoReusedShot_OrAllowSideEntryBelowRim",
+      "status": "Passed",
+      "duration": 0.8824196,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Hoop_RejectsUpwardAndOutsideCrossings_AcceptsDownwardEntry",
+      "status": "Passed",
+      "duration": 1.0477135,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.HouseWindows_DetachOnNewspaperImpact_AndRestoreOnRestart",
+      "status": "Passed",
+      "duration": 1.0432879,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.ImportantTargets_VarySideways_KeepDepthAndAttachedBankAngles",
+      "status": "Passed",
+      "duration": 0.344035,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Mailbox_RejectsReverseAndOutsideEntry_AndAcceptsFrontEntry",
+      "status": "Passed",
+      "duration": 0.6971282,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Mailbox_UsesBothSides_LeavesDoorwayClear_AndPlayerCanScoreEachSide",
+      "status": "Passed",
+      "duration": 1.5146111,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.NormalPaperThrow_ScoresOnce_AndClearsOldProjectiles",
+      "status": "Passed",
+      "duration": 1.4583766,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.OrdinaryCollision_CancelsCleanBonus",
+      "status": "Passed",
+      "duration": 0.5578775,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.PedestrianPenalty_RepeatedEpisodesDeductImmediately_AndMissesDoNotRefund",
+      "status": "Passed",
+      "duration": 0.5897438,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.PhysicsProfiles_ShareGravity_ButPaperRespondsMoreToWind",
+      "status": "Passed",
+      "duration": 0.3313762,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.PhysicsProps_MoveOnImpact_AndRestartRestoresPose",
+      "status": "Passed",
+      "duration": 0.5374729,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.PredictedFlight_MatchesRigidbodyWithAirResistance",
+      "status": "Passed",
+      "duration": 0.7369923,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.ProjectilePool_IsBounded_AndRestartResetsEveryShot",
+      "status": "Passed",
+      "duration": 0.3395845,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.RandomizedStages_CanBeScoredWithPlayerThrow_FromSeveralSeeds",
+      "status": "Failed",
+      "duration": 17.6130435,
+      "message": "  Expected state did not arrive within 3 seconds. Seed=950, stage=Street hits=1, contacts=4, radius=0.243064, offsets=(-0.92, -1.26, 0.44);(1.28, -1.26, 0.44);(-3.12, -1.26, 0.44)\r\n  Expected: True\r\n  But was:  False\r\n",
+      "stackTrace": "at TossRush.Tests.PrototypeTests+<WaitUntil>d__7.MoveNext () [0x0006d] in C:\\Users\\User\\UnityProjects\\TossRush\\Assets\\TossRush\\Tests\\PlayMode\\PrototypeTests.cs:52\r\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0004e] in .\\Library\\PackageCache\\com.unity.test-framework@bd7f943e9647\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\r\n"
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.RealRebound_Qualifies_WhileGentleContactDoesNot",
+      "status": "Passed",
+      "duration": 0.9120167,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.ReboundThreshold_RejectsBoundaryAndWeakContacts_InEveryStage",
+      "status": "Passed",
+      "duration": 0.3341488,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.SceneProps_MatchEachStage_AndStreetUsesCrowdInstead",
+      "status": "Passed",
+      "duration": 0.4301828,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.SceneryHasKnockableFurnitureAndContents_AndStreetBinsHaveDistinctRealColours",
+      "status": "Passed",
+      "duration": 0.3410827,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.SidewalkCrowd_CrossesThrowingLane_AndPhysicallyBlocksTrashBag",
+      "status": "Passed",
+      "duration": 0.3850273,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.SoftBag_CollapsesOnLid_LimitsRebound_AndRestoresOnReuse",
+      "status": "Passed",
+      "duration": 0.4426385,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.StageOrder_UsesFiveProjectileTypes_AndHasNoBackdropTitles",
+      "status": "Passed",
+      "duration": 0.3344228,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.StageVariations_StayInBounds_AndCameraKeepsLayoutVisible",
+      "status": "Passed",
+      "duration": 0.3432094,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Street_AllThreeBinsAcceptDrops_AndGapDoesNotCountAsGoal",
+      "status": "Passed",
+      "duration": 1.7044076,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Street_BagStartsSideways_AndSpinsAroundWorldUp",
+      "status": "Passed",
+      "duration": 0.5435645,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Street_FrontRimSlide_ScoresInAllThreeBins_WithCompressedBag",
+      "status": "Passed",
+      "duration": 1.2310134,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Street_LidContactRollsIntoOpening_AndAwardsBasePlusContactsOnce",
+      "status": "Passed",
+      "duration": 0.8024659,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Street_LidReboundMeetsLowerThreshold_AndBanksPointsOnlyOnGoal",
+      "status": "Passed",
+      "duration": 0.5512408,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.StreetCrowd_WalksAndAnimates_RestartsAndStopsWhenInactive",
+      "status": "Passed",
+      "duration": 0.6876391,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.StreetOpening_RejectsUpwardAndOutsideEntry_ThenAcceptsDirectDrop",
+      "status": "Passed",
+      "duration": 1.0094155,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.SurfaceMaterials_BasketballBouncesMoreThanPaper",
+      "status": "Passed",
+      "duration": 1.8268976,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.TargetRimContact_Banks30OnGoal_AndCancelsCleanBonus",
+      "status": "Passed",
+      "duration": 0.6530572,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.TargetsHaveOutline_AndHUDLeavesCenterClear",
+      "status": "Passed",
+      "duration": 0.3351857,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.ThemedProps_ContactsStayPendingUntilGoal_AndPropsReset",
+      "status": "Passed",
+      "duration": 1.1326849,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.Traffic_MovesInOppositeDirections_AndRestartRestoresIt",
+      "status": "Passed",
+      "duration": 0.5911053,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.TrashBag_SpinsAndCurves_AndPredictionMatchesActualFlight",
+      "status": "Passed",
+      "duration": 0.7378073,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.VariationBounds_KeepLidAndBackboardShots_AndMailboxPlayerThrowsReachable",
+      "status": "Passed",
+      "duration": 2.4835466,
+      "message": null,
+      "stackTrace": null
+    },
+    {
+      "fullName": "TossRush.Tests.PrototypeTests.WindArrow_FlipsDirection_AndCleanRaysStayHiddenOnMenu",
+      "status": "Passed",
+      "duration": 0.3536001,
+      "message": null,
+      "stackTrace": null
+    }
+  ]
+}

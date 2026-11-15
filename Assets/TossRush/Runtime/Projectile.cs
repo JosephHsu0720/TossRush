@@ -121,6 +121,7 @@ namespace TossRush
             if (softBag && collision.contactCount > 0) softBag.AbsorbCollision(collision);
             if (!Owner || collision.contactCount == 0) return;
             var contact = collision.GetContact(0);
+            if (Owner.CanScore && Owner.gameAudio) Owner.gameAudio.Impact(collision.relativeVelocity.magnitude);
             var pedestrian = collision.collider.GetComponentInParent<Pedestrian>();
             if (pedestrian)
             {

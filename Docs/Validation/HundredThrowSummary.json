@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-16",
+  "editor": "6000.3.24f1",
+  "attempts": 100,
+  "passed": 100,
+  "failed": 0,
+  "playerOriginThrows": 75,
+  "controlledPhysicsThrows": 25,
+  "stages": [
+    {
+      "stage": "Basketball",
+      "attempts": 20,
+      "passed": 20,
+      "goals": 9
+    },
+    {
+      "stage": "Carnival",
+      "attempts": 20,
+      "passed": 20,
+      "goals": 9
+    },
+    {
+      "stage": "Corner",
+      "attempts": 20,
+      "passed": 20,
+      "goals": 7
+    },
+    {
+      "stage": "Doorstep",
+      "attempts": 20,
+      "passed": 20,
+      "goals": 6
+    },
+    {
+      "stage": "Street",
+      "attempts": 20,
+      "passed": 20,
+      "goals": 5
+    }
+  ]
+}
