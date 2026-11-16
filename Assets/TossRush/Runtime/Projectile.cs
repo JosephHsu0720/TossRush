@@ -58,7 +58,8 @@ namespace TossRush
         {
             if (!Body) Body = GetComponent<Rigidbody>();
             if (softBag) softBag.ResetDeformation();
-            Quaternion rotation = Quaternion.Euler(data.projectileEulerAngles);
+            Quaternion rotation = GetComponent<DartFlight>() && velocity.sqrMagnitude > .01f
+                ? Quaternion.LookRotation(velocity, Vector3.up) : Quaternion.Euler(data.projectileEulerAngles);
             transform.SetPositionAndRotation(position, rotation);
             PreviousPosition = position;
             StageToken = token;

@@ -2180,10 +2180,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ROOM / STREET / COURT / MIDWAY / DOORSTEP
+  m_text: 'ROOM / STREET / COURT / MIDWAY / DOORSTEP / BAR
 
-    CLEAN +150 / REBOUND +30
-    ON GOAL'
+    CLEAN +150 / REBOUND
+    +30 ON GOAL'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e256da4cb4c7b144b6d498cebfe2326, type: 2}
   m_sharedMaterial: {fileID: 2186284977480509199, guid: 4e256da4cb4c7b144b6d498cebfe2326, type: 2}
@@ -3502,7 +3502,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FIVE STAGES. ONE CLOCK. MAKE IT COUNT.
+  m_text: SIX STAGES. ONE CLOCK. MAKE IT COUNT.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e256da4cb4c7b144b6d498cebfe2326, type: 2}
   m_sharedMaterial: {fileID: 2186284977480509199, guid: 4e256da4cb4c7b144b6d498cebfe2326, type: 2}

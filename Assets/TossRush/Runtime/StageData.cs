@@ -23,6 +23,8 @@ namespace TossRush
         [Range(0, 65)] public float throwLoft = 22f;
         [Tooltip("Throw straight along the viewing direction without additional upward loft. Camera pitch still controls elevation.")]
         public bool horizontalThrow;
+        [Tooltip("Move the camera and its throw origin forward for this stage only.")]
+        [Min(0)] public float playerForwardOffset;
         public ProjectilePhysicsProfile physicsProfile;
         [Min(0.1f)] public float gravityScale = 1f;
         [Tooltip("Fallback air velocity in m/s when randomization is off.")]

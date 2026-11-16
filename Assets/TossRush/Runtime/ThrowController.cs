@@ -13,7 +13,17 @@ namespace TossRush
         [Range(0.01f, 1)] public float sensitivity = 0.13f;
         [Range(-10, 20)] public float restingPitch = 6f;
         float yaw, pitch, nextThrow;
+        Vector3 viewHome;
+        bool viewHomeCached;
         readonly Vector3[] positions = new Vector3[100];
+
+        void Awake() => CacheViewHome();
+
+        void CacheViewHome()
+        {
+            if (viewHomeCached) return;
+            viewHome = view.transform.localPosition; viewHomeCached = true;
+        }
 
         public Vector3 LaunchPosition => throwOrigin.position;
         public Vector3 LaunchVelocity => game.ActiveStage.data.horizontalThrow
@@ -22,6 +32,8 @@ namespace TossRush
 
         public void ResetForStage(int index)
         {
+            CacheViewHome();
+            view.transform.localPosition = viewHome + Vector3.forward * game.ActiveStage.data.playerForwardOffset;
             yaw = 0;
             // View the stage layout instead of tilting the camera along the ballistic launch angle.
             pitch = restingPitch;

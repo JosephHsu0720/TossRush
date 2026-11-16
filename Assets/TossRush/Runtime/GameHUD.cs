@@ -57,6 +57,7 @@ namespace TossRush
             if (windIndicator) windIndicator.SetWind(wind, game.thrower.view.transform, data.accent);
             stageText.color = data.accent;
             string instruction = data.instruction;
+            if (game.ActiveStage.Dartboard) instruction = game.ActiveStage.Dartboard.Instruction;
             if (data.verticalMotionAmplitude > 0)
                 instruction = game.ActiveStage.CurrentVerticalAmplitude > 0 ? "BOTTLE FLIP / LEFT+RIGHT + UP+DOWN / PRIZES +10"
                     : "BOTTLE FLIP / LEFT+RIGHT / PRIZES +10 / CLEAR TO UNLOCK UP+DOWN";

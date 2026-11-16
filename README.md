@@ -4,11 +4,12 @@
 
 A 20-second first-person throwing game made with Unity.
 
-Toss paper balls, trash bags, basketballs, plastic bottles, and newspapers into different targets to chase a high score in just 20 seconds! Each successful throw takes you to the next scene. Use the trajectory preview, account for the wind, and bounce shots off the scenery to find your aim.
+Toss paper balls, trash bags, basketballs, plastic bottles, newspapers, and darts at different targets to chase a high score in just 20 seconds! Each successful throw takes you to the next scene. Use the trajectory preview, account for the wind, and bounce shots off the scenery to find your aim.
 
 ## Features
 
-- Five settings: a room corner, curbside trash bins, a basketball court with crosswinds, a moving carnival opening, and a doorstep mailbox.
+- Six settings: a room corner, curbside trash bins, a basketball court with crosswinds, a moving carnival opening, a doorstep mailbox, and bar darts.
+- Bar darts choose a random scoring region on every entry, including the first. A yellow outline marks the active target, and the throwing distance is 28% shorter overall.
 - Clean-shot and bounce bonuses, with distinct throwing behavior such as curving trash bags.
 - Cartoon-style environments, target outlines, and hit feedback.
 - Looping CC0 music with throw, goal, start and result sounds.

@@ -18,6 +18,8 @@ namespace TossRush.Editor
         static void Carnival() => SelectStage("Carnival");
         [MenuItem(Menu + "住家（信箱）")]
         static void Doorstep() => SelectStage("Doorstep");
+        [MenuItem(Menu + "酒吧（飛鏢）")]
+        static void Darts() => SelectStage("Darts");
         [MenuItem(Menu + "恢復正常輪替", false, 20)]
         static void NormalRotation() => SelectStage(null);
 

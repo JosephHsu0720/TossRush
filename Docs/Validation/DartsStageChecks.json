@@ -1,0 +1,537 @@
+{
+    "passed": true,
+    "startFrame": 1507,
+    "endFrame": 8825,
+    "checks": [
+        {
+            "name": "First entry chooses a region and matching outline",
+            "passed": true,
+            "detail": "First=69 14 DOUBLE"
+        },
+        {
+            "name": "All 82 regions fit the dart tip",
+            "passed": true,
+            "detail": "Regions=82"
+        },
+        {
+            "name": "Re-entry samples all regions without consecutive repeats",
+            "passed": true,
+            "detail": "Unique=82/82 across 2048 entries"
+        },
+        {
+            "name": "Outline mask and scoring plane follow every selection",
+            "passed": true,
+            "detail": "2048 selections"
+        },
+        {
+            "name": "Throw distance reduced another 10 percent to 72 percent of original",
+            "passed": true,
+            "detail": "Baseline=8.352739m, current=6.013972m, ratio=0.72"
+        },
+        {
+            "name": "Six stages and held dart",
+            "passed": true,
+            "detail": "Stages=6, held=6"
+        },
+        {
+            "name": "Full distance throw accepted",
+            "passed": true,
+            "detail": "Origin=(0.07, 1.72, -3.17)"
+        },
+        {
+            "name": "Selected region scores and wraps to room",
+            "passed": true,
+            "detail": "Score=250, stage=Corner"
+        },
+        {
+            "name": "Other stages restore the camera position",
+            "passed": true,
+            "detail": "Camera z=-6"
+        },
+        {
+            "name": "Unselected bullseye does not score and dart sticks",
+            "passed": true,
+            "detail": "Hits=0"
+        },
+        {
+            "name": "Selected outer bull scores with reused dart",
+            "passed": true,
+            "detail": "Score=250"
+        },
+        {
+            "name": "Selected double scores",
+            "passed": true,
+            "detail": "Hits=1"
+        },
+        {
+            "name": "Selected triple scores",
+            "passed": true,
+            "detail": "Hits=1"
+        },
+        {
+            "name": "Adjacent unselected sector does not score",
+            "passed": true,
+            "detail": "Hits=0"
+        },
+        {
+            "name": "Bullseye scores when selected",
+            "passed": true,
+            "detail": "Hits=1"
+        },
+        {
+            "name": "Unselected outer bull does not score",
+            "passed": true,
+            "detail": "Hits=0"
+        },
+        {
+            "name": "Back of board does not score",
+            "passed": true,
+            "detail": "Hits=0"
+        },
+        {
+            "name": "Wall miss does not score",
+            "passed": true,
+            "detail": "Hits=0"
+        },
+        {
+            "name": "Fixed stage clear chooses a different target",
+            "passed": true,
+            "detail": "Hits=1, old=9, new=68"
+        },
+        {
+            "name": "Previous target no longer scores",
+            "passed": true,
+            "detail": "Hits=1"
+        },
+        {
+            "name": "Mailbox advances to a randomly selected bar target",
+            "passed": true,
+            "detail": "Stage=Darts"
+        },
+        {
+            "name": "Bar clear wraps without duplicate scoring",
+            "passed": true,
+            "detail": "Stage=Corner, hits=2"
+        },
+        {
+            "name": "Timeout rejects late dart",
+            "passed": true,
+            "detail": "Playing=False"
+        },
+        {
+            "name": "Player loop advanced",
+            "passed": true,
+            "detail": "Frames=1518"
+        },
+        {
+            "name": "Player throw hits region 0 BULLSEYE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 1 OUTER BULL",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 2 20 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 3 20 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 4 20 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 5 20 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 6 1 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 7 1 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 8 1 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 9 1 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 10 18 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 11 18 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 12 18 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 13 18 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 14 4 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 15 4 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 16 4 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 17 4 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 18 13 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 19 13 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 20 13 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 21 13 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 22 6 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 23 6 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 24 6 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 25 6 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 26 10 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 27 10 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 28 10 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 29 10 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 30 15 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 31 15 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 32 15 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 33 15 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 34 2 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 35 2 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 36 2 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 37 2 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 38 17 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 39 17 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 40 17 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 41 17 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 42 3 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 43 3 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 44 3 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 45 3 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 46 19 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 47 19 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 48 19 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 49 19 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 50 7 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 51 7 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 52 7 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 53 7 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 54 16 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 55 16 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 56 16 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 57 16 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 58 8 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 59 8 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 60 8 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 61 8 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 62 11 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 63 11 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 64 11 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 65 11 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 66 14 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 67 14 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 68 14 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 69 14 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 70 9 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 71 9 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 72 9 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 73 9 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 74 12 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 75 12 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 76 12 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 77 12 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 78 5 INNER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 79 5 TRIPLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 80 5 OUTER SINGLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        },
+        {
+            "name": "Player throw hits region 81 5 DOUBLE",
+            "passed": true,
+            "detail": "Hits=1, score=250"
+        }
+    ]
+}

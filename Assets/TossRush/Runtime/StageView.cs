@@ -10,6 +10,7 @@ namespace TossRush
         public ScoreGate gate;
         [Min(0.01f)] public float authoredRadius = 0.67f;
         public GameDirector Game { get; private set; }
+        public DartboardTarget Dartboard { get; private set; }
         public Vector3 CurrentWind { get; private set; }
         public Vector3 CurrentTargetCenter { get; private set; }
         public float CurrentVerticalAmplitude { get; private set; }
@@ -27,6 +28,7 @@ namespace TossRush
         public void Initialize(GameDirector game)
         {
             Game = game;
+            Dartboard = movingTarget.GetComponent<DartboardTarget>();
             home = movingTarget.localPosition;
             movingTarget.localScale = Vector3.one * (data.targetRadius / authoredRadius);
             CurrentTargetCenter = home;
@@ -59,6 +61,7 @@ namespace TossRush
                 motionPhase = Random.Range(0, Mathf.PI * 2);
             }
             movingTarget.localPosition = PositionAtTime(0);
+            if (Dartboard) Dartboard.ChooseNextTarget();
             foreach (var targetGate in gates) targetGate.ResetTracking();
             foreach (var prop in props) prop.ResetPose();
             foreach (var vehicle in vehicles) vehicle.ResetPose();

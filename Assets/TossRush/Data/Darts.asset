@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ab102b18f102047bfd0b7d7dff5743, type: 3}
+  m_Name: Darts
+  m_EditorClassIdentifier: TossRush.Runtime::TossRush.StageData
+  title: BAR / DARTS
+  instruction: DARTS / HIT THE YELLOW TARGET / CLEAN +150
+  accent: {r: 1, g: 0.65, b: 0.26, a: 1}
+  points: 100
+  cleanShotBonus: 150
+  pointsPerPropCollision: 0
+  minimumReboundSpeed: 1.5
+  pedestrianHitPenalty: 0
+  heldItemIndex: 5
+  launchSpeed: 22
+  throwLoft: 0
+  horizontalThrow: 1
+  playerForwardOffset: 2.338767
+  physicsProfile: {fileID: 11400000, guid: 2be9af308958998439763b8efc431516, type: 2}
+  gravityScale: 1
+  wind: {x: 0, y: 0, z: 0}
+  windInfluence: 0
+  windLineWidthMultiplier: 1
+  throwInterval: 0.32
+  projectileRadius: 0.018
+  targetRadius: 0.2
+  motionAmplitude: 0
+  motionSpeed: 1.4
+  motionSpeedAfterFirstClear: 1
+  verticalMotionAmplitude: 0
+  verticalMotionSpeed: 1.2
+  verticalMotionUnlockHits: 1
+  randomize: 0
+  horizontalOffsetRange: {x: -0.8, y: 0.8}
+  minimumHorizontalDistanceFromCenter: 0
+  minimumHorizontalChange: 0
+  depthOffsetRange: {x: -0.25, y: 0.25}
+  windSpeedRange: {x: 0, y: 0}
+  windDirectionSpread: 15
+  projectilePrefab: {fileID: 4735970305999467482, guid: d554e6f43eedee74b9152726d07a4019, type: 3}
+  projectileEulerAngles: {x: 0, y: 0, z: 0}

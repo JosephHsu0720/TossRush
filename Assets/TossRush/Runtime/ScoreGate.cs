@@ -220,6 +220,7 @@ namespace TossRush
 
         public bool FitsOpening(Vector3 crossingOffset, Projectile shot, Vector3 normal)
         {
+            if (stage.Dartboard) return stage.Dartboard.ContainsWorldPoint(transform.position + crossingOffset, shot.ScoringRadius);
             // Flat newspapers need their actual projected box dimensions to fit a narrow mail slot.
             var box = shot.GetComponent<BoxCollider>();
             if (openingHalfExtents.x > 0 && openingHalfExtents.y > 0 && box)
@@ -240,6 +241,7 @@ namespace TossRush
 
         public bool FitsOpening(Vector3 crossingOffset, float radius, Vector3 normal)
         {
+            if (stage.Dartboard) return stage.Dartboard.ContainsWorldPoint(transform.position + crossingOffset, radius);
             if (openingHalfExtents.x > 0 && openingHalfExtents.y > 0) {
                 Vector3 local = transform.InverseTransformVector(crossingOffset);
                 Vector3 scale = transform.lossyScale;
