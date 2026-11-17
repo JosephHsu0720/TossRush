@@ -10,6 +10,7 @@ namespace TossRush
         [Tooltip("Local normal of the entry plane. Up for bins/hoops; back for a vertical hole.")]
         public Vector3 entryNormal = Vector3.up;
         public StageView stage;
+        public TrashColor trashColor;
         [Tooltip("Optional rectangular opening in gate-local X/Z units. Zero uses the original circular opening.")]
         public Vector2 openingHalfExtents;
         [Tooltip("World-space depth below the entry plane to finish a rim roll-in. Zero requires crossing the plane fully inside the opening.")]
@@ -44,8 +45,7 @@ namespace TossRush
                     if (TryBoxEntry(from, to, shot, normal, true))
                     {
                         pendingRollIns.Remove(shot);
-                        shot.MarkScored();
-                        game.RegisterHit(shot);
+                        game.RegisterTargetEntry(shot, this);
                         break;
                     }
                     continue;
@@ -72,8 +72,7 @@ namespace TossRush
                 }
                 if (!entered) continue;
                 pendingRollIns.Remove(shot);
-                shot.MarkScored();
-                game.RegisterHit(shot);
+                game.RegisterTargetEntry(shot, this);
                 break;
             }
             previousCenter = center;
@@ -98,13 +97,13 @@ namespace TossRush
                 // resolved in FixedUpdate, after the contact has cancelled the clean bonus.
                 if (!TryBoxEntry(from, to, shot, normal, false)) return false;
                 pendingRollIns.Remove(shot);
-                shot.MarkScored(); game.RegisterHit(shot); return true;
+                game.RegisterTargetEntry(shot, this); return true;
             }
             float before = Vector3.Dot(from, normal), after = Vector3.Dot(to, normal);
             if (before <= 0 || after > 0) return false;
             Vector3 crossing = Vector3.Lerp(from, to, before / (before - after));
             if (!FitsOpening(crossing, shot, normal)) return false;
-            shot.MarkScored(); game.RegisterHit(shot); return true;
+            game.RegisterTargetEntry(shot, this); return true;
         }
 
         bool UsesBoxEntry(Projectile shot) => rollInDepth > 0 && openingHalfExtents.x > 0

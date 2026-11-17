@@ -9,6 +9,7 @@ namespace TossRush
         public Rigidbody Body { get; private set; }
         public bool InFlight { get; private set; }
         public bool Scored { get; private set; }
+        public TrashColor TrashColor { get; private set; }
         public int StageToken { get; private set; }
         public float Radius { get; private set; }
         public Vector3 PreviousPosition { get; private set; }
@@ -54,8 +55,11 @@ namespace TossRush
             }
         }
 
-        public void Launch(StageData data, int token, Vector3 position, Vector3 velocity, Vector3 stageWind)
+        public void Launch(StageData data, int token, Vector3 position, Vector3 velocity, Vector3 stageWind, TrashColor trashColor = TrashColor.None)
         {
+            TrashColor = trashColor;
+            var colorVisual = GetComponentInChildren<TrashColorVisual>(true);
+            if (colorVisual) colorVisual.Apply(trashColor);
             if (!Body) Body = GetComponent<Rigidbody>();
             if (softBag) softBag.ResetDeformation();
             Quaternion rotation = GetComponent<DartFlight>() && velocity.sqrMagnitude > .01f

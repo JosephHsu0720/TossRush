@@ -1,0 +1,347 @@
+{
+    "passed": true,
+    "startFrame": 2693,
+    "endFrame": 3599,
+    "checks": [
+        {
+            "name": "Only Street requires colour matching",
+            "detail": "Other stage scoring stays unrestricted.",
+            "passed": true
+        },
+        {
+            "name": "Shared entry preserves Corner",
+            "detail": "Score=250, expected=250",
+            "passed": true
+        },
+        {
+            "name": "Shared entry preserves Basketball",
+            "detail": "Score=300, expected=300",
+            "passed": true
+        },
+        {
+            "name": "Shared entry preserves Carnival",
+            "detail": "Score=350, expected=350",
+            "passed": true
+        },
+        {
+            "name": "Shared entry preserves Doorstep",
+            "detail": "Score=350, expected=350",
+            "passed": true
+        },
+        {
+            "name": "Shared entry preserves Darts",
+            "detail": "Score=250, expected=250",
+            "passed": true
+        },
+        {
+            "name": "Three distinct bin colours",
+            "detail": "Green, Red, Blue",
+            "passed": true
+        },
+        {
+            "name": "Bin body and lid match scoring colour",
+            "detail": "Each bin's body and lid must use its own colour, including nested bin instances.",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 0",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 0",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 0",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Matching entry 0",
+            "detail": "Score=350, hits=1, bonus=150",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 1",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 1",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 1",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Wrong entry 1",
+            "detail": "Score=-50, pending=30, hits=0",
+            "passed": true
+        },
+        {
+            "name": "Wrong bag resolves only once 1",
+            "detail": "Score=-50",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 2",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 2",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 2",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Wrong entry 2",
+            "detail": "Score=-50, pending=30, hits=0",
+            "passed": true
+        },
+        {
+            "name": "Wrong bag resolves only once 2",
+            "detail": "Score=-50",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 3",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 3",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 3",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Wrong entry 3",
+            "detail": "Score=-50, pending=30, hits=0",
+            "passed": true
+        },
+        {
+            "name": "Wrong bag resolves only once 3",
+            "detail": "Score=-50",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 4",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 4",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 4",
+            "detail": "Blue",
+            "passed": true
+        },
+        {
+            "name": "Matching entry 4",
+            "detail": "Score=350, hits=1, bonus=150",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 5",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 5",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 5",
+            "detail": "Blue",
+            "passed": true
+        },
+        {
+            "name": "Wrong entry 5",
+            "detail": "Score=-50, pending=30, hits=0",
+            "passed": true
+        },
+        {
+            "name": "Wrong bag resolves only once 5",
+            "detail": "Score=-50",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 6",
+            "detail": "Blue",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 6",
+            "detail": "Blue",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 6",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Wrong entry 6",
+            "detail": "Score=-50, pending=30, hits=0",
+            "passed": true
+        },
+        {
+            "name": "Wrong bag resolves only once 6",
+            "detail": "Score=-50",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 7",
+            "detail": "Blue",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 7",
+            "detail": "Blue",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 7",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Wrong entry 7",
+            "detail": "Score=-50, pending=30, hits=0",
+            "passed": true
+        },
+        {
+            "name": "Wrong bag resolves only once 7",
+            "detail": "Score=-50",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 8",
+            "detail": "Blue",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 8",
+            "detail": "Blue",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 8",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Matching entry 8",
+            "detail": "Score=350, hits=1, bonus=150",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 9",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 9",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 9",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Outside opening does not score",
+            "detail": "Score=0",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 10",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 10",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 10",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Upward entry does not score",
+            "detail": "Score=0",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 11",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 11",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 11",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Matching entry 11",
+            "detail": "Score=350, hits=1, bonus=150",
+            "passed": true
+        },
+        {
+            "name": "Held bag colour 12",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Flight colour preserved 12",
+            "detail": "Red",
+            "passed": true
+        },
+        {
+            "name": "Next held bag matches next launch 12",
+            "detail": "Green",
+            "passed": true
+        },
+        {
+            "name": "Wrong entry 12",
+            "detail": "Score=-50, pending=30, hits=0",
+            "passed": true
+        },
+        {
+            "name": "Wrong bag resolves only once 12",
+            "detail": "Score=-50",
+            "passed": true
+        },
+        {
+            "name": "Real player loop advances",
+            "detail": "2693 -> 3599",
+            "passed": true
+        }
+    ]
+}

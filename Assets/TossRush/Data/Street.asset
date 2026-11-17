@@ -13,17 +13,21 @@ MonoBehaviour:
   m_Name: Street
   m_EditorClassIdentifier: TossRush.Runtime::TossRush.StageData
   title: CURBSIDE SPIN
-  instruction: TRASH BAG / LID REBOUND +30 / HIT PEDESTRIAN -10
+  instruction: MATCH BAG + BIN COLOUR / WRONG BIN -50 / LID REBOUND +30 / PEDESTRIAN
+    -10
   accent: {r: 0.35, g: 0.9, b: 0.91, a: 1}
   points: 200
   cleanShotBonus: 150
   pointsPerPropCollision: 30
   minimumReboundSpeed: 0.1
   pedestrianHitPenalty: 10
+  matchTrashColors: 1
+  wrongBinPenalty: 50
   heldItemIndex: 3
   launchSpeed: 11.8
   throwLoft: 38
   horizontalThrow: 0
+  playerForwardOffset: 0
   physicsProfile: {fileID: 11400000, guid: 9afbce2d35d7cca42b73534f4a72be8f, type: 2}
   gravityScale: 1
   wind: {x: 0, y: 0, z: 0}

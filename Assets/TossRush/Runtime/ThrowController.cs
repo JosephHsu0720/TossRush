@@ -51,6 +51,13 @@ namespace TossRush
             Cursor.visible = !captured;
         }
 
+        public void RefreshHeldTrashColor()
+        {
+            var item = heldItems[game.ActiveStage.data.heldItemIndex];
+            var visual = item.GetComponentInChildren<TrashColorVisual>(true);
+            if (visual) visual.Apply(game.NextTrashColor);
+        }
+
         void Update()
         {
             bool playing = game.IsPlaying;

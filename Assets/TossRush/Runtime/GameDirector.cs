@@ -32,6 +32,7 @@ namespace TossRush
         public int Hits { get; private set; }
         public int Throws { get; private set; }
         public int LastAward { get; private set; }
+        public TrashColor NextTrashColor { get; private set; }
         public int LastBonus { get; private set; }
         public bool LastWasClean { get; private set; }
         public float Remaining => IsPlaying ? Mathf.Max(0, (float)(roundEnd - Time.realtimeSinceStartupAsDouble)) : 0;
@@ -123,8 +124,9 @@ namespace TossRush
             foreach (var shot in pools[stageIndex])
             {
                 if (shot.InFlight) continue;
-                shot.Launch(ActiveStage.data, StageToken, position, velocity, ActiveStage.CurrentWind);
+                shot.Launch(ActiveStage.data, StageToken, position, velocity, ActiveStage.CurrentWind, NextTrashColor);
                 Throws++;
+                PrepareNextTrashBag();
                 if (gameAudio && gameAudio.playThrowSounds) gameAudio.Play(throwClip);
                 return true;
             }
@@ -157,6 +159,33 @@ namespace TossRush
             if (gameAudio) gameAudio.Play(hitClip, .85f);
             else if (hitClip) audioSource.PlayOneShot(hitClip, .68f);
             BeginTransition();
+        }
+
+        void PrepareNextTrashBag()
+        {
+            NextTrashColor = ActiveStage.data.matchTrashColors ? (TrashColor)Random.Range(1, 4) : TrashColor.None;
+            thrower.RefreshHeldTrashColor();
+        }
+
+        public void RegisterTargetEntry(Projectile shot, ScoreGate target)
+        {
+            if (!CanScore || !shot || shot.Owner != this || !shot.InFlight || shot.Scored || shot.StageToken != StageToken) return;
+            if (!target || target.stage != ActiveStage) return;
+            // Resolve each launch once, including a wrong bin, so a bounce cannot score twice.
+            shot.MarkScored();
+            var data = ActiveStage.data;
+            if (!data.matchTrashColors || shot.TrashColor != TrashColor.None && shot.TrashColor == target.trashColor)
+            {
+                RegisterHit(shot);
+                return;
+            }
+            LastWasClean = false;
+            LastBonus = 0;
+            LastAward = -data.wrongBinPenalty;
+            Score += LastAward;
+            hud.ShowPenalty(data.wrongBinPenalty, target.transform.position, thrower.view);
+            hud.ShowFeedback("-" + data.wrongBinPenalty + "   WRONG BIN", new Color(1, .18f, .12f));
+            if (gameAudio && gameAudio.playPenaltySounds) gameAudio.Play(gameAudio.penalty);
         }
 
         public void RegisterPedestrianHit(Projectile shot, Pedestrian pedestrian, Vector3 point)
@@ -200,6 +229,7 @@ namespace TossRush
                 if (i != index) stages[i].gameObject.SetActive(false);
             ActiveStage.gameObject.SetActive(true);
             ActiveStage.ResetStage();
+            PrepareNextTrashBag();
             thrower.ResetForStage(index);
         }
 

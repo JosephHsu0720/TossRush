@@ -17,6 +17,9 @@ namespace TossRush
         [Min(0)] public float minimumReboundSpeed = 1.5f;
         [Tooltip("Immediate deduction per new projectile contact with a pedestrian. Zero disables it for this stage.")]
         [Min(0)] public int pedestrianHitPenalty;
+        [Tooltip("Require the thrown bag to match the receiving bin's colour.")]
+        public bool matchTrashColors;
+        [Min(0)] public int wrongBinPenalty = 50;
         [Min(0)] public int heldItemIndex;
         [Min(1)] public float launchSpeed = 11f;
         [Tooltip("Upward loft relative to the viewing direction. Keeps the camera on the scene while throwing an arc.")]

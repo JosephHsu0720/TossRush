@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 575288c34da20fa4f8fd33a83e1cbe4a, type: 2}
+  - {fileID: 2100000, guid: 207364a201bd4b1448b1595a44cb9569, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,7 +156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42316a2c0f86834489ee8ce20bb98550, type: 2}
+  - {fileID: 2100000, guid: 207364a201bd4b1448b1595a44cb9569, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,7 +246,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42316a2c0f86834489ee8ce20bb98550, type: 2}
+  - {fileID: 2100000, guid: 207364a201bd4b1448b1595a44cb9569, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -279,6 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3402868614231834675}
+  - component: {fileID: 708830014093031767}
   m_Layer: 0
   m_Name: TrashBagVisual
   m_TagString: Untagged
@@ -305,6 +306,26 @@ Transform:
   - {fileID: 8589135530411459724}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &708830014093031767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7026111982147318689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e384de1c025d818458ea829d7950052b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TossRush.Runtime::TossRush.TrashColorVisual
+  surfaces:
+  - {fileID: 5112061954583116039}
+  - {fileID: 1619653035613471634}
+  - {fileID: 3610267373469939580}
+  - {fileID: 1783440953062003049}
+  red: {fileID: 2100000, guid: 207364a201bd4b1448b1595a44cb9569, type: 2}
+  green: {fileID: 2100000, guid: 866e1cacf319c254bad1247b6f5c29d9, type: 2}
+  blue: {fileID: 2100000, guid: c9431941f711a0a44a94f0bc97a01ece, type: 2}
 --- !u!1 &7200664445584495377
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +392,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42316a2c0f86834489ee8ce20bb98550, type: 2}
+  - {fileID: 2100000, guid: 207364a201bd4b1448b1595a44cb9569, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
