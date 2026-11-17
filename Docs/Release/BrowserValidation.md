@@ -1,5 +1,14 @@
 # WebGL 瀏覽器驗證
 
+## v1.0.1（2026-11-17，台北）
+
+- 成品：`Artifacts/Release/TossRush-Web-v1.0.1.zip`，19,704,607 bytes；Unity 建置 0 errors / 0 warnings。
+- 確認 HTML 的 `productVersion` 為 `1.0.1`，ZIP 根目錄包含 `index.html`；63 個檔案全部逐一比對 SHA-256，均與建置資料夾一致。詳細記錄見 `LastBuild.json`、`ZipAudit.json`。
+- Windows Google Chrome 透過本機 HTTP 載入本次 WebGL 成品，首頁正常顯示；點擊 LET'S TOSS 後進入房間關卡，倒數顯示 19.9s。
+- 本次為載入與開始遊戲的基本驗證；街頭配色與重新進場規則另有 `../Validation/StreetColorPlayMode.json` 的 85 項 Editor 檢查。未將本次基本驗證擴大為瀏覽器六關全通、全螢幕或 itch.io 上傳後驗證。
+
+## 先前版本驗證
+
 日期：2026-11-16（台北）。瀏覽器：Windows 上既有 Google Chrome。測試透過本機 HTTP，包含直接頁面及 iframe 預覽；不以雙擊 HTML 或 Editor 畫面代替。
 
 ## 已觀察到的結果
