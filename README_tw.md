@@ -17,9 +17,9 @@
 
 ## 試玩
 
-目前為開發中原型，以 Unity Editor 試玩為主。
+目前為開發中原型。網頁版發布準備、建置成品與實際驗證狀態見 [發布檢查清單](Docs/Release/ReleaseChecklist.md)；itch.io 頁面目前為私人草稿。
 
-1. 使用 **Unity 6000.3.24f1** 開啟專案，等待套件與資產匯入。
+1. 使用 **Unity 6000.3.11f1** 開啟專案，等待套件與資產匯入（與 ProjectSettings 及本次網頁建置版本一致）。
 2. 開啟 `Assets/TossRush/Scenes/TossRush.unity`。
 3. 按下 Play，再點選 **LET'S TOSS**。
 

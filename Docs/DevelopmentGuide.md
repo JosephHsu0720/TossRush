@@ -4,11 +4,11 @@ A 20-second first-person throwing game prototype made with Unity.
 
 在 20 秒內，將紙團、垃圾袋、籃球、寶特瓶、報紙與飛鏢投向不同目標，挑戰更高分。每次命中後切換情境，利用飛行軌跡預覽、風向與場景碰撞調整投擲路線。
 
-目前為 Unity Editor 可試玩的開發中原型，尚未提供已驗證的 Windows／WebGL 發行版本。
+目前為開發中原型，已開始提供 WebGL 發布建置；成品、瀏覽器實測與 itch.io 私人草稿的最新狀態見 [發布檢查清單](Release/ReleaseChecklist.md)。Windows 發行版本尚未建置。下方歷次驗證紀錄中的發布狀態保留當時結果。
 
 ## 開啟專案
 
-1. 安裝 Unity Hub 與 **Unity 6000.3.24f1**。
+1. 安裝 Unity Hub 與 **Unity 6000.3.11f1**（與 ProjectSettings 及本次 WebGL 建置一致）。
 2. Clone 或下載此 repository，在 Unity Hub 加入專案根目錄。
 3. 使用指定版本開啟，等待 Unity 還原套件與匯入資產。
 4. 依下方步驟開啟場景並試玩。

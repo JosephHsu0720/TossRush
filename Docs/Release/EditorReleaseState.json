@@ -1,0 +1,16 @@
+{
+  "unity": "6000.3.11f1",
+  "playing": false,
+  "compiling": false,
+  "scene": "Assets/TossRush/Scenes/TossRush.unity",
+  "sceneDirty": false,
+  "roundDuration": 20.0,
+  "startingStage": 0,
+  "repeatStartingStage": false,
+  "stages": 6,
+  "target": "WebGL",
+  "compression": "Gzip",
+  "decompressionFallback": true,
+  "memory": 128,
+  "template": "PROJECT:TossRush"
+}

@@ -12,11 +12,16 @@ namespace TossRush
 
         void OnEnable()
         {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            // The web template handles fullscreen inside the browser's click event.
+            gameObject.SetActive(false);
+#else
 #if UNITY_EDITOR
             foreach (var window in Resources.FindObjectsOfTypeAll<UnityEditor.EditorWindow>())
                 if (window.GetType().FullName == "UnityEditor.GameView") { gameView = window; break; }
 #endif
             RefreshIcon();
+#endif
         }
 
         void Update() => RefreshIcon();
@@ -27,10 +32,12 @@ namespace TossRush
             if (!gameView)
                 gameView = UnityEditor.EditorWindow.GetWindow(typeof(UnityEditor.EditorWindow).Assembly.GetType("UnityEditor.GameView"));
             gameView.maximized = !gameView.maximized;
-#else
+#elif !UNITY_WEBGL
             Screen.fullScreenMode = Screen.fullScreen ? FullScreenMode.Windowed : FullScreenMode.FullScreenWindow;
 #endif
+#if !UNITY_WEBGL || UNITY_EDITOR
             RefreshIcon();
+#endif
         }
 
         void RefreshIcon()

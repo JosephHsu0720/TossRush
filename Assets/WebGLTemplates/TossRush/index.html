@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{{ PRODUCT_NAME }}}</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #101925; color: #fff; font-family: system-ui, sans-serif; }
+    #unity-canvas { display: block; width: 100%; height: 100%; background: #101925; outline: none; }
+    #loading { position: fixed; inset: 0; display: grid; place-content: center; gap: 18px; text-align: center; background: #101925; }
+    h1 { margin: 0; font-size: clamp(34px, 7vw, 72px); letter-spacing: .04em; color: #ffc857; }
+    p { margin: 0; line-height: 1.6; }
+    progress { width: min(340px, 75vw); height: 12px; accent-color: #ffc857; }
+    #failure { max-width: 540px; margin: 0 24px; }
+    #fullscreen { position: fixed; right: 18px; bottom: 18px; width: 44px; height: 44px; padding: 8px; border: 2px solid #ffe294; border-radius: 5px; background: #ffc400; color: #17343c; cursor: pointer; }
+    #fullscreen[hidden] { display: none; }
+    #fullscreen:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+    #fullscreen svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 3; }
+    #notice { position: fixed; right: 18px; bottom: 74px; max-width: min(340px, 85vw); padding: 12px; border-radius: 6px; background: #101925; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <canvas id="unity-canvas" width="{{{ WIDTH }}}" height="{{{ HEIGHT }}}" tabindex="0" aria-label="TossRush game. Mouse to aim, left click to throw, Escape to release the mouse, R to replay."></canvas>
+  <div id="loading" role="status">
+    <h1>TOSSRUSH</h1>
+    <p id="message">Six scenes. Twenty seconds. Make every throw count.</p>
+    <progress id="progress" max="1" value="0" aria-label="Loading game"></progress>
+    <p id="failure" hidden></p>
+  </div>
+  <button id="fullscreen" type="button" aria-label="Enter fullscreen" title="Fullscreen" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg></button>
+  <p id="notice" role="status" hidden></p>
+  <script src="Build/{{{ LOADER_FILENAME }}}"></script>
+  <script>
+    const canvas = document.querySelector('#unity-canvas');
+    const fullscreenButton = document.querySelector('#fullscreen');
+    const notice = document.querySelector('#notice');
+    fullscreenButton.addEventListener('click', async () => {
+      try {
+        if (document.fullscreenElement) await document.exitFullscreen();
+        else await document.documentElement.requestFullscreen();
+        notice.hidden = true;
+      } catch (error) {
+        // A denied browser request must not interrupt the Unity player.
+        notice.textContent = 'Fullscreen is unavailable here. You can keep playing in this window.';
+        notice.hidden = false;
+        console.warn('Fullscreen request was declined.', error);
+      }
+    });
+    document.addEventListener('fullscreenchange', () => {
+      fullscreenButton.setAttribute('aria-label', document.fullscreenElement ? 'Exit fullscreen' : 'Enter fullscreen');
+    });
+    createUnityInstance(canvas, {
+      arguments: [],
+      dataUrl: 'Build/{{{ DATA_FILENAME }}}',
+      frameworkUrl: 'Build/{{{ FRAMEWORK_FILENAME }}}',
+#if USE_THREADS
+      workerUrl: 'Build/{{{ WORKER_FILENAME }}}',
+#endif
+#if USE_WASM
+      codeUrl: 'Build/{{{ CODE_FILENAME }}}',
+#endif
+#if SYMBOLS_FILENAME
+      symbolsUrl: 'Build/{{{ SYMBOLS_FILENAME }}}',
+#endif
+      streamingAssetsUrl: 'StreamingAssets',
+      companyName: {{{ JSON.stringify(COMPANY_NAME) }}},
+      productName: {{{ JSON.stringify(PRODUCT_NAME) }}},
+      productVersion: {{{ JSON.stringify(PRODUCT_VERSION) }}},
+      autoSyncPersistentDataPath: true,
+      devicePixelRatio: Math.min(window.devicePixelRatio || 1, 1.5)
+    }, progress => { document.querySelector('#progress').value = progress; })
+    .then(() => { document.querySelector('#loading').remove(); fullscreenButton.hidden = false; })
+    .catch(error => {
+      document.querySelector('#message').textContent = 'The game could not load. Try a current desktop browser with WebGL 2 enabled.';
+      document.querySelector('#progress').hidden = true;
+      const failure = document.querySelector('#failure');
+      failure.hidden = false;
+      failure.textContent = String(error);
+      console.error(error);
+    });
+  </script>
+</body>
+</html>

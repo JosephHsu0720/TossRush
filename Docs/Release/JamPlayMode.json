@@ -1,0 +1,69 @@
+{
+  "utc": "2026-11-16T08:51:42.8607555Z",
+  "passed": true,
+  "startFrame": 2005,
+  "endFrame": 4576,
+  "fullRoundSeconds": 20.106038099998841,
+  "checks": [
+    {
+      "name": "Release scene has six complete stages",
+      "detail": "Count=6",
+      "passed": true
+    },
+    {
+      "name": "Default round is 20 seconds and begins at first stage",
+      "detail": "Duration=20",
+      "passed": true
+    },
+    {
+      "name": "Player loop advances",
+      "detail": "Frames=42",
+      "passed": true
+    },
+    {
+      "name": "Released cursor does not pause countdown",
+      "detail": "Remaining=19.63681",
+      "passed": true
+    },
+    {
+      "name": "Time scale zero does not extend wall-clock deadline",
+      "detail": "Playing=False",
+      "passed": true
+    },
+    {
+      "name": "Expired deadline rejects throws before the next Update",
+      "detail": "Remaining=0",
+      "passed": true
+    },
+    {
+      "name": "Valid registered hit enters transition",
+      "detail": "Controlled scoring setup, not a player aim test.",
+      "passed": true
+    },
+    {
+      "name": "Transition shares the same deadline",
+      "detail": "Remaining=19.49282",
+      "passed": true
+    },
+    {
+      "name": "Replay resets score, throws, hits and unlocked progress",
+      "detail": "All six stages reset.",
+      "passed": true
+    },
+    {
+      "name": "Full 20-second round finishes",
+      "detail": "Observed after 20.106 seconds.",
+      "passed": true
+    },
+    {
+      "name": "Result screen is visible and all projectiles retired",
+      "detail": "Result=True",
+      "passed": true
+    },
+    {
+      "name": "Late throw is rejected without changing score",
+      "detail": "No late score/throw.",
+      "passed": true
+    }
+  ]
+}

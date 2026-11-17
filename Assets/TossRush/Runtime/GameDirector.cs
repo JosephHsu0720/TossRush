@@ -23,7 +23,7 @@ namespace TossRush
 
         public bool IsPlaying { get; private set; }
         public bool IsTransitioning { get; private set; }
-        public bool CanScore => IsPlaying && !IsTransitioning && Time.timeAsDouble < roundEnd;
+        public bool CanScore => IsPlaying && !IsTransitioning && Time.realtimeSinceStartupAsDouble < roundEnd;
         public bool CanThrow => CanScore;
         public StageView ActiveStage => stages[stageIndex];
         public int StageToken { get; private set; }
@@ -34,7 +34,7 @@ namespace TossRush
         public int LastAward { get; private set; }
         public int LastBonus { get; private set; }
         public bool LastWasClean { get; private set; }
-        public float Remaining => IsPlaying ? Mathf.Max(0, (float)(roundEnd - Time.timeAsDouble)) : 0;
+        public float Remaining => IsPlaying ? Mathf.Max(0, (float)(roundEnd - Time.realtimeSinceStartupAsDouble)) : 0;
         public IReadOnlyList<Projectile> Projectiles => allShots;
         readonly List<Projectile> allShots = new List<Projectile>();
         readonly List<List<Projectile>> pools = new List<List<Projectile>>();
@@ -86,7 +86,8 @@ namespace TossRush
             hasResult = false;
             IsTransitioning = false;
             IsPlaying = true;
-            roundEnd = Time.timeAsDouble + roundDuration;
+            // A jam round has a wall-clock deadline, including stalls and lost browser focus.
+            roundEnd = Time.realtimeSinceStartupAsDouble + roundDuration;
             ActivateStage(Mathf.Clamp(startingStageIndex, 0, stages.Length - 1));
             hud.ShowPlay();
             thrower.SetCursor(true);
@@ -100,7 +101,7 @@ namespace TossRush
                 if (hasResult && Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame) StartRound();
                 return;
             }
-            if (Time.timeAsDouble >= roundEnd) { FinishRound(); return; }
+            if (Time.realtimeSinceStartupAsDouble >= roundEnd) { FinishRound(); return; }
             if (IsTransitioning)
             {
                 float t = (float)((Time.timeAsDouble-transitionStart)/transitionDuration);

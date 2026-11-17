@@ -17,9 +17,9 @@ Toss paper balls, trash bags, basketballs, plastic bottles, newspapers, and dart
 
 ## Play in the Editor
 
-This is a prototype in development, currently intended for playtesting in the Unity Editor.
+This is a prototype in development. See the [release checklist](Docs/Release/ReleaseChecklist.md) for Web builds, browser validation, and the private itch.io draft.
 
-1. Open the project with **Unity 6000.3.24f1** and wait for packages and assets to finish importing.
+1. Open the project with **Unity 6000.3.11f1** and wait for packages and assets to finish importing (the version recorded in ProjectSettings and used for the Web release build).
 2. Open `Assets/TossRush/Scenes/TossRush.unity`.
 3. Enter Play Mode, then click **LET'S TOSS**.
 
