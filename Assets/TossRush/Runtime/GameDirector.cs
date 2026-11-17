@@ -126,7 +126,6 @@ namespace TossRush
                 if (shot.InFlight) continue;
                 shot.Launch(ActiveStage.data, StageToken, position, velocity, ActiveStage.CurrentWind, NextTrashColor);
                 Throws++;
-                PrepareNextTrashBag();
                 if (gameAudio && gameAudio.playThrowSounds) gameAudio.Play(throwClip);
                 return true;
             }
@@ -161,7 +160,7 @@ namespace TossRush
             BeginTransition();
         }
 
-        void PrepareNextTrashBag()
+        void PrepareStageTrashBag()
         {
             NextTrashColor = ActiveStage.data.matchTrashColors ? (TrashColor)Random.Range(1, 4) : TrashColor.None;
             thrower.RefreshHeldTrashColor();
@@ -229,7 +228,7 @@ namespace TossRush
                 if (i != index) stages[i].gameObject.SetActive(false);
             ActiveStage.gameObject.SetActive(true);
             ActiveStage.ResetStage();
-            PrepareNextTrashBag();
+            PrepareStageTrashBag();
             thrower.ResetForStage(index);
         }
 

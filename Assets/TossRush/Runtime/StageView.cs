@@ -62,6 +62,7 @@ namespace TossRush
             }
             movingTarget.localPosition = PositionAtTime(0);
             if (Dartboard) Dartboard.ChooseNextTarget();
+            if (data.matchTrashColors) ShuffleTrashColors();
             foreach (var targetGate in gates) targetGate.ResetTracking();
             foreach (var prop in props) prop.ResetPose();
             foreach (var vehicle in vehicles) vehicle.ResetPose();
@@ -69,6 +70,23 @@ namespace TossRush
         }
 
         static float Sample(Vector2 range) => Random.Range(Mathf.Min(range.x, range.y), Mathf.Max(range.x, range.y));
+
+        void ShuffleTrashColors()
+        {
+            // Shuffle once on entry; throws and wrong-bin penalties keep this assignment.
+            for (int i = gates.Length - 1; i > 0; i--)
+            {
+                int j = Random.Range(0, i + 1);
+                TrashColor color = gates[i].trashColor;
+                gates[i].trashColor = gates[j].trashColor;
+                gates[j].trashColor = color;
+            }
+            foreach (var targetGate in gates)
+            {
+                var visual = targetGate.GetComponentInParent<TargetMarker>().GetComponent<TrashColorVisual>();
+                if (visual) visual.Apply(targetGate.trashColor);
+            }
+        }
 
         internal void RecordClear() => ClearsThisRound++;
         internal void ResetRoundProgress() { ClearsThisRound = 0; CurrentVerticalAmplitude = 0; CurrentMotionSpeedMultiplier = 1; }

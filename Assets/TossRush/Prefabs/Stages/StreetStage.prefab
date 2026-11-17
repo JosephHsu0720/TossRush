@@ -52557,8 +52557,44 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 126489003081718265, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5579507997136152842}
   m_SourcePrefab: {fileID: 100100000, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+--- !u!1 &473214617628321922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 126489003081718265, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+  m_PrefabInstance: {fileID: 527012570535555451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5579507997136152842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473214617628321922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e384de1c025d818458ea829d7950052b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TossRush.Runtime::TossRush.TrashColorVisual
+  surfaces:
+  - {fileID: 2387714176691644266}
+  - {fileID: 2598774548299492765}
+  red: {fileID: 2100000, guid: 8080aeb3f4f53e645a2a165e16b6fca1, type: 2}
+  green: {fileID: 2100000, guid: d0aa6012cc58edd4696bde5dd3b1ad4e, type: 2}
+  blue: {fileID: 2100000, guid: d387000343bbd9a4e83fb9c90510a903, type: 2}
+--- !u!23 &2387714176691644266 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2770433128935806481, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+  m_PrefabInstance: {fileID: 527012570535555451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2598774548299492765 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2540277076508302566, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+  m_PrefabInstance: {fileID: 527012570535555451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5611368672241646273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5372729723683605434, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
@@ -52645,8 +52681,34 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5372729723683605434, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2394602646227940781}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 126489003081718265, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 95524279791631159}
   m_SourcePrefab: {fileID: 100100000, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+--- !u!1 &994000432093841984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 126489003081718265, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+  m_PrefabInstance: {fileID: 867513799838798777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &95524279791631159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994000432093841984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e384de1c025d818458ea829d7950052b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TossRush.Runtime::TossRush.TrashColorVisual
+  surfaces:
+  - {fileID: 3060347082286384552}
+  - {fileID: 3407790874199609183}
+  red: {fileID: 2100000, guid: 8080aeb3f4f53e645a2a165e16b6fca1, type: 2}
+  green: {fileID: 2100000, guid: d0aa6012cc58edd4696bde5dd3b1ad4e, type: 2}
+  blue: {fileID: 2100000, guid: d387000343bbd9a4e83fb9c90510a903, type: 2}
 --- !u!114 &1651835550840382722 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1938369296310204091, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
@@ -52658,6 +52720,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb16510811448d429cbf83bd74e2b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TossRush.Runtime::TossRush.ScoreGate
+--- !u!23 &3060347082286384552 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2770433128935806481, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+  m_PrefabInstance: {fileID: 867513799838798777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &3407790874199609183 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2540277076508302566, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+  m_PrefabInstance: {fileID: 867513799838798777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5081681076380506115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5372729723683605434, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
@@ -52964,10 +53036,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 126489003081718265, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2701611977309008988}
   m_SourcePrefab: {fileID: 100100000, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
 --- !u!4 &2394602646227940781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5372729723683605434, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
   m_PrefabInstance: {fileID: 7760990084785536535}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &5256954028488663793 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2540277076508302566, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+  m_PrefabInstance: {fileID: 7760990084785536535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5604198793626593286 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2770433128935806481, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+  m_PrefabInstance: {fileID: 7760990084785536535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7671303934909458414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 126489003081718265, guid: da172176d745ec24d9f97b327fd90f64, type: 3}
+  m_PrefabInstance: {fileID: 7760990084785536535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2701611977309008988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7671303934909458414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e384de1c025d818458ea829d7950052b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TossRush.Runtime::TossRush.TrashColorVisual
+  surfaces:
+  - {fileID: 5604198793626593286}
+  - {fileID: 5256954028488663793}
+  red: {fileID: 2100000, guid: 8080aeb3f4f53e645a2a165e16b6fca1, type: 2}
+  green: {fileID: 2100000, guid: d0aa6012cc58edd4696bde5dd3b1ad4e, type: 2}
+  blue: {fileID: 2100000, guid: d387000343bbd9a4e83fb9c90510a903, type: 2}

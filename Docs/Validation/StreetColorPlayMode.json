@@ -1,7 +1,7 @@
 {
     "passed": true,
-    "startFrame": 2693,
-    "endFrame": 3599,
+    "startFrame": 1198,
+    "endFrame": 2424,
     "checks": [
         {
             "name": "Only Street requires colour matching",
@@ -35,12 +35,47 @@
         },
         {
             "name": "Three distinct bin colours",
-            "detail": "Green, Red, Blue",
+            "detail": "Blue, Green, Red",
             "passed": true
         },
         {
             "name": "Bin body and lid match scoring colour",
             "detail": "Each bin's body and lid must use its own colour, including nested bin instances.",
+            "passed": true
+        },
+        {
+            "name": "New visits sample all three bag colours",
+            "detail": "128 entries; colours=3",
+            "passed": true
+        },
+        {
+            "name": "New visits sample all six bin orders",
+            "detail": "Blue,Green,Red / Blue,Red,Green / Green,Blue,Red / Green,Red,Blue / Red,Blue,Green / Red,Green,Blue",
+            "passed": true
+        },
+        {
+            "name": "Every shuffled layout has one bin of each colour",
+            "detail": "128 entries",
+            "passed": true
+        },
+        {
+            "name": "Shuffled bin appearance matches scoring",
+            "detail": "All bodies and lids across 128 entries",
+            "passed": true
+        },
+        {
+            "name": "Repeated throws and pooled reuse keep the same colour and layout",
+            "detail": "512 throws across 128 entries",
+            "passed": true
+        },
+        {
+            "name": "Wrong bins preserve the current visit colour and layout",
+            "detail": "512 wrong entries; -50 each",
+            "passed": true
+        },
+        {
+            "name": "Full projectile pool does not reroll",
+            "detail": "Rejected throw keeps the current assignment",
             "passed": true
         },
         {
@@ -54,8 +89,8 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 0",
-            "detail": "Green",
+            "name": "Throws retain entry colour and bin order 0",
+            "detail": "Red / Green,Red,Blue",
             "passed": true
         },
         {
@@ -74,8 +109,8 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 1",
-            "detail": "Red",
+            "name": "Throws retain entry colour and bin order 1",
+            "detail": "Red / Green,Red,Blue",
             "passed": true
         },
         {
@@ -89,6 +124,11 @@
             "passed": true
         },
         {
+            "name": "Failed attempt keeps colour and bin order 1",
+            "detail": "Red / Green,Red,Blue",
+            "passed": true
+        },
+        {
             "name": "Held bag colour 2",
             "detail": "Red",
             "passed": true
@@ -99,8 +139,8 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 2",
-            "detail": "Green",
+            "name": "Throws retain entry colour and bin order 2",
+            "detail": "Red / Red,Green,Blue",
             "passed": true
         },
         {
@@ -114,6 +154,11 @@
             "passed": true
         },
         {
+            "name": "Failed attempt keeps colour and bin order 2",
+            "detail": "Red / Red,Green,Blue",
+            "passed": true
+        },
+        {
             "name": "Held bag colour 3",
             "detail": "Green",
             "passed": true
@@ -124,8 +169,8 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 3",
-            "detail": "Red",
+            "name": "Throws retain entry colour and bin order 3",
+            "detail": "Green / Blue,Red,Green",
             "passed": true
         },
         {
@@ -139,6 +184,11 @@
             "passed": true
         },
         {
+            "name": "Failed attempt keeps colour and bin order 3",
+            "detail": "Green / Blue,Red,Green",
+            "passed": true
+        },
+        {
             "name": "Held bag colour 4",
             "detail": "Green",
             "passed": true
@@ -149,8 +199,8 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 4",
-            "detail": "Blue",
+            "name": "Throws retain entry colour and bin order 4",
+            "detail": "Green / Green,Red,Blue",
             "passed": true
         },
         {
@@ -169,8 +219,8 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 5",
-            "detail": "Blue",
+            "name": "Throws retain entry colour and bin order 5",
+            "detail": "Green / Blue,Green,Red",
             "passed": true
         },
         {
@@ -184,6 +234,11 @@
             "passed": true
         },
         {
+            "name": "Failed attempt keeps colour and bin order 5",
+            "detail": "Green / Blue,Green,Red",
+            "passed": true
+        },
+        {
             "name": "Held bag colour 6",
             "detail": "Blue",
             "passed": true
@@ -194,8 +249,8 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 6",
-            "detail": "Green",
+            "name": "Throws retain entry colour and bin order 6",
+            "detail": "Blue / Blue,Green,Red",
             "passed": true
         },
         {
@@ -209,6 +264,11 @@
             "passed": true
         },
         {
+            "name": "Failed attempt keeps colour and bin order 6",
+            "detail": "Blue / Blue,Green,Red",
+            "passed": true
+        },
+        {
             "name": "Held bag colour 7",
             "detail": "Blue",
             "passed": true
@@ -219,8 +279,8 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 7",
-            "detail": "Green",
+            "name": "Throws retain entry colour and bin order 7",
+            "detail": "Blue / Red,Green,Blue",
             "passed": true
         },
         {
@@ -234,6 +294,11 @@
             "passed": true
         },
         {
+            "name": "Failed attempt keeps colour and bin order 7",
+            "detail": "Blue / Red,Green,Blue",
+            "passed": true
+        },
+        {
             "name": "Held bag colour 8",
             "detail": "Blue",
             "passed": true
@@ -244,8 +309,8 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 8",
-            "detail": "Red",
+            "name": "Throws retain entry colour and bin order 8",
+            "detail": "Blue / Blue,Red,Green",
             "passed": true
         },
         {
@@ -264,13 +329,18 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 9",
-            "detail": "Green",
+            "name": "Throws retain entry colour and bin order 9",
+            "detail": "Red / Blue,Green,Red",
             "passed": true
         },
         {
             "name": "Outside opening does not score",
             "detail": "Score=0",
+            "passed": true
+        },
+        {
+            "name": "Failed attempt keeps colour and bin order 9",
+            "detail": "Red / Blue,Green,Red",
             "passed": true
         },
         {
@@ -284,13 +354,18 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 10",
-            "detail": "Green",
+            "name": "Throws retain entry colour and bin order 10",
+            "detail": "Red / Blue,Green,Red",
             "passed": true
         },
         {
             "name": "Upward entry does not score",
             "detail": "Score=0",
+            "passed": true
+        },
+        {
+            "name": "Failed attempt keeps colour and bin order 10",
+            "detail": "Red / Blue,Green,Red",
             "passed": true
         },
         {
@@ -304,8 +379,8 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 11",
-            "detail": "Red",
+            "name": "Throws retain entry colour and bin order 11",
+            "detail": "Red / Red,Green,Blue",
             "passed": true
         },
         {
@@ -324,8 +399,8 @@
             "passed": true
         },
         {
-            "name": "Next held bag matches next launch 12",
-            "detail": "Green",
+            "name": "Throws retain entry colour and bin order 12",
+            "detail": "Red / Red,Blue,Green",
             "passed": true
         },
         {
@@ -339,8 +414,18 @@
             "passed": true
         },
         {
+            "name": "Failed attempt keeps colour and bin order 12",
+            "detail": "Red / Red,Blue,Green",
+            "passed": true
+        },
+        {
+            "name": "Normal rotation prepares a fresh Street visit",
+            "detail": "Stage token=177 -> 183; bag=Blue; bins=Blue,Green,Red",
+            "passed": true
+        },
+        {
             "name": "Real player loop advances",
-            "detail": "2693 -> 3599",
+            "detail": "1198 -> 2424",
             "passed": true
         }
     ]

@@ -47,11 +47,15 @@ namespace TossRush.Editor
                     gates[i].trashColor = (TrashColor)(i + 1);
                     PrefabUtility.RecordPrefabInstancePropertyModifications(gates[i]);
                     var marker = gates[i].GetComponentInParent<TargetMarker>();
-                    foreach (var renderer in marker.GetComponentsInChildren<MeshRenderer>(true))
+                    var colorVisual = marker.GetComponent<TrashColorVisual>();
+                    if (!colorVisual) colorVisual = marker.gameObject.AddComponent<TrashColorVisual>();
+                    colorVisual.red = bins[0]; colorVisual.green = bins[1]; colorVisual.blue = bins[2];
+                    colorVisual.surfaces = marker.GetComponentsInChildren<MeshRenderer>(true)
+                        .Where(r => r.GetComponentInParent<TargetMarker>() == marker
+                            && (r.name == "Wheeled Bin Body" || r.name == "Roll Surface")).Cast<Renderer>().ToArray();
+                    colorVisual.Apply(gates[i].trashColor);
+                    foreach (var renderer in colorVisual.surfaces)
                     {
-                        if (renderer.GetComponentInParent<TargetMarker>() != marker) continue;
-                        if (renderer.name != "Wheeled Bin Body" && renderer.name != "Roll Surface") continue;
-                        renderer.sharedMaterial = bins[i];
                         PrefabUtility.RecordPrefabInstancePropertyModifications(renderer);
                     }
                 }
