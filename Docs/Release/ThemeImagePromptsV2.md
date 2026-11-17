@@ -1,0 +1,23 @@
+# Theme image revision prompts
+
+2026-11-16. Built-in image generation; version 2. Each image was generated in its own call. Exported assets retain version 1 separately.
+
+## banner-v2
+
+- C:\Users\sheena\TossRush\Docs\Release\Media\Theme\Banner-960x300.png
+
+Precise object edit for an existing game banner. Edit input image 1 only. REMOVE ONLY the bright yellow target outline/glow around the blue wastebasket on the right. The blue wastebasket must remain in exactly the same location, shape, size and color, with a natural blue rim and ordinary scene edges; reconstruct the tiny exposed room/floor pixels behind the removed yellow outline. Preserve the TOSSRUSH lettering EXACTLY as shown, including all its cream and gold letter colors and dark navy outline. Do NOT remove the yellow from the title, and do not change typography. Preserve the entire room panorama, paper ball, furniture, window, books, rug, lighting, composition and aspect ratio. No new objects, no other changes, no new text. Output the same wide shallow banner, designed to export at exactly 960x300. Opaque background.
+
+## background-carnival-v2
+
+- C:\Users\sheena\TossRush\Docs\Release\Media\Gameplay-Carnival.png
+- C:\Users\sheena\AppData\Local\Temp\codex-clipboard-7cf079f6-d40c-4d13-8d3b-1b213e8836d9.png
+
+Create ONE vertically repeatable seamless website background tile for TossRush, 16:9, ideally 1920x1080. Input 1 is the actual carnival gameplay screenshot: use its low-poly carnival atmosphere, coral and cream striped booths, colorful small pennant bunting, warm string lights, teal accents and distant ferris wheel as scene/style references. Input 2 is the current page screenshot: only use it to understand that a centered 960px-wide opaque page column hides the middle of a 1920px-wide background. This is a WEB BACKGROUND TILE, not a screenshot or website mockup. Keep the middle 58% of the image completely quiet dark desaturated navy/teal #0C202B with no content. Concentrate soft low-contrast carnival vignettes in the far left 21% and far right 21%: cropped simple striped booth roofs, a small row of toy prizes, bunting and gently glowing warm bulbs, a partial ferris wheel far off at one side. No people. Cheerful carnival at dusk, muted orange and mint, dim enough to support readable white page content. CRITICAL: this image must repeat vertically, so the entire TOP 64 pixel band and entire BOTTOM 64 pixel band must BOTH be exactly the SAME uniform solid dark navy #0C202B across the complete width; gently blend each vignette into these identical bands over the adjacent 100 pixels. No clouds, horizon, booth roof, light wire, geometry, gradients or texture may touch the very top or bottom boundary. This is intentional for an invisible vertical tile boundary. Do not fade only the bottom; top AND bottom must match. Do not draw a visible border or panel. No floor plane or horizon that would make each repetition look like stacked screenshots. Decorations should feel like a softly lit, continuous repeating sidebar pattern with spaced carnival scenery. No title, no letters, numbers, logos, HUD, cursor, target highlight or yellow outlines, no watermark. Opaque background.
+
+## embed-simple-v2
+
+- C:\Users\sheena\AppData\Local\Temp\codex-clipboard-7cf079f6-d40c-4d13-8d3b-1b213e8836d9.png
+
+Create ONE minimal 16:9 pre-play background for the TossRush itch.io game frame, final export 960x540. Input image is the current website screenshot showing why the pink-red Run game button is lost against the busy basketball scene. Replace the busy court with a much SIMPLER background. The central 75% of the image must be uninterrupted calm very dark navy / petrol blue around #102632, with only a restrained smooth gradient and absolutely no bright objects, hoops, poles, fence, houses, trees, targets or linework behind the center launch button. The center must have strong contrast against itch.io's coral-red button #FA5C5C. Add ONLY subtle game-themed hints in outer corners: two or three very faint muted teal basketball-court line fragments at the bottom-left edge and one small low-poly basketball silhouette at the extreme bottom-right, maximum 12% of image width, rendered dark muted ochre/brown, not bright orange/red. Keep all those details outside the central 75% width and central 70% height. No visible hoop or goal anywhere. No vignette crowding the central area. No embedded button, no play icon, no title, no text, numbers, badges, UI, border, logos or watermark. Simple flat-shaded aesthetic matching a low-poly arcade game. Opaque background. The result should look almost like a premium solid-color loading backdrop with very restrained corner scenery, not an illustration competing with the launch button.
+
