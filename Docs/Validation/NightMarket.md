@@ -54,4 +54,4 @@
 
 另以 `NightMarketAimValidation.Begin()` 進行 14 組相同偏瞄條件的實際投擲對照：六排中央各偏移水平／垂直 0.7 度，另對 1000 分中央與外側目標各測試四個方向的 1.2 度偏移。舊 8 度姿態、無出手修正時套中 2／14；新 18 度姿態與最多 1.8 度輔助時套中 14／14。14 次綠色提示全部與實際得分一致。這是容錯與預覽一致性測試，不是玩家平均分數。詳細數據見 `NightMarketAimAssist.json`；畫面見 `NightMarketAimGuide.png`、`NightMarketAimReady.png`。
 
-關卡可透過 Unity 選單 `TossRush/Add Night Market Special Mode` 重新建立。此操作會重建夜市資產及同步首頁、玩家持有物件與場景連結。
+一次性的 `Add Night Market Special Mode` 重建工具已移除。夜市場景、Prefab、材質及資料保持為已保存資產，後續直接編輯這些資產。

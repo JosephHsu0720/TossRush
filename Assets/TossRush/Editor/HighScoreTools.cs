@@ -5,13 +5,6 @@ namespace TossRush.Editor
 {
     public static class HighScoreTools
     {
-        [MenuItem("TossRush/Open Prototype")]
-        public static void OpenPrototype()
-        {
-            if (!Application.isPlaying)
-                UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/TossRush/Scenes/TossRush.unity");
-        }
-
         public static void ClearHighScore()
         {
             if (!CanModifyRecords) return;

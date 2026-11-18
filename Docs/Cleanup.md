@@ -1,5 +1,16 @@
 # 專案清理紀錄
 
+## 2026-11-19：移除已完成的固定關卡驗證腳本
+
+`StageToolsValidation.cs` 與其 `.meta` 已移除；它僅用於驗證前次整合，不是固定關卡測試工具的執行相依。保留 `Docs/Validation/StageTools.json` 作為歷史驗證結果。
+
+## 2026-11-18：測試工具整合與一次性 Editor 清理
+
+- 「固定關卡測試」移入 **TossRush → 測試工具**，提供六個關卡選擇、「固定此關卡」及「恢復正常輪替」。遊玩中切換會重新開始一般模式，包含從特殊模式切回測試關卡。
+- 移除圖片中的一次性 Add／Apply／Repair／Refresh／Update 及 Open Prototype 選單。刪除 15 份僅供一次性製作使用的 Editor 腳本與各自 `.meta`，含只被這些工具使用的 DartboardRegionAuthoring 輔助類別。
+- 遊戲場景、Prefab、材質、網格、音效與關卡資料保持原樣；保留測試工具、紀錄操作、驗證程式及可重複使用的 Release 建置工具。
+- 程式編譯通過，場景與 36 份 Prefab 沒有遺失腳本引用。固定關卡檢查 16／16、紀錄工具 9／9 通過，共 25 項；驗證後還原原有紀錄與測試設定。結果見 `Docs/Validation/StageTools.json`、`TestTools.json`，畫面見 `TestTools.png`。
+
 日期：2026-11-11。
 
 ## 已移除

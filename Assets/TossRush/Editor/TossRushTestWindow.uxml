@@ -1,7 +1,19 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements">
     <ui:Style src="TossRushTestWindow.uss" />
+    <ui:ScrollView mode="Vertical" class="tools-scroll">
     <ui:VisualElement class="test-tools">
         <ui:Label text="TossRush 測試工具" class="title" />
+        <ui:Label text="固定關卡測試" class="section-title" />
+        <ui:Label name="stageStatus" class="hint wrapped" />
+        <ui:VisualElement name="stageActions" class="action">
+            <ui:DropdownField name="stageChoice" label="測試關卡" />
+            <ui:VisualElement class="stage-buttons">
+                <ui:Button name="fixStage" text="固定此關卡" />
+                <ui:Button name="normalRotation" text="恢復正常輪替" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Label text="設定後按 Play 和 LET'S TOSS 開始；遊玩中切換會重新開始一般模式回合。" class="hint wrapped" />
+        <ui:Label text="分數與解鎖紀錄" class="section-title" />
         <ui:VisualElement class="records">
             <ui:Label name="normalBest" />
             <ui:Label name="specialBest" />
@@ -20,4 +32,5 @@
         </ui:VisualElement>
         <ui:Label name="lastAction" class="hint wrapped" />
     </ui:VisualElement>
+    </ui:ScrollView>
 </ui:UXML>

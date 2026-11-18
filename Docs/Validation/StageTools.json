@@ -1,0 +1,69 @@
+{
+    "passed": true,
+    "checks": [
+        {
+            "name": "Selects and starts fixed normal stage 0",
+            "passed": true
+        },
+        {
+            "name": "A hit repeats fixed stage 0",
+            "passed": true
+        },
+        {
+            "name": "Selects and starts fixed normal stage 1",
+            "passed": true
+        },
+        {
+            "name": "A hit repeats fixed stage 1",
+            "passed": true
+        },
+        {
+            "name": "Selects and starts fixed normal stage 2",
+            "passed": true
+        },
+        {
+            "name": "A hit repeats fixed stage 2",
+            "passed": true
+        },
+        {
+            "name": "Selects and starts fixed normal stage 3",
+            "passed": true
+        },
+        {
+            "name": "A hit repeats fixed stage 3",
+            "passed": true
+        },
+        {
+            "name": "Selects and starts fixed normal stage 4",
+            "passed": true
+        },
+        {
+            "name": "A hit repeats fixed stage 4",
+            "passed": true
+        },
+        {
+            "name": "Selects and starts fixed normal stage 5",
+            "passed": true
+        },
+        {
+            "name": "A hit repeats fixed stage 5",
+            "passed": true
+        },
+        {
+            "name": "Restore returns to the first normal stage",
+            "passed": true
+        },
+        {
+            "name": "Normal rotation advances after a hit",
+            "passed": true
+        },
+        {
+            "name": "The real player loop advanced",
+            "passed": true
+        },
+        {
+            "name": "Player records restored",
+            "passed": true
+        }
+    ]
+}

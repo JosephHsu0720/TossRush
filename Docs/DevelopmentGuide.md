@@ -25,7 +25,7 @@ A 20-second first-person throwing game prototype made with Unity.
 4. 右上角的向外／向內四角圖示切換畫面大小。Editor 切換 Game View 最大化／還原；執行檔分支切換全螢幕／視窗。遊玩中先按 Esc 再點擊。
 5. 結算後按 **ONE MORE ROUND** 或 **R** 重玩。
 
-固定測試單一關卡：在 Unity 上方選 **TossRush → 固定關卡測試 → 房間／街頭／籃球／園遊會（寶特瓶）／住家（信箱）／酒吧（飛鏢）**，再按 Play 和 LET'S TOSS。命中後會重新準備同一關，保留位置隨機變化；園遊會通過一次後，下次會加入上下移動。20 秒結束後按 R 可繼續測試，重新一回合會重置園遊會解鎖。遊玩中選另一關會立刻重新開始回合；選 **恢復正常輪替** 回到第一關與正常輪替。這個固定模式只在 Editor 生效。
+固定測試單一關卡：在 Unity 上方選 **TossRush → 測試工具**，於「固定關卡測試」選擇房間／街頭／籃球／園遊會（寶特瓶）／住家（信箱）／酒吧（飛鏢），按 **固定此關卡**，再按 Play 和 LET'S TOSS。命中後會重新準備同一關，保留位置隨機變化；園遊會通過一次後，下次會加入上下移動。20 秒結束後按 R 可繼續測試，重新一回合會重置園遊會解鎖。遊玩中套用另一關會立刻重新開始一般模式回合（即使原本在特殊模式）；按 **恢復正常輪替** 回到第一關與正常輪替。
 
 | 順序 | 關卡 | 投擲物／目標 | 計分 |
 |---|---|---|---|
@@ -108,14 +108,11 @@ A 20-second first-person throwing game prototype made with Unity.
 
 ### 開發工具
 
-- **TossRush → 測試工具**：查看最高分與特殊模式解鎖狀態；Clear High Score 同時清除一般／特殊模式高分並保留解鎖，Reset Special Mode Unlock 重設解鎖與一般模式高分。需先停止 Play Mode。
-- 專案自動測試、舊驗證／預覽腳本已移除，保留 **TossRush → 固定關卡測試**。`Docs/Validation/` 內既有報告屬歷史紀錄，不代表目前仍提供相同測試入口。
-- **TossRush → Apply Neighborhood And Rebound Update**：保存五關的門檻計分、人群、物件與信箱／報紙資產；重複執行不增加重複人群或物件。
-- **TossRush → Update Scene Props And Sidewalk Crowd**：只更新各場景的主題擺設與人行道行人動線，移除先前的共用雜物。
-- **TossRush → Apply Mailbox Bottle And Street Scoring**：保存歐式小型信箱、34 m/s 平拋報紙、柔軟垃圾袋、翻轉寶特瓶與街頭扣分／低反彈門檻。
-- **TossRush → Repair Bin And Hoop Entry Detection**：套用街頭三桶 0.65 m 與籃框 0.6 m 的擦邊滾入追蹤；判定使用實際碰撞體中心與壓縮後半徑。
-- **TossRush → Apply Target Variation And Progression**：保存左側信箱配置、受限的左右變化，以及園遊會通關後的上下移動。
-- **Starting Stage Index**：0 房間、1 街頭、2 籃球、3 移動洞口、4 住家門口。
+- **TossRush → 測試工具**：固定測試一般模式的六個關卡或恢復正常輪替；也可查看最高分與特殊模式解鎖狀態。Clear High Score 同時清除兩種模式高分並保留解鎖，Reset Special Mode Unlock 重設解鎖與一般模式高分；這兩項紀錄操作需先停止 Play Mode。
+- 圖示中的一次性 Add／Apply／Repair／Refresh／Update 及 Open Prototype 工具已移除，直接使用現有場景與 Prefab。本文早期章節提及的重建選單屬歷史記錄，不再提供。
+- **TossRush → Release**：保留可重複使用的 Web 建置與封裝工具。
+- `Docs/Validation/` 內既有報告屬歷史紀錄，不代表目前仍提供相同測試入口。
+- **Starting Stage Index**：0 房間、1 街頭、2 籃球、3 園遊會、4 住家門口、5 酒吧。
 - `Assets/TossRush/Data/`：關卡分數、投速、上拋角度、位置／風向隨機範圍、投擲間隔。
 - `Assets/TossRush/Data/Physics/TrashBag.asset`：垃圾袋質量、阻力、自轉、旋轉升力及存留時間。
 - `Assets/TossRush/Prefabs/Targets/StreetTarget.prefab`：桶體、桶蓋碰撞面與矩形計分開口。
@@ -124,7 +121,7 @@ A 20-second first-person throwing game prototype made with Unity.
 - `Assets/TossRush/Prefabs/UI/`：HUD、霓虹箭頭、全螢幕圖示與空心提示。
 - `Assets/TossRush/Materials/TargetOutline.mat`：外框顏色及寬度，目前保留寬度 8。
 
-**TossRush → Apply Street Stage Update** 會重新製作這輪專用資產並重設關卡順序，適合初始化，不是一般啟動按鈕；自行微調後不要隨意重按。
+一次性場景產生器已移除；調整場景、外觀與關卡參數時，直接維護已保存的場景、Prefab、材質與關卡資料。
 
 場景、車輛、目標、投擲物及 UI 都存為 Prefab；遊戲只預先建立投擲物池並重用，不逐項組裝場景或 UI。目前五種投擲物，預設最多 80 個池物件。
 

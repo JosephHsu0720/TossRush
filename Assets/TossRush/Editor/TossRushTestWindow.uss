@@ -1,6 +1,20 @@
+.tools-scroll {
+    flex-grow: 1;
+}
 .test-tools {
     padding: 16px;
+}
+.section-title {
+    -unity-font-style: bold;
+    margin-bottom: 8px;
+}
+.stage-buttons {
+    flex-direction: row;
+    margin-top: 8px;
+}
+.stage-buttons > Button {
     flex-grow: 1;
+    min-height: 30px;
 }
 .title {
     font-size: 18px;

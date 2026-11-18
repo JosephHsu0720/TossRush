@@ -6,54 +6,51 @@ namespace TossRush.Editor
 {
     public static class StagePlaytestTools
     {
-        const string Menu = "TossRush/固定關卡測試/";
+        public static string StageLabel(StageView stage)
+        {
+            if (!stage || !stage.data) return "（缺少關卡）";
+            switch (stage.data.name)
+            {
+                case "Corner": return "房間";
+                case "Street": return "街頭";
+                case "Basketball": return "籃球";
+                case "Carnival": return "園遊會（寶特瓶）";
+                case "Doorstep": return "住家（信箱）";
+                case "Darts": return "酒吧（飛鏢）";
+                default: return stage.data.title;
+            }
+        }
 
-        [MenuItem(Menu + "房間")]
-        static void Room() => SelectStage("Corner");
-        [MenuItem(Menu + "街頭")]
-        static void Street() => SelectStage("Street");
-        [MenuItem(Menu + "籃球")]
-        static void Basketball() => SelectStage("Basketball");
-        [MenuItem(Menu + "園遊會（寶特瓶）")]
-        static void Carnival() => SelectStage("Carnival");
-        [MenuItem(Menu + "住家（信箱）")]
-        static void Doorstep() => SelectStage("Doorstep");
-        [MenuItem(Menu + "酒吧（飛鏢）")]
-        static void Darts() => SelectStage("Darts");
-        [MenuItem(Menu + "恢復正常輪替", false, 20)]
-        static void NormalRotation() => SelectStage(null);
+        public static bool SelectStage(int index) => Configure(index, true);
+        public static bool RestoreNormalRotation() => Configure(0, false);
 
-        static void SelectStage(string stageName)
+        static bool Configure(int index, bool repeat)
         {
             var game = Object.FindFirstObjectByType<GameDirector>();
             if (!game)
             {
                 Debug.LogWarning("請先開啟 Assets/TossRush/Scenes/TossRush.unity，再選擇測試關卡。");
-                return;
+                return false;
             }
 
-            int index = 0;
-            if (stageName != null)
+            if (index < 0 || index >= game.stages.Length || !game.stages[index])
             {
-                index = System.Array.FindIndex(game.stages, stage => stage && stage.data && stage.data.name == stageName);
-                if (index < 0)
-                {
-                    Debug.LogWarning("目前場景沒有這個關卡：" + stageName);
-                    return;
-                }
+                Debug.LogWarning("目前場景沒有選定的測試關卡。");
+                return false;
             }
 
             Undo.RecordObject(game, "Select TossRush playtest stage");
             game.startingStageIndex = index;
-            game.repeatStartingStage = stageName != null;
+            game.repeatStartingStage = repeat;
             Selection.activeGameObject = game.gameObject;
-            if (Application.isPlaying) game.StartRound();
+            if (Application.isPlaying) game.StartNormalRound();
             else
             {
                 PrefabUtility.RecordPrefabInstancePropertyModifications(game);
                 EditorSceneManager.MarkSceneDirty(game.gameObject.scene);
             }
-            Debug.Log(stageName == null ? "已恢復正常關卡輪替。" : "已固定測試「" + game.stages[index].data.title + "」。按 Play 和 LET'S TOSS 開始；遊玩中切換會重新開始回合。");
+            Debug.Log(!repeat ? "已恢復正常關卡輪替。" : "已固定測試「" + game.stages[index].data.title + "」。按 Play 和 LET'S TOSS 開始；遊玩中切換會重新開始回合。");
+            return true;
         }
     }
 }
