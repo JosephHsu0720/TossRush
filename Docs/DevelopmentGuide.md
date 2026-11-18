@@ -108,7 +108,7 @@ A 20-second first-person throwing game prototype made with Unity.
 
 ### 開發工具
 
-- **TossRush → Clear High Score**：清除本機高分。
+- **TossRush → 測試工具**：查看最高分與特殊模式解鎖狀態；Clear High Score 同時清除一般／特殊模式高分並保留解鎖，Reset Special Mode Unlock 重設解鎖與一般模式高分。需先停止 Play Mode。
 - 專案自動測試、舊驗證／預覽腳本已移除，保留 **TossRush → 固定關卡測試**。`Docs/Validation/` 內既有報告屬歷史紀錄，不代表目前仍提供相同測試入口。
 - **TossRush → Apply Neighborhood And Rebound Update**：保存五關的門檻計分、人群、物件與信箱／報紙資產；重複執行不增加重複人群或物件。
 - **TossRush → Update Scene Props And Sidewalk Crowd**：只更新各場景的主題擺設與人行道行人動線，移除先前的共用雜物。

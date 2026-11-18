@@ -471,6 +471,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 615272984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &337280592
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2413852583362224415, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413852583362224415, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413852583362224415, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413852583362224415, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413852583362224415, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413852583362224415, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413852583362224415, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413852583362224415, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413852583362224415, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413852583362224415, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678329309394822512, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_Name
+      value: NightMarketStage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678329309394822512, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+--- !u!114 &337280593 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6093568199984879993, guid: 56f5d88106e1fa34683ca044a5ec5693, type: 3}
+  m_PrefabInstance: {fileID: 337280592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7baf926879a71154098336b04735241e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TossRush.Runtime::TossRush.StageView
 --- !u!1001 &484897375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,6 +653,7 @@ MonoBehaviour:
   - {fileID: 1464261231}
   - {fileID: 484897376}
   - {fileID: 1531109656}
+  specialStage: {fileID: 337280593}
   thrower: {fileID: 140239295}
   hud: {fileID: 636734333}
   poolRoot: {fileID: 1932336096}
@@ -1421,3 +1494,4 @@ SceneRoots:
   - {fileID: 61936608}
   - {fileID: 1773133683}
   - {fileID: 1531109655}
+  - {fileID: 337280592}

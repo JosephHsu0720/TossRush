@@ -1,0 +1,357 @@
+{
+    "passed": true,
+    "startFrame": 1585,
+    "endFrame": 3643,
+    "checks": [
+        {
+            "name": "Six distance-ordered rows use the requested points and ring-diameter spacing",
+            "passed": true,
+            "detail": "Targets=46; points=20/50/100/250/500/1000"
+        },
+        {
+            "name": "Every row has more targets, totalling 46 prizes",
+            "passed": true,
+            "detail": "Counts=11/11/7/7/5/5"
+        },
+        {
+            "name": "Rear prize rows stand progressively higher",
+            "passed": true,
+            "detail": "Base heights=0.20/0.65/1.10/1.55/2.00/2.45"
+        },
+        {
+            "name": "Every prize plinth rests on a solid support",
+            "passed": true,
+            "detail": "Checked=46"
+        },
+        {
+            "name": "All six centre prizes are visible from the resting camera",
+            "passed": true,
+            "detail": "Viewport bounds and unobstructed capture sections"
+        },
+        {
+            "name": "Special entry uses a separate stage and a 20-second clock",
+            "passed": true,
+            "detail": "Remaining=19.97909; regular stages=6"
+        },
+        {
+            "name": "Physical ring colliders leave the centre open",
+            "passed": true,
+            "detail": "Sphere colliders=32; inner radius=0.23"
+        },
+        {
+            "name": "Special scoring excludes regular clean/rebound bonuses",
+            "passed": true,
+            "detail": "Clean=0"
+        },
+        {
+            "name": "Held ring front is slightly higher than its back",
+            "passed": true,
+            "detail": "Held angles=(342.00, 0.00, 0.00)"
+        },
+        {
+            "name": "Swept centred descent captures a target",
+            "passed": true,
+            "detail": "Four metre sweep"
+        },
+        {
+            "name": "Upward and side entries are rejected",
+            "passed": true,
+            "detail": "Direction boundaries"
+        },
+        {
+            "name": "Side overlap without full hole clearance is rejected",
+            "passed": true,
+            "detail": "Offset .2 > inner-minus-neck .16"
+        },
+        {
+            "name": "A vertical ring is rejected",
+            "passed": true,
+            "detail": "Ninety degree tilt"
+        },
+        {
+            "name": "A ring starting below the capture section is rejected",
+            "passed": true,
+            "detail": "Below-to-below"
+        },
+        {
+            "name": "Falling ring scores row 1 exactly once",
+            "passed": true,
+            "detail": "Score=20; expected=20; hits=1"
+        },
+        {
+            "name": "Row 1 hit stays in the special stage",
+            "passed": true,
+            "detail": "Token=26"
+        },
+        {
+            "name": "Resolved row 1 cannot score again",
+            "passed": true,
+            "detail": "Score=20"
+        },
+        {
+            "name": "Captured row 1 stays visible and dark with colliders intact",
+            "passed": true,
+            "detail": "Claimed=True"
+        },
+        {
+            "name": "A second ring cannot claim row 1 again",
+            "passed": true,
+            "detail": "Score=20"
+        },
+        {
+            "name": "Falling ring scores row 2 exactly once",
+            "passed": true,
+            "detail": "Score=70; expected=70; hits=2"
+        },
+        {
+            "name": "Row 2 hit stays in the special stage",
+            "passed": true,
+            "detail": "Token=26"
+        },
+        {
+            "name": "Resolved row 2 cannot score again",
+            "passed": true,
+            "detail": "Score=70"
+        },
+        {
+            "name": "Captured row 2 stays visible and dark with colliders intact",
+            "passed": true,
+            "detail": "Claimed=True"
+        },
+        {
+            "name": "A second ring cannot claim row 2 again",
+            "passed": true,
+            "detail": "Score=70"
+        },
+        {
+            "name": "Falling ring scores row 3 exactly once",
+            "passed": true,
+            "detail": "Score=170; expected=170; hits=3"
+        },
+        {
+            "name": "Row 3 hit stays in the special stage",
+            "passed": true,
+            "detail": "Token=26"
+        },
+        {
+            "name": "Resolved row 3 cannot score again",
+            "passed": true,
+            "detail": "Score=170"
+        },
+        {
+            "name": "Captured row 3 stays visible and dark with colliders intact",
+            "passed": true,
+            "detail": "Claimed=True"
+        },
+        {
+            "name": "A second ring cannot claim row 3 again",
+            "passed": true,
+            "detail": "Score=170"
+        },
+        {
+            "name": "Falling ring scores row 4 exactly once",
+            "passed": true,
+            "detail": "Score=420; expected=420; hits=4"
+        },
+        {
+            "name": "Row 4 hit stays in the special stage",
+            "passed": true,
+            "detail": "Token=26"
+        },
+        {
+            "name": "Resolved row 4 cannot score again",
+            "passed": true,
+            "detail": "Score=420"
+        },
+        {
+            "name": "Captured row 4 stays visible and dark with colliders intact",
+            "passed": true,
+            "detail": "Claimed=True"
+        },
+        {
+            "name": "A second ring cannot claim row 4 again",
+            "passed": true,
+            "detail": "Score=420"
+        },
+        {
+            "name": "Falling ring scores row 5 exactly once",
+            "passed": true,
+            "detail": "Score=920; expected=920; hits=5"
+        },
+        {
+            "name": "Row 5 hit stays in the special stage",
+            "passed": true,
+            "detail": "Token=26"
+        },
+        {
+            "name": "Resolved row 5 cannot score again",
+            "passed": true,
+            "detail": "Score=920"
+        },
+        {
+            "name": "Captured row 5 stays visible and dark with colliders intact",
+            "passed": true,
+            "detail": "Claimed=True"
+        },
+        {
+            "name": "A second ring cannot claim row 5 again",
+            "passed": true,
+            "detail": "Score=920"
+        },
+        {
+            "name": "Falling ring scores row 6 exactly once",
+            "passed": true,
+            "detail": "Score=1920; expected=1920; hits=6"
+        },
+        {
+            "name": "Row 6 hit stays in the special stage",
+            "passed": true,
+            "detail": "Token=26"
+        },
+        {
+            "name": "Resolved row 6 cannot score again",
+            "passed": true,
+            "detail": "Score=1920"
+        },
+        {
+            "name": "Captured row 6 stays visible and dark with colliders intact",
+            "passed": true,
+            "detail": "Claimed=True"
+        },
+        {
+            "name": "A second ring cannot claim row 6 again",
+            "passed": true,
+            "detail": "Score=1920"
+        },
+        {
+            "name": "Wind varies slowly during the round",
+            "passed": true,
+            "detail": "Before=(-0.13, 0.00, -0.09); after=(0.47, 0.00, 0.16)"
+        },
+        {
+            "name": "A physical off-centre miss earns no points",
+            "passed": true,
+            "detail": "Score=0"
+        },
+        {
+            "name": "An old stage token is rejected",
+            "passed": true,
+            "detail": "Shot token=26"
+        },
+        {
+            "name": "Legal controller throw reaches the predicted capture section for SMALL FIGURES 6",
+            "passed": true,
+            "detail": "Pitch=26.35005; yaw=0.3178423; predicted error=0.001051018; capture offset=0.001051018; hole clearance=0.14; origin=(0.00, 1.43, -5.55)"
+        },
+        {
+            "name": "Controller throw rewards retention and rejects escape for SMALL FIGURES 6",
+            "passed": true,
+            "detail": "Retained=True; score=20; collisions=16"
+        },
+        {
+            "name": "Legal controller throw reaches the predicted capture section for LARGE FIGURES 5",
+            "passed": true,
+            "detail": "Pitch=15.85001; yaw=-2.830513; predicted error=0.005307787; capture offset=0.005307787; hole clearance=0.105; origin=(-0.02, 1.51, -5.52)"
+        },
+        {
+            "name": "Controller throw rewards retention and rejects escape for LARGE FIGURES 5",
+            "passed": true,
+            "detail": "Retained=True; score=50; collisions=18"
+        },
+        {
+            "name": "Legal controller throw reaches the predicted capture section for WATER BOTTLES 4",
+            "passed": true,
+            "detail": "Pitch=9.225015; yaw=0.4765352; predicted error=0.00561359; capture offset=0.07441507; hole clearance=0.175; origin=(0.00, 1.57, -5.51)"
+        },
+        {
+            "name": "Controller throw rewards retention and rejects escape for WATER BOTTLES 4",
+            "passed": true,
+            "detail": "Retained=True; score=100; collisions=26"
+        },
+        {
+            "name": "Legal controller throw reaches the predicted capture section for TIN CANS 3",
+            "passed": true,
+            "detail": "Pitch=4.400023; yaw=-4.603819; predicted error=0.003910483; capture offset=0.003910483; hole clearance=0.145; origin=(-0.04, 1.61, -5.50)"
+        },
+        {
+            "name": "Controller throw rewards retention and rejects escape for TIN CANS 3",
+            "passed": true,
+            "detail": "Retained=True; score=250; collisions=13"
+        },
+        {
+            "name": "Legal controller throw reaches the predicted capture section for BEER CANS 3",
+            "passed": true,
+            "detail": "Pitch=-2.799978; yaw=0.03956468; predicted error=0.0008734245; capture offset=0.0008734245; hole clearance=0.145; origin=(0.00, 1.67, -5.50)"
+        },
+        {
+            "name": "Controller throw rewards retention and rejects escape for BEER CANS 3",
+            "passed": true,
+            "detail": "Retained=True; score=500; collisions=16"
+        },
+        {
+            "name": "Legal controller throw reaches the predicted capture section for PREMIUM BOTTLES 2",
+            "passed": true,
+            "detail": "Pitch=-11.19997; yaw=-2.375382; predicted error=0.001247666; capture offset=0.001247666; hole clearance=0.175; origin=(-0.02, 1.75, -5.51)"
+        },
+        {
+            "name": "Controller throw rewards retention and rejects escape for PREMIUM BOTTLES 2",
+            "passed": true,
+            "detail": "Retained=True; score=1000; collisions=21"
+        },
+        {
+            "name": "Legal controller throw reaches the predicted capture section for PREMIUM BOTTLES 5",
+            "passed": true,
+            "detail": "Pitch=-15.27497; yaw=21.95643; predicted error=0.002950745; capture offset=0.002950745; hole clearance=0.175; origin=(0.18, 1.78, -5.55)"
+        },
+        {
+            "name": "Controller throw rewards retention and rejects escape for PREMIUM BOTTLES 5",
+            "passed": true,
+            "detail": "Retained=True; score=1000; collisions=17"
+        },
+        {
+            "name": "Replay keeps special mode and clears the previous score",
+            "passed": true,
+            "detail": "Remaining=19.99908"
+        },
+        {
+            "name": "Replay restores every prize's original color and eligibility",
+            "passed": true,
+            "detail": "Restored=46"
+        },
+        {
+            "name": "Live wind changes an airborne ring's horizontal velocity",
+            "passed": true,
+            "detail": "Wind=(1.75, 0.00, 0.51); velocity=(0.45, -10.43, 0.11)"
+        },
+        {
+            "name": "The wall-clock deadline rejects late ring rewards immediately",
+            "passed": true,
+            "detail": "Score=0"
+        },
+        {
+            "name": "Timeout shows a result and retires every projectile",
+            "passed": true,
+            "detail": "Playing=False"
+        },
+        {
+            "name": "Result menu button restores the main menu",
+            "passed": true,
+            "detail": "Menu=True"
+        },
+        {
+            "name": "Normal entry retains all six original stages",
+            "passed": true,
+            "detail": "Stage=CornerStage"
+        },
+        {
+            "name": "Normal successful shots still advance to the next stage",
+            "passed": true,
+            "detail": "Stage=StreetStage"
+        },
+        {
+            "name": "Player loop advances throughout validation",
+            "passed": true,
+            "detail": "Frames=2058"
+        }
+    ]
+}

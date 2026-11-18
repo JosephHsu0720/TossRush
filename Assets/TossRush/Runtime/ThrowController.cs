@@ -10,6 +10,8 @@ namespace TossRush
         public Transform throwOrigin;
         public GameObject[] heldItems;
         public LineRenderer trajectory;
+        public RingAimGuidance ringAim;
+        public Vector3 LastLaunchVelocity { get; private set; }
         [Range(0.01f, 1)] public float sensitivity = 0.13f;
         [Range(-10, 20)] public float restingPitch = 6f;
         float yaw, pitch, nextThrow;
@@ -61,7 +63,7 @@ namespace TossRush
         void Update()
         {
             bool playing = game.IsPlaying;
-            trajectory.enabled = game.CanThrow && Cursor.lockState == CursorLockMode.Locked;
+            trajectory.enabled = game.CanThrow && Cursor.lockState == CursorLockMode.Locked && !game.ActiveStage.data.ringToss;
             if (!playing) return;
             var keyboard = Keyboard.current;
             if (keyboard != null && keyboard.escapeKey.wasPressedThisFrame) { SetCursor(false); return; }
@@ -85,7 +87,11 @@ namespace TossRush
         public bool TryThrow()
         {
             if (!game.CanThrow || Time.time < nextThrow) return false;
-            if (!game.Launch(LaunchPosition, LaunchVelocity)) return false;
+            Vector3 velocity = LaunchVelocity;
+            if (ringAim && ringAim.AimAssistEnabled && game.ActiveStage.data.ringToss)
+            { ringAim.Refresh(true); velocity = ringAim.AssistedVelocity; }
+            if (!game.Launch(LaunchPosition, velocity)) return false;
+            LastLaunchVelocity = velocity;
             nextThrow = Time.time + game.ActiveStage.data.throwInterval;
             return true;
         }

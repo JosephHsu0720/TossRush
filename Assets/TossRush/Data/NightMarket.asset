@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ab102b18f102047bfd0b7d7dff5743, type: 3}
+  m_Name: NightMarket
+  m_EditorClassIdentifier: TossRush.Runtime::TossRush.StageData
+  title: NIGHT MARKET / RING TOSS
+  ringToss: 1
+  changingWind: 1
+  windChangeSpeed: 0.18
+  instruction: FOLLOW THE LANDING RING / GREEN = READY / LEFT CLICK TO THROW
+  accent: {r: 1, g: 0.68, b: 0.23, a: 1}
+  points: 20
+  cleanShotBonus: 0
+  pointsPerPropCollision: 0
+  minimumReboundSpeed: 1.5
+  pedestrianHitPenalty: 0
+  matchTrashColors: 0
+  wrongBinPenalty: 50
+  heldItemIndex: 6
+  launchSpeed: 15.5
+  throwLoft: 18
+  horizontalThrow: 0
+  playerForwardOffset: 0
+  physicsProfile: {fileID: 11400000, guid: 55bd1df4430c12f43bc6c54a88032bff, type: 2}
+  gravityScale: 1
+  wind: {x: 0.9, y: 0, z: 0.2}
+  windInfluence: 1
+  windLineWidthMultiplier: 0.8
+  throwInterval: 0.32
+  projectileRadius: 0.03
+  targetRadius: 1
+  motionAmplitude: 0
+  motionSpeed: 1.4
+  motionSpeedAfterFirstClear: 1
+  verticalMotionAmplitude: 0
+  verticalMotionSpeed: 1.2
+  verticalMotionUnlockHits: 1
+  randomize: 0
+  horizontalOffsetRange: {x: -0.8, y: 0.8}
+  minimumHorizontalDistanceFromCenter: 0
+  minimumHorizontalChange: 0
+  depthOffsetRange: {x: -0.25, y: 0.25}
+  windSpeedRange: {x: 0.5, y: 2.1}
+  windDirectionSpread: 15
+  projectilePrefab: {fileID: 6112865872189597505, guid: ed4f7d0cbc66663499db4aeea9d49078, type: 3}
+  projectileEulerAngles: {x: -18, y: 0, z: 0}

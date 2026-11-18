@@ -7,6 +7,7 @@ namespace TossRush
     public sealed class GameDirector : MonoBehaviour
     {
         public StageView[] stages;
+        public StageView specialStage;
         public ThrowController thrower;
         public GameHUD hud;
         public Transform poolRoot;
@@ -25,7 +26,8 @@ namespace TossRush
         public bool IsTransitioning { get; private set; }
         public bool CanScore => IsPlaying && !IsTransitioning && Time.realtimeSinceStartupAsDouble < roundEnd;
         public bool CanThrow => CanScore;
-        public StageView ActiveStage => stages[stageIndex];
+        public bool IsSpecialMode { get; private set; }
+        public StageView ActiveStage => IsSpecialMode ? specialStage : stages[stageIndex];
         public int StageToken { get; private set; }
         public int Score { get; private set; }
         public int Best { get; private set; }
@@ -43,27 +45,37 @@ namespace TossRush
         double roundEnd, transitionStart;
         bool hasResult, transitionActivated;
         public const string BestKey = "TossRush.Best.v1";
+        public const string SpecialBestKey = "TossRush.RingToss.Best.v1";
+        public const string SpecialUnlockKey = "TossRush.RingToss.Unlocked.v1";
+        public const int SpecialUnlockScore = 1200;
+        public int SpecialUnlockProgress => PlayerPrefs.GetInt(BestKey, 0);
+        public bool SpecialModeUnlocked => PlayerPrefs.GetInt(SpecialUnlockKey, 0) == 1
+            || SpecialUnlockProgress >= SpecialUnlockScore;
+        string CurrentBestKey => IsSpecialMode ? SpecialBestKey : BestKey;
 
         void Awake()
         {
             Best = PlayerPrefs.GetInt(BestKey, 0);
+            CheckSpecialModeUnlock();
             Physics.IgnoreLayerCollision(8, 8);
             Physics.IgnoreLayerCollision(8, 9);
             // Release any authored stage atmosphere before selecting the menu stage.
             foreach (var stage in stages) stage.gameObject.SetActive(false);
+            if (specialStage) specialStage.gameObject.SetActive(false);
             var sharedPools = new Dictionary<Projectile, List<Projectile>>();
-            for (int i = 0; i < stages.Length; i++)
+            for (int i = 0; i < stages.Length + (specialStage ? 1 : 0); i++)
             {
-                stages[i].Initialize(this);
-                if (!sharedPools.TryGetValue(stages[i].data.projectilePrefab, out var pool))
+                var stage = i < stages.Length ? stages[i] : specialStage;
+                stage.Initialize(this);
+                if (!sharedPools.TryGetValue(stage.data.projectilePrefab, out var pool))
                 {
                     pool = new List<Projectile>();
-                    sharedPools.Add(stages[i].data.projectilePrefab, pool);
+                    sharedPools.Add(stage.data.projectilePrefab, pool);
                     for (int j = 0; j < poolSizePerStage; j++)
                     {
-                        var shot = Instantiate(stages[i].data.projectilePrefab, poolRoot);
+                        var shot = Instantiate(stage.data.projectilePrefab, poolRoot);
                         shot.Owner = this;
-                        shot.name = stages[i].data.title + " Shot " + j;
+                        shot.name = stage.data.title + " Shot " + j;
                         shot.Retire();
                         pool.Add(shot); allShots.Add(shot);
                     }
@@ -79,20 +91,51 @@ namespace TossRush
 
         public void StartRound()
         {
+            if (IsSpecialMode && !SpecialModeUnlocked) return;
             RetireAll();
             Score = Hits = Throws = 0;
             foreach (var stage in stages) stage.ResetRoundProgress();
+            if (specialStage) specialStage.ResetRoundProgress();
             LastAward = LastBonus = 0;
             LastWasClean = false;
             hasResult = false;
             IsTransitioning = false;
             IsPlaying = true;
             // A jam round has a wall-clock deadline, including stalls and lost browser focus.
-            roundEnd = Time.realtimeSinceStartupAsDouble + roundDuration;
+            roundEnd = Time.realtimeSinceStartupAsDouble + CurrentRoundDuration;
             ActivateStage(Mathf.Clamp(startingStageIndex, 0, stages.Length - 1));
             hud.ShowPlay();
             thrower.SetCursor(true);
             if (gameAudio) gameAudio.Play(gameAudio.start);
+        }
+
+        public float CurrentRoundDuration => IsSpecialMode ? 20f : roundDuration;
+
+        public void StartNormalRound()
+        {
+            IsSpecialMode = false;
+            Best = PlayerPrefs.GetInt(BestKey, 0);
+            StartRound();
+        }
+
+        public void StartSpecialRound()
+        {
+            CheckSpecialModeUnlock();
+            if (!specialStage || !SpecialModeUnlocked) return;
+            IsSpecialMode = true;
+            Best = PlayerPrefs.GetInt(SpecialBestKey, 0);
+            StartRound();
+        }
+
+        public void ReturnToMenu()
+        {
+            IsPlaying = IsTransitioning = hasResult = false;
+            RetireAll();
+            IsSpecialMode = false;
+            Best = PlayerPrefs.GetInt(BestKey, 0);
+            ActivateStage(0);
+            thrower.SetCursor(false);
+            hud.ShowMenu(Best);
         }
 
         void Update()
@@ -121,7 +164,7 @@ namespace TossRush
         public bool Launch(Vector3 position, Vector3 velocity)
         {
             if (!CanThrow) return false;
-            foreach (var shot in pools[stageIndex])
+            foreach (var shot in pools[IsSpecialMode ? stages.Length : stageIndex])
             {
                 if (shot.InFlight) continue;
                 shot.Launch(ActiveStage.data, StageToken, position, velocity, ActiveStage.CurrentWind, NextTrashColor);
@@ -150,6 +193,7 @@ namespace TossRush
             LastBonus = LastWasClean ? data.cleanShotBonus : 0;
             LastAward = data.points + LastBonus + shot.PendingCollisionPoints;
             Score += LastAward;
+            CheckSpecialModeUnlock();
             Hits++;
             ActiveStage.RecordClear();
             string detail = LastWasClean ? "CLEAN SHOT" : "NICE SHOT";
@@ -158,6 +202,23 @@ namespace TossRush
             if (gameAudio) gameAudio.Play(hitClip, .85f);
             else if (hitClip) audioSource.PlayOneShot(hitClip, .68f);
             BeginTransition();
+        }
+
+        public void RegisterRingHit(Projectile shot, RingTarget target)
+        {
+            if (!CanScore || !IsSpecialMode || !target || target.stage != ActiveStage || !shot
+                || shot.Owner != this || !shot.InFlight || shot.Scored || shot.StageToken != StageToken) return;
+            if (!target.TryScore(shot) || !target.TryClaim()) return;
+            shot.MarkScored();
+            LastWasClean = false;
+            LastBonus = 0;
+            LastAward = target.points;
+            Score += LastAward;
+            Hits++;
+            ActiveStage.RecordClear();
+            hud.ShowCollision(LastAward, target.CapturePosition, thrower.view, ActiveStage.data.accent);
+            hud.ShowFeedback("+" + LastAward + "   RING ON!", ActiveStage.data.accent);
+            if (gameAudio) gameAudio.Play(hitClip, .85f);
         }
 
         void PrepareStageTrashBag()
@@ -202,6 +263,7 @@ namespace TossRush
         {
             if (!CanScore || !prop || prop.stage != ActiveStage || !prop.KnockedDown || prop.knockdownPoints <= 0) return;
             Score += prop.knockdownPoints;
+            CheckSpecialModeUnlock();
             if (gameAudio && gameAudio.playRewardSounds) gameAudio.Play(gameAudio.reward, .65f);
             hud.collisionFeedback.Show(prop.knockdownPoints, prop.transform.position, thrower.view, ActiveStage.data.accent, false);
         }
@@ -225,7 +287,8 @@ namespace TossRush
             StageToken++;
             // Let the previous stage restore its lighting before the next one takes it.
             for (int i = 0; i < stages.Length; i++)
-                if (i != index) stages[i].gameObject.SetActive(false);
+                if (IsSpecialMode || i != index) stages[i].gameObject.SetActive(false);
+            if (specialStage) specialStage.gameObject.SetActive(IsSpecialMode);
             ActiveStage.gameObject.SetActive(true);
             ActiveStage.ResetStage();
             PrepareStageTrashBag();
@@ -234,11 +297,12 @@ namespace TossRush
 
         void FinishRound()
         {
+            CheckSpecialModeUnlock();
             IsPlaying = IsTransitioning = false;
             hasResult = true;
             RetireAll();
             bool newRecord = Score > Best;
-            if (newRecord) { Best = Score; PlayerPrefs.SetInt(BestKey, Best); PlayerPrefs.Save(); }
+            if (newRecord) { Best = Score; PlayerPrefs.SetInt(CurrentBestKey, Best); PlayerPrefs.Save(); }
             thrower.SetCursor(false);
             hud.SetTransition(0);
             hud.ShowResult(Score, Best, Hits, Throws, newRecord);
@@ -247,14 +311,24 @@ namespace TossRush
 
         public void ClearHighScore()
         {
+            CheckSpecialModeUnlock();
             Best = 0;
             PlayerPrefs.DeleteKey(BestKey);
+            PlayerPrefs.DeleteKey(SpecialBestKey);
             PlayerPrefs.Save();
             if (!IsPlaying)
             {
                 if (hasResult) hud.ShowResult(Score, 0, Hits, Throws, false);
                 else hud.ShowMenu(0);
             }
+        }
+
+        void CheckSpecialModeUnlock()
+        {
+            if (PlayerPrefs.GetInt(SpecialUnlockKey, 0) == 1) return;
+            if (SpecialUnlockProgress < SpecialUnlockScore && (!IsPlaying || IsSpecialMode || Score < SpecialUnlockScore)) return;
+            PlayerPrefs.SetInt(SpecialUnlockKey, 1);
+            PlayerPrefs.Save();
         }
 
         void RetireAll() { foreach (var shot in allShots) shot.Retire(); }

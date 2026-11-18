@@ -1,0 +1,102 @@
+{
+    "complete": true,
+    "passed": true,
+    "frames": 142,
+    "checks": [
+        {
+            "name": "Fresh player is locked even with an old special-mode record",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Locked button callback cannot bypass mode entry",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Direct special entry is also guarded",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Existing menu has one EventSystem and a raycastable Canvas",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Locked button shows single-round normal best and the 1200 requirement",
+            "passed": true,
+            "detail": "SPECIAL MODE / RING TOSS\n<size=12>UNLOCK: LET'S TOSS 0800 / 1200</size>"
+        },
+        {
+            "name": "Locked button is dark but the condition text remains readable",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "1199 best remains locked and displays exact progress",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Let's Toss still starts normal mode while special is locked",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "A real normal reward reaching 1199 does not unlock",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "A real normal reward reaching exactly 1200 unlocks immediately",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Unlock survives later score loss and leaving before the result",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Unlocked button restores normal entry text and interaction",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Unlocked title fits its existing button",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Unlocked menu button enters the 20-second ring-toss round",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Clearing a score does not revoke a permanent unlock",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Existing normal best of 1200 grants access",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Old qualifying record is migrated to a saved permanent unlock",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Crossing the threshold above 1200 also unlocks",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Two 600-point rounds are not added together for unlocking",
+            "passed": true,
+            "detail": ""
+        }
+    ]
+}

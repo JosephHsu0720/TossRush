@@ -1,0 +1,539 @@
+{
+    "model": "Trajectory-assisted, high-value-first simulated player; not measured human players",
+    "timing": "Real 20-second wall-clock rounds, normal time scale and physics step",
+    "requestedRounds": 30,
+    "completedRounds": 30,
+    "seed": 20261117,
+    "maximumAvailableScore": 10720,
+    "aimErrorStdDegrees": 0.6499999761581421,
+    "roundBiasStdDegrees": 0.15000000596046449,
+    "initialAimSeconds": 1.0,
+    "minimumAimSeconds": 0.8500000238418579,
+    "maximumAimSeconds": 1.149999976158142,
+    "meanScore": 6208.333333333333,
+    "medianScore": 6000.0,
+    "sampleStdDev": 751.6743761869843,
+    "mean95CiLow": 5927.685023666466,
+    "mean95CiHigh": 6488.9816430002,
+    "meanThrows": 19.466666666666666,
+    "meanHits": 7.566666666666666,
+    "hitRate": 0.3886986301369863,
+    "percentile10": 5500.0,
+    "percentile90": 7250.0,
+    "minimumScore": 5000,
+    "maximumScore": 7750,
+    "complete": true,
+    "failure": "",
+    "rounds": [
+        {
+            "round": 1,
+            "seed": 20261117,
+            "score": 7500,
+            "throws": 19,
+            "hits": 10,
+            "wallSeconds": 20.009306100022515,
+            "physicsSeconds": 20.01999290674603,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                5,
+                5
+            ]
+        },
+        {
+            "round": 2,
+            "seed": 20261118,
+            "score": 5000,
+            "throws": 18,
+            "hits": 6,
+            "wallSeconds": 20.011865000007675,
+            "physicsSeconds": 20.01999290674603,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                2,
+                4
+            ]
+        },
+        {
+            "round": 3,
+            "seed": 20261119,
+            "score": 7000,
+            "throws": 19,
+            "hits": 10,
+            "wallSeconds": 20.01355519995559,
+            "physicsSeconds": 19.9999929138322,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                2,
+                3,
+                5
+            ]
+        },
+        {
+            "round": 4,
+            "seed": 20261120,
+            "score": 7250,
+            "throws": 19,
+            "hits": 10,
+            "wallSeconds": 20.01505869999528,
+            "physicsSeconds": 20.01999290674604,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                1,
+                4,
+                5
+            ]
+        },
+        {
+            "round": 5,
+            "seed": 20261121,
+            "score": 6000,
+            "throws": 20,
+            "hits": 7,
+            "wallSeconds": 20.013845700013918,
+            "physicsSeconds": 19.9999929138322,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                2,
+                5
+            ]
+        },
+        {
+            "round": 6,
+            "seed": 20261122,
+            "score": 5500,
+            "throws": 20,
+            "hits": 6,
+            "wallSeconds": 20.014590999984649,
+            "physicsSeconds": 20.01999290674604,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                1,
+                5
+            ]
+        },
+        {
+            "round": 7,
+            "seed": 20261123,
+            "score": 6000,
+            "throws": 19,
+            "hits": 7,
+            "wallSeconds": 20.018518699973357,
+            "physicsSeconds": 20.019992906746027,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                2,
+                5
+            ]
+        },
+        {
+            "round": 8,
+            "seed": 20261124,
+            "score": 7750,
+            "throws": 19,
+            "hits": 11,
+            "wallSeconds": 20.024394499952906,
+            "physicsSeconds": 19.999992913832217,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                1,
+                5,
+                5
+            ]
+        },
+        {
+            "round": 9,
+            "seed": 20261125,
+            "score": 6000,
+            "throws": 20,
+            "hits": 7,
+            "wallSeconds": 20.011424500029535,
+            "physicsSeconds": 20.01999290674604,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                2,
+                5
+            ]
+        },
+        {
+            "round": 10,
+            "seed": 20261126,
+            "score": 6000,
+            "throws": 19,
+            "hits": 8,
+            "wallSeconds": 20.01853200001642,
+            "physicsSeconds": 20.019992906746013,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                4,
+                4
+            ]
+        },
+        {
+            "round": 11,
+            "seed": 20261127,
+            "score": 5500,
+            "throws": 20,
+            "hits": 6,
+            "wallSeconds": 20.01494800002547,
+            "physicsSeconds": 20.019992906746013,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                1,
+                5
+            ]
+        },
+        {
+            "round": 12,
+            "seed": 20261128,
+            "score": 6000,
+            "throws": 20,
+            "hits": 7,
+            "wallSeconds": 20.019028200011236,
+            "physicsSeconds": 20.019992906746013,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                2,
+                5
+            ]
+        },
+        {
+            "round": 13,
+            "seed": 20261129,
+            "score": 5500,
+            "throws": 19,
+            "hits": 6,
+            "wallSeconds": 20.019137000024786,
+            "physicsSeconds": 20.039992899659866,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                1,
+                5
+            ]
+        },
+        {
+            "round": 14,
+            "seed": 20261130,
+            "score": 6500,
+            "throws": 19,
+            "hits": 8,
+            "wallSeconds": 20.023007999989205,
+            "physicsSeconds": 20.01999290674604,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                3,
+                5
+            ]
+        },
+        {
+            "round": 15,
+            "seed": 20261131,
+            "score": 5500,
+            "throws": 20,
+            "hits": 6,
+            "wallSeconds": 20.012390599993524,
+            "physicsSeconds": 20.01999290674604,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                1,
+                5
+            ]
+        },
+        {
+            "round": 16,
+            "seed": 20261132,
+            "score": 7000,
+            "throws": 20,
+            "hits": 9,
+            "wallSeconds": 20.011297399993056,
+            "physicsSeconds": 19.999992913832217,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                4,
+                5
+            ]
+        },
+        {
+            "round": 17,
+            "seed": 20261133,
+            "score": 7000,
+            "throws": 20,
+            "hits": 9,
+            "wallSeconds": 20.013412899977994,
+            "physicsSeconds": 20.01999290674604,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                4,
+                5
+            ]
+        },
+        {
+            "round": 18,
+            "seed": 20261134,
+            "score": 5500,
+            "throws": 20,
+            "hits": 6,
+            "wallSeconds": 20.019495100015776,
+            "physicsSeconds": 19.99999291383216,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                1,
+                5
+            ]
+        },
+        {
+            "round": 19,
+            "seed": 20261135,
+            "score": 7000,
+            "throws": 19,
+            "hits": 9,
+            "wallSeconds": 20.016773600014859,
+            "physicsSeconds": 20.01999290674604,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                4,
+                5
+            ]
+        },
+        {
+            "round": 20,
+            "seed": 20261136,
+            "score": 6000,
+            "throws": 20,
+            "hits": 7,
+            "wallSeconds": 20.03020410001045,
+            "physicsSeconds": 20.019992906745985,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                2,
+                5
+            ]
+        },
+        {
+            "round": 21,
+            "seed": 20261137,
+            "score": 6500,
+            "throws": 19,
+            "hits": 8,
+            "wallSeconds": 20.01742439996451,
+            "physicsSeconds": 20.019992906745985,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                3,
+                5
+            ]
+        },
+        {
+            "round": 22,
+            "seed": 20261138,
+            "score": 5500,
+            "throws": 20,
+            "hits": 6,
+            "wallSeconds": 20.019603899971118,
+            "physicsSeconds": 20.019992906745985,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                1,
+                5
+            ]
+        },
+        {
+            "round": 23,
+            "seed": 20261139,
+            "score": 5500,
+            "throws": 20,
+            "hits": 6,
+            "wallSeconds": 20.025465200014879,
+            "physicsSeconds": 20.01999290674604,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                1,
+                5
+            ]
+        },
+        {
+            "round": 24,
+            "seed": 20261140,
+            "score": 5500,
+            "throws": 19,
+            "hits": 6,
+            "wallSeconds": 20.01826899999287,
+            "physicsSeconds": 20.01999290674604,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                1,
+                5
+            ]
+        },
+        {
+            "round": 25,
+            "seed": 20261141,
+            "score": 6500,
+            "throws": 20,
+            "hits": 8,
+            "wallSeconds": 20.015230000019075,
+            "physicsSeconds": 19.999992913832217,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                3,
+                5
+            ]
+        },
+        {
+            "round": 26,
+            "seed": 20261142,
+            "score": 7250,
+            "throws": 20,
+            "hits": 10,
+            "wallSeconds": 20.011208400013858,
+            "physicsSeconds": 20.01999290674604,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                1,
+                4,
+                5
+            ]
+        },
+        {
+            "round": 27,
+            "seed": 20261143,
+            "score": 6500,
+            "throws": 19,
+            "hits": 8,
+            "wallSeconds": 20.014852399996017,
+            "physicsSeconds": 19.999992913832103,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                3,
+                5
+            ]
+        },
+        {
+            "round": 28,
+            "seed": 20261144,
+            "score": 5000,
+            "throws": 19,
+            "hits": 5,
+            "wallSeconds": 20.016325000033249,
+            "physicsSeconds": 19.999992913832103,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                5
+            ]
+        },
+        {
+            "round": 29,
+            "seed": 20261145,
+            "score": 6500,
+            "throws": 20,
+            "hits": 8,
+            "wallSeconds": 20.01174499996705,
+            "physicsSeconds": 20.019992906745985,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                3,
+                5
+            ]
+        },
+        {
+            "round": 30,
+            "seed": 20261146,
+            "score": 6000,
+            "throws": 19,
+            "hits": 7,
+            "wallSeconds": 20.0205941000022,
+            "physicsSeconds": 20.019992906745985,
+            "claimedByRow": [
+                0,
+                0,
+                0,
+                0,
+                2,
+                5
+            ]
+        }
+    ]
+}

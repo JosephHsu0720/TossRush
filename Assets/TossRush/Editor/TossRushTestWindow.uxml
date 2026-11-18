@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:Style src="TossRushTestWindow.uss" />
+    <ui:VisualElement class="test-tools">
+        <ui:Label text="TossRush 測試工具" class="title" />
+        <ui:VisualElement class="records">
+            <ui:Label name="normalBest" />
+            <ui:Label name="specialBest" />
+            <ui:Label name="unlockState" class="wrapped" />
+        </ui:VisualElement>
+        <ui:Label text="請先停止 Play Mode，再清除或重設紀錄。" class="hint wrapped" />
+        <ui:VisualElement name="actions">
+            <ui:VisualElement class="action">
+                <ui:Button name="clearScores" text="Clear High Score" />
+                <ui:Label text="清除一般模式與特殊模式最高分，保留解鎖狀態。" class="wrapped" />
+            </ui:VisualElement>
+            <ui:VisualElement class="action">
+                <ui:Button name="resetUnlock" text="Reset Special Mode Unlock" />
+                <ui:Label text="重新鎖定特殊模式，並清除一般模式最高分；保留特殊模式最高分。" class="wrapped" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Label name="lastAction" class="hint wrapped" />
+    </ui:VisualElement>
+</ui:UXML>

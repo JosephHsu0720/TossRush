@@ -1,0 +1,583 @@
+{
+    "passed": true,
+    "complete": true,
+    "startFrame": 81,
+    "endFrame": 5327,
+    "checks": [
+        {
+            "name": "Entry and direct registration cannot award before settlement",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Enclosed ring remains pending before the full hold duration",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Ring bouncing upward out of the prize earns nothing",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Re-entry starts a fresh hold instead of retaining old progress",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained re-entry scores exactly once",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Only confirmed captures turn dark and remain physical",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "A second real ring cannot claim the same dark prize",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Sliding out sideways cancels pending capture",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "A fast sweep through the entire band without retention earns nothing",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Actual cap-edge geometry remains enclosed",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Shallow cap overlap without deep insertion cannot settle",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Rim overlap cannot reward",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Originating below the cap has no valid top approach",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Sideways insertion without top approach is rejected",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Upward insertion is rejected",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Pool reuse clears approach and pending settlement",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retired pending ring cannot score",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "The 20-second deadline rejects unconfirmed captures",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "A new round clears pending capture",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Restart restores all 46 prizes and original colors",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "A genuine lower-body roll-in still scores after settling",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Real moving enclosure is not immediately rewarded",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "A real PhysX rebound escaping the target receives zero",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Physical entry waits for settlement 1/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 1/46 - SMALL FIGURES 1",
+            "passed": true,
+            "detail": "Points=20; score=20; speed=4.066212E-09; local height=-0.00965558"
+        },
+        {
+            "name": "Physical entry waits for settlement 2/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 2/46 - SMALL FIGURES 2",
+            "passed": true,
+            "detail": "Points=20; score=20; speed=1.106328E-09; local height=-0.00965558"
+        },
+        {
+            "name": "Physical entry waits for settlement 3/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 3/46 - SMALL FIGURES 3",
+            "passed": true,
+            "detail": "Points=20; score=20; speed=5.019441E-07; local height=-0.009655625"
+        },
+        {
+            "name": "Physical entry waits for settlement 4/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 4/46 - SMALL FIGURES 4",
+            "passed": true,
+            "detail": "Points=20; score=20; speed=1.69703E-09; local height=-0.00965558"
+        },
+        {
+            "name": "Physical entry waits for settlement 5/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 5/46 - SMALL FIGURES 5",
+            "passed": true,
+            "detail": "Points=20; score=20; speed=1.870133E-09; local height=-0.00965558"
+        },
+        {
+            "name": "Physical entry waits for settlement 6/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 6/46 - SMALL FIGURES 6",
+            "passed": true,
+            "detail": "Points=20; score=20; speed=2.216298E-08; local height=-0.00965558"
+        },
+        {
+            "name": "Physical entry waits for settlement 7/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 7/46 - SMALL FIGURES 7",
+            "passed": true,
+            "detail": "Points=20; score=20; speed=9.914415E-09; local height=-0.00965558"
+        },
+        {
+            "name": "Physical entry waits for settlement 8/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 8/46 - SMALL FIGURES 8",
+            "passed": true,
+            "detail": "Points=20; score=20; speed=4.326204E-09; local height=-0.00965558"
+        },
+        {
+            "name": "Physical entry waits for settlement 9/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 9/46 - SMALL FIGURES 9",
+            "passed": true,
+            "detail": "Points=20; score=20; speed=5.033385E-07; local height=-0.009655625"
+        },
+        {
+            "name": "Physical entry waits for settlement 10/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 10/46 - SMALL FIGURES 10",
+            "passed": true,
+            "detail": "Points=20; score=20; speed=1.028222E-11; local height=-0.00965558"
+        },
+        {
+            "name": "Physical entry waits for settlement 11/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 11/46 - SMALL FIGURES 11",
+            "passed": true,
+            "detail": "Points=20; score=20; speed=4.907427E-09; local height=-0.00965558"
+        },
+        {
+            "name": "Physical entry waits for settlement 12/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 12/46 - LARGE FIGURES 1",
+            "passed": true,
+            "detail": "Points=50; score=50; speed=1.702064E-08; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 13/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 13/46 - LARGE FIGURES 2",
+            "passed": true,
+            "detail": "Points=50; score=50; speed=1.341126E-06; local height=-0.009655535"
+        },
+        {
+            "name": "Physical entry waits for settlement 14/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 14/46 - LARGE FIGURES 3",
+            "passed": true,
+            "detail": "Points=50; score=50; speed=2.303864E-08; local height=-0.009655297"
+        },
+        {
+            "name": "Physical entry waits for settlement 15/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 15/46 - LARGE FIGURES 4",
+            "passed": true,
+            "detail": "Points=50; score=50; speed=1.346236E-06; local height=-0.009655535"
+        },
+        {
+            "name": "Physical entry waits for settlement 16/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 16/46 - LARGE FIGURES 5",
+            "passed": true,
+            "detail": "Points=50; score=50; speed=3.660511E-06; local height=-0.009656072"
+        },
+        {
+            "name": "Physical entry waits for settlement 17/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 17/46 - LARGE FIGURES 6",
+            "passed": true,
+            "detail": "Points=50; score=50; speed=1.82524E-08; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 18/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 18/46 - LARGE FIGURES 7",
+            "passed": true,
+            "detail": "Points=50; score=50; speed=3.08504E-09; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 19/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 19/46 - LARGE FIGURES 8",
+            "passed": true,
+            "detail": "Points=50; score=50; speed=1.233786E-08; local height=-0.009655297"
+        },
+        {
+            "name": "Physical entry waits for settlement 20/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 20/46 - LARGE FIGURES 9",
+            "passed": true,
+            "detail": "Points=50; score=50; speed=1.341108E-06; local height=-0.009655535"
+        },
+        {
+            "name": "Physical entry waits for settlement 21/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 21/46 - LARGE FIGURES 10",
+            "passed": true,
+            "detail": "Points=50; score=50; speed=1.341247E-06; local height=-0.009655535"
+        },
+        {
+            "name": "Physical entry waits for settlement 22/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 22/46 - LARGE FIGURES 11",
+            "passed": true,
+            "detail": "Points=50; score=50; speed=1.344603E-06; local height=-0.009655535"
+        },
+        {
+            "name": "Physical entry waits for settlement 23/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 23/46 - WATER BOTTLES 1",
+            "passed": true,
+            "detail": "Points=100; score=100; speed=1.915954E-08; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 24/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 24/46 - WATER BOTTLES 2",
+            "passed": true,
+            "detail": "Points=100; score=100; speed=9.902868E-08; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 25/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 25/46 - WATER BOTTLES 3",
+            "passed": true,
+            "detail": "Points=100; score=100; speed=1.191856E-07; local height=-0.009655356"
+        },
+        {
+            "name": "Physical entry waits for settlement 26/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 26/46 - WATER BOTTLES 4",
+            "passed": true,
+            "detail": "Points=100; score=100; speed=1.303374E-07; local height=-0.009654403"
+        },
+        {
+            "name": "Physical entry waits for settlement 27/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 27/46 - WATER BOTTLES 5",
+            "passed": true,
+            "detail": "Points=100; score=100; speed=3.725908E-07; local height=-0.009656072"
+        },
+        {
+            "name": "Physical entry waits for settlement 28/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 28/46 - WATER BOTTLES 6",
+            "passed": true,
+            "detail": "Points=100; score=100; speed=2.079E-08; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 29/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 29/46 - WATER BOTTLES 7",
+            "passed": true,
+            "detail": "Points=100; score=100; speed=1.887078E-08; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 30/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 30/46 - TIN CANS 1",
+            "passed": true,
+            "detail": "Points=250; score=250; speed=5.719349E-07; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 31/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 31/46 - TIN CANS 2",
+            "passed": true,
+            "detail": "Points=250; score=250; speed=5.025928E-07; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 32/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 32/46 - TIN CANS 3",
+            "passed": true,
+            "detail": "Points=250; score=250; speed=4.833695E-07; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 33/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 33/46 - TIN CANS 4",
+            "passed": true,
+            "detail": "Points=250; score=250; speed=4.05614E-07; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 34/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 34/46 - TIN CANS 5",
+            "passed": true,
+            "detail": "Points=250; score=250; speed=1.804659E-07; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 35/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 35/46 - TIN CANS 6",
+            "passed": true,
+            "detail": "Points=250; score=250; speed=5.728749E-07; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 36/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 36/46 - TIN CANS 7",
+            "passed": true,
+            "detail": "Points=250; score=250; speed=1.502446E-09; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 37/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 37/46 - BEER CANS 1",
+            "passed": true,
+            "detail": "Points=500; score=500; speed=1.343434E-06; local height=-0.009655714"
+        },
+        {
+            "name": "Physical entry waits for settlement 38/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 38/46 - BEER CANS 2",
+            "passed": true,
+            "detail": "Points=500; score=500; speed=1.344623E-06; local height=-0.009655714"
+        },
+        {
+            "name": "Physical entry waits for settlement 39/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 39/46 - BEER CANS 3",
+            "passed": true,
+            "detail": "Points=500; score=500; speed=1.341105E-06; local height=-0.009655595"
+        },
+        {
+            "name": "Physical entry waits for settlement 40/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 40/46 - BEER CANS 4",
+            "passed": true,
+            "detail": "Points=500; score=500; speed=1.326209E-06; local height=-0.009655714"
+        },
+        {
+            "name": "Physical entry waits for settlement 41/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 41/46 - BEER CANS 5",
+            "passed": true,
+            "detail": "Points=500; score=500; speed=1.36045E-06; local height=-0.009655714"
+        },
+        {
+            "name": "Physical entry waits for settlement 42/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 42/46 - PREMIUM BOTTLES 1",
+            "passed": true,
+            "detail": "Points=1000; score=1000; speed=1.490127E-08; local height=-0.009655237"
+        },
+        {
+            "name": "Physical entry waits for settlement 43/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 43/46 - PREMIUM BOTTLES 2",
+            "passed": true,
+            "detail": "Points=1000; score=1000; speed=3.940756E-08; local height=-0.009655237"
+        },
+        {
+            "name": "Physical entry waits for settlement 44/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 44/46 - PREMIUM BOTTLES 3",
+            "passed": true,
+            "detail": "Points=1000; score=1000; speed=3.630304E-07; local height=-0.009655237"
+        },
+        {
+            "name": "Physical entry waits for settlement 45/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 45/46 - PREMIUM BOTTLES 4",
+            "passed": true,
+            "detail": "Points=1000; score=1000; speed=1.74623E-10; local height=-0.009655237"
+        },
+        {
+            "name": "Physical entry waits for settlement 46/46",
+            "passed": true,
+            "detail": ""
+        },
+        {
+            "name": "Retained physical drop 46/46 - PREMIUM BOTTLES 5",
+            "passed": true,
+            "detail": "Points=1000; score=1000; speed=5.314411E-08; local height=-0.009655237"
+        }
+    ]
+}

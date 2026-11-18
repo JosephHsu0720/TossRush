@@ -20,10 +20,13 @@ namespace TossRush
         float elapsed, motionPhase;
         float lastHorizontalOffset;
         bool hasHorizontalOffset;
+        float windPhase;
         PhysicsProp[] props;
         TrafficVehicle[] vehicles;
         Pedestrian[] pedestrians;
         ScoreGate[] gates;
+        RingTarget[] ringTargets;
+        public System.Collections.Generic.IReadOnlyList<RingTarget> RingTargets => ringTargets;
 
         public void Initialize(GameDirector game)
         {
@@ -34,6 +37,7 @@ namespace TossRush
             CurrentTargetCenter = home;
             CurrentWind = data.wind;
             gates = movingTarget.GetComponentsInChildren<ScoreGate>(true);
+            ringTargets = movingTarget.GetComponentsInChildren<RingTarget>(true);
             foreach (var targetGate in gates) targetGate.stage = this;
             props = GetComponentsInChildren<PhysicsProp>(true);
             foreach (var prop in props) { prop.stage = this; prop.InitializePose(); }
@@ -63,10 +67,13 @@ namespace TossRush
             movingTarget.localPosition = PositionAtTime(0);
             if (Dartboard) Dartboard.ChooseNextTarget();
             if (data.matchTrashColors) ShuffleTrashColors();
+            windPhase = Random.Range(0, Mathf.PI * 2);
+            if (data.changingWind) UpdateChangingWind();
             foreach (var targetGate in gates) targetGate.ResetTracking();
             foreach (var prop in props) prop.ResetPose();
             foreach (var vehicle in vehicles) vehicle.ResetPose();
             foreach (var pedestrian in pedestrians) pedestrian.ResetPose();
+            foreach (var ringTarget in ringTargets) ringTarget.ResetForRound();
         }
 
         static float Sample(Vector2 range) => Random.Range(Mathf.Min(range.x, range.y), Mathf.Max(range.x, range.y));
@@ -132,13 +139,28 @@ namespace TossRush
         public Vector3 PredictedGatePosition(float secondsAhead)
         {
             Vector3 offset = PositionAtTime(elapsed + secondsAhead) - movingTarget.localPosition;
-            return gate.transform.position + transform.TransformVector(offset);
+            return (gate ? gate.transform.position : movingTarget.position) + transform.TransformVector(offset);
+        }
+
+        void UpdateChangingWind()
+        {
+            CurrentWind = WindAtFutureTime(0);
+        }
+
+        public Vector3 WindAtFutureTime(float secondsAhead)
+        {
+            if (!data.changingWind) return CurrentWind;
+            float t = (elapsed + secondsAhead) * data.windChangeSpeed + windPhase;
+            float strength = Mathf.Lerp(Mathf.Min(data.windSpeedRange.x, data.windSpeedRange.y),
+                Mathf.Max(data.windSpeedRange.x, data.windSpeedRange.y), .5f + .5f * Mathf.Sin(t * .61f));
+            return new Vector3(Mathf.Sin(t), 0, Mathf.Cos(t * .73f) * .45f) * strength;
         }
 
         void FixedUpdate()
         {
             if (!Game || !Game.CanScore) return;
             elapsed += Time.fixedDeltaTime;
+            if (data.changingWind) UpdateChangingWind();
             movingTarget.localPosition = PositionAtTime(elapsed);
         }
     }

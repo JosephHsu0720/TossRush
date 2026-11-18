@@ -1,0 +1,30 @@
+.test-tools {
+    padding: 16px;
+    flex-grow: 1;
+}
+.title {
+    font-size: 18px;
+    -unity-font-style: bold;
+    margin-bottom: 12px;
+}
+.records {
+    padding: 10px;
+    background-color: rgba(128, 128, 128, 0.12);
+    margin-bottom: 10px;
+}
+.records > Label {
+    margin-bottom: 4px;
+}
+.wrapped {
+    white-space: normal;
+}
+.hint {
+    margin-bottom: 12px;
+}
+.action {
+    margin-bottom: 16px;
+}
+.action > Button {
+    min-height: 30px;
+    margin-bottom: 6px;
+}

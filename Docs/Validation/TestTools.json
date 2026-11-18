@@ -1,0 +1,41 @@
+{
+    "passed": true,
+    "checks": [
+        {
+            "name": "Clear High Score deletes both mode records",
+            "passed": true
+        },
+        {
+            "name": "Clear High Score preserves a permanent unlock",
+            "passed": true
+        },
+        {
+            "name": "Clearing scores does not unlock an unqualified player",
+            "passed": true
+        },
+        {
+            "name": "Clearing a qualifying legacy score preserves its unlocked eligibility",
+            "passed": true
+        },
+        {
+            "name": "Reset deletes the unlock flag",
+            "passed": true
+        },
+        {
+            "name": "Reset also deletes the qualifying normal score",
+            "passed": true
+        },
+        {
+            "name": "Reset preserves the special-mode high score",
+            "passed": true
+        },
+        {
+            "name": "Repeated reset stays locked and preserves the special record",
+            "passed": true
+        },
+        {
+            "name": "Original player records restored",
+            "passed": true
+        }
+    ]
+}

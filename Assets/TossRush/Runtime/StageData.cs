@@ -6,6 +6,10 @@ namespace TossRush
     public sealed class StageData : ScriptableObject
     {
         public string title;
+        [Header("Special mode")]
+        public bool ringToss;
+        public bool changingWind;
+        [Min(0)] public float windChangeSpeed = .18f;
         [TextArea] public string instruction;
         public Color accent = Color.cyan;
         [Min(1)] public int points = 100;

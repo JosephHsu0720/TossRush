@@ -29,6 +29,8 @@ namespace TossRush
         SoftBagDeformation softBag;
         Collider shape;
         SphereCollider sphere;
+        bool changingWind;
+        float windInfluence;
 
         void Awake()
         {
@@ -64,6 +66,7 @@ namespace TossRush
             if (softBag) softBag.ResetDeformation();
             Quaternion rotation = GetComponent<DartFlight>() && velocity.sqrMagnitude > .01f
                 ? Quaternion.LookRotation(velocity, Vector3.up) : Quaternion.Euler(data.projectileEulerAngles);
+            if (GetComponent<RingFlight>()) rotation = RingFlight.LaunchRotation(data, velocity);
             transform.SetPositionAndRotation(position, rotation);
             PreviousPosition = position;
             StageToken = token;
@@ -77,6 +80,8 @@ namespace TossRush
             InFlight = true;
             profile = data.physicsProfile;
             wind = stageWind * data.windInfluence;
+            changingWind = data.changingWind;
+            windInfluence = data.windInfluence;
             gravityScale = data.gravityScale;
             expiresAt = Time.time + (profile ? profile.flightLifetime : 4f);
             gameObject.SetActive(true);
@@ -105,6 +110,8 @@ namespace TossRush
             PreviousScoringRotation = Body.rotation;
             // After contact, let friction and gravity roll the bag off the lid, without artificial sideways lift.
             Vector3 spin = CollisionCount == 0 ? Body.angularVelocity : Vector3.zero;
+            if (changingWind && Owner && Owner.ActiveStage && StageToken == Owner.StageToken)
+                wind = Owner.ActiveStage.CurrentWind * windInfluence;
             Body.AddForce(ProjectileFlight.Acceleration(profile, Body.linearVelocity, wind, gravityScale, spin), ForceMode.Acceleration);
             if (Time.time >= expiresAt || Body.position.y < -4f) Retire();
         }

@@ -7,6 +7,9 @@ namespace TossRush
     {
         public GameObject menuPanel, resultPanel, playPanel;
         public UnityEngine.UI.Button startButton, restartButton;
+        public UnityEngine.UI.Button specialButton, menuButton;
+        public TMP_Text specialBestText;
+        public TMP_Text ringAimText;
         public TMP_Text timerText, scoreText, stageText, hintText, feedbackText, resultText, bestText;
         public TMP_Text highScoreText;
         public CleanShotEffect cleanShotEffect;
@@ -18,12 +21,31 @@ namespace TossRush
         Material materialInstance;
         float feedbackEnd;
         GameDirector game;
+        TMP_Text specialButtonLabel;
+        Color specialLabelColor;
+        bool specialLabelAutoSize;
+        float specialLabelFontSize;
 
         public void Initialize(GameDirector director)
         {
             game = director;
-            startButton.onClick.AddListener(game.StartRound);
+            startButton.onClick.AddListener(game.StartNormalRound);
             restartButton.onClick.AddListener(game.StartRound);
+            if (specialButton)
+            {
+                specialButton.onClick.AddListener(game.StartSpecialRound);
+                specialButtonLabel = specialButton.GetComponentInChildren<TMP_Text>(true);
+                if (specialButtonLabel)
+                {
+                    specialLabelColor = specialButtonLabel.color;
+                    specialLabelAutoSize = specialButtonLabel.enableAutoSizing;
+                    specialLabelFontSize = specialButtonLabel.fontSize;
+                }
+                var colors = specialButton.colors;
+                colors.disabledColor = new Color(.20f, .22f, .26f, 1);
+                specialButton.colors = colors;
+            }
+            if (menuButton) menuButton.onClick.AddListener(game.ReturnToMenu);
             materialInstance = new Material(feedbackMaterial);
             timerFill.material = materialInstance;
         }
@@ -35,7 +57,23 @@ namespace TossRush
             cleanShotEffect.gameObject.SetActive(false);
             menuPanel.SetActive(true); resultPanel.SetActive(false); playPanel.SetActive(false);
             bestText.text = "HIGH SCORE  /  " + best.ToString("0000");
+            if (specialBestText) specialBestText.text = "RING TOSS BEST  /  " + PlayerPrefs.GetInt(GameDirector.SpecialBestKey, 0).ToString("0000");
+            RefreshSpecialModeAccess();
             SetTransition(0);
+        }
+
+        public void RefreshSpecialModeAccess()
+        {
+            if (!game || !specialButton) return;
+            bool unlocked = game.SpecialModeUnlocked;
+            specialButton.interactable = unlocked;
+            if (!specialButtonLabel) return;
+            specialButtonLabel.enableAutoSizing = unlocked && specialLabelAutoSize;
+            specialButtonLabel.fontSize = unlocked ? specialLabelFontSize : 17;
+            specialButtonLabel.color = unlocked ? specialLabelColor : new Color(.78f, .80f, .83f, 1);
+            specialButtonLabel.text = unlocked ? "SPECIAL MODE / RING TOSS"
+                : "SPECIAL MODE / RING TOSS\n<size=12>UNLOCK: LET'S TOSS " + game.SpecialUnlockProgress.ToString("0000")
+                    + " / " + GameDirector.SpecialUnlockScore + "</size>";
         }
 
         public void ShowPlay()
@@ -45,7 +83,7 @@ namespace TossRush
             feedbackEnd = 0; feedback.alpha = 0;
             cleanShotEffect.gameObject.SetActive(true);
             cleanShotEffect.ResetEffect();
-            Refresh(game.roundDuration, 0, game.ActiveStage.data, false);
+            Refresh(game.CurrentRoundDuration, 0, game.ActiveStage.data, false);
         }
 
         public void Refresh(float time, int score, StageData data, bool released)
@@ -54,15 +92,18 @@ namespace TossRush
             scoreText.text = score.ToString("0000");
             Vector3 wind = game.ActiveStage.CurrentWind;
             stageText.text = data.title.ToUpperInvariant() + "   /   +" + data.points;
+            if (data.ringToss) stageText.text = "NIGHT MARKET / RING TOSS";
             if (windIndicator) windIndicator.SetWind(wind, game.thrower.view.transform, data.accent);
             stageText.color = data.accent;
             string instruction = data.instruction;
+            if (data.ringToss && (!game.thrower.ringAim || !game.thrower.ringAim.AimAssistEnabled))
+                instruction = "MOVE MOUSE TO AIM / LEFT CLICK TO THROW";
             if (game.ActiveStage.Dartboard) instruction = game.ActiveStage.Dartboard.Instruction;
             if (data.verticalMotionAmplitude > 0)
                 instruction = game.ActiveStage.CurrentVerticalAmplitude > 0 ? "BOTTLE FLIP / LEFT+RIGHT + UP+DOWN / PRIZES +10"
                     : "BOTTLE FLIP / LEFT+RIGHT / PRIZES +10 / CLEAR TO UNLOCK UP+DOWN";
             hintText.text = released ? "CLICK TO CAPTURE MOUSE  /  TIMER CONTINUES" : instruction + "   |   ESC : RELEASE MOUSE";
-            timerFill.fillAmount = time/game.roundDuration;
+            timerFill.fillAmount = time/game.CurrentRoundDuration;
             timerFill.color = time <= 5 ? new Color(1,0.3f,0.25f) : data.accent;
             bool newRecord = score > game.Best;
             highScoreText.text = (newRecord ? "NEW HIGH SCORE " : "HIGH SCORE ") + Mathf.Max(game.Best, score).ToString("0000");
