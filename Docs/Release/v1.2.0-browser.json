@@ -1,0 +1,10 @@
+{
+  "version": "1.2.0",
+  "passed": true,
+  "exceptions": [],
+  "errors": [],
+  "loaded": true,
+  "loadSeconds": 1.057,
+  "framesAdvanced": 64,
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+}

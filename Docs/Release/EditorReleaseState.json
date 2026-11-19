@@ -1,5 +1,6 @@
 {
   "unity": "6000.3.11f1",
+  "version": "1.2.0",
   "playing": false,
   "compiling": false,
   "scene": "Assets/TossRush/Scenes/TossRush.unity",
@@ -8,6 +9,8 @@
   "startingStage": 0,
   "repeatStartingStage": false,
   "stages": 6,
+  "specialStage": true,
+  "aimAssist": false,
   "target": "WebGL",
   "compression": "Gzip",
   "decompressionFallback": true,

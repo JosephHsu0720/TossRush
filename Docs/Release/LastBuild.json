@@ -1,12 +1,12 @@
 {
-  "utc": "2026-11-17T08:24:45.3006791Z",
+  "utc": "2026-11-18T17:01:03.8534872Z",
   "unity": "6000.3.11f1",
-  "output": "Builds/WebGL/20261117-082143",
-  "archive": "Artifacts/Release/TossRush-Web-v1.0.1.zip",
-  "zipBytes": 19704607,
-  "buildBytes": 20229031,
+  "output": "Builds/WebGL/20261118-165611",
+  "archive": "Artifacts/Release/TossRush-Web-v1.2.0.zip",
+  "zipBytes": 19807610,
+  "buildBytes": 20331171,
   "warnings": 0,
   "errors": 0,
-  "seconds": 180.8477058,
-  "version": "1.0.1"
+  "seconds": 290.9056591,
+  "version": "1.2.0"
 }
